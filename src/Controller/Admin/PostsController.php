@@ -29,22 +29,6 @@ class PostsController extends AppController
     }
 
     /**
-     * View method
-     *
-     * @param string|null $id Post id.
-     * @return \Cake\Http\Response|void
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
-    public function view($id = null)
-    {
-        $post = $this->Posts->get($id, [
-            'contain' => []
-        ]);
-
-        $this->set('post', $post);
-    }
-
-    /**
      * Add method
      *
      * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
@@ -74,7 +58,7 @@ class PostsController extends AppController
     public function edit($id = null)
     {
         $post = $this->Posts->get($id, [
-            'contain' => []
+            'contain' => ['Tags']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $post = $this->Posts->patchEntity($post, $this->request->getData());

@@ -30,7 +30,11 @@ class PostsController extends AppController
     {
         $posts = $this->paginate(
             $this->Posts->find('all', [
-                'order' => ['Posts.id' => 'DESC']
+                'condtions' => [
+                    'Posts.published' => true
+                ],
+                'order' => ['Posts.id' => 'DESC'],
+                'contain' => ['Tags']
             ])
         );
         $pages = TableRegistry::get('Pages');
@@ -50,12 +54,14 @@ class PostsController extends AppController
     {
         $post = $this->Posts->find('all', [
             'conditions' => [
-                'Posts.alias' => $this->request->getParam('alias')
-            ]
+                'Posts.alias' => $this->request->getParam('alias'),
+                'Posts.published' => true
+            ],
+            'contain' => ['Tags']
         ])->first();
 
         if (empty($post)) {
-            throw new RecordNotFoundException('Нет поста');
+            throw new RecordNotFoundException(__('No post'));
         }
 
         $this->set('post', $post);

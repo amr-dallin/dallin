@@ -445,10 +445,10 @@ mark,
   height: auto; }
 
 .img-thumbnail {
-  padding: 0.25rem;
+  padding: 0;
   background-color: #fff;
-  border: 1px solid #dee2e6;
-  border-radius: 0.25rem;
+  border: 1px solid #e9ecef;
+  border-radius: 0;
   max-width: 100%;
   height: auto; }
 
@@ -3508,13 +3508,14 @@ input[type="button"].btn-block {
     background-color: #1d2124; }
 
 .jumbotron {
-  color: #fff;
   margin-bottom: 4rem;
-  background-color: #001e37;
   border-radius: 0.3rem; }
   @media (min-width: 576px) {
     .jumbotron {
-      padding: 8rem 4rem; } }
+      padding: 3.3333333333rem; } }
+  @media (max-width: 767.98px) {
+    .jumbotron {
+      padding: 2rem; } }
 
 .jumbotron-fluid {
   padding-right: 0;
@@ -5299,7 +5300,7 @@ button.bg-dark:focus {
 .shadow-sm {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important; }
 
-.shadow {
+.shadow, .books-page .books-list .book-item:hover {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; }
 
 .shadow-lg {
@@ -10471,6 +10472,61 @@ readers do not read off random characters that represent icons */
   position: static;
   width: auto; }
 
+.article {
+  border-bottom: 1px solid #e9ecef;
+  margin-bottom: 1.5rem; }
+  .article h1, .article h2, .article h3, .article h4, .article p, .article ul, .article ol {
+    font-family: "Noto Serif", Georgia, Cambria, "Times New Roman", serif; }
+    .article h1 .header-link, .article h2 .header-link, .article h3 .header-link, .article h4 .header-link, .article p .header-link, .article ul .header-link, .article ol .header-link {
+      font-weight: 500;
+      line-height: 1.25;
+      color: inherit; }
+  @media (max-width: 767.98px) {
+    .article h1 {
+      font-size: 1.9791666667rem; } }
+  @media (max-width: 767.98px) {
+    .article h2 {
+      font-size: 1.71875rem; } }
+  @media (max-width: 767.98px) {
+    .article h3 {
+      font-size: 1.4583333333rem; } }
+  @media (max-width: 767.98px) {
+    .article h4 {
+      font-size: 1.3020833333rem; } }
+  @media (max-width: 767.98px) {
+    .article .lead {
+      font-size: 1.1458333333rem; } }
+  @media (max-width: 767.98px) {
+    .article p, .article ul, .article ol {
+      font-size: 1.0416666667rem; } }
+  .article pre {
+    font-size: .2rem; }
+    .article pre > code {
+      font-size: .9rem; }
+  .article .article-date {
+    margin: .5rem 0;
+    font-size: .95rem;
+    color: #001e37; }
+    .article .article-date i {
+      display: inline-block;
+      margin-right: .2rem; }
+  .article .article-tags {
+    margin-bottom: 1.2rem; }
+  .article .article-share {
+    border-top: 1px solid #e9ecef;
+    padding-top: 1rem; }
+    .article .article-share .share-list-label {
+      font-weight: bold;
+      font-size: .95rem; }
+    .article .article-share .share-list {
+      margin-top: .25rem;
+      font-size: .9rem; }
+  .article footer {
+    font-size: 1.09375rem;
+    padding-bottom: 1rem; }
+  .article:last-child {
+    border-bottom: none; }
+
 /*
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -10652,25 +10708,9 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : 02.08.2018, 17:04:50
+    Created on : 02.08.2018, 17:50:31
     Author     : amr.dallin
 */
-.blog-main .blog-post {
-  border-bottom: 1px solid #e9ecef;
-  margin-bottom: 35px; }
-  .blog-main .blog-post .blog-post-title-heading {
-    font-weight: 500;
-    line-height: 1.25; }
-    .blog-main .blog-post .blog-post-title-heading .blog-post-title-link {
-      color: inherit; }
-  .blog-main .blog-post .blog-post-date {
-    font-size: .95rem;
-    color: #001e37; }
-  .blog-main .blog-post .blog-post-tags {
-    font-size: 1.09375rem; }
-  .blog-main .blog-post:last-child {
-    border-bottom: none; }
-
 /*
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -10680,37 +10720,26 @@ and open the template in the editor.
     Created on : 02.08.2018, 17:50:31
     Author     : amr.dallin
 */
-.blog-post-view h1 {
-  text-transform: uppercase; }
-.blog-post-view .blog_post_date {
-  margin: .5rem 0;
-  font-size: .95rem;
-  color: #001e37; }
-  .blog-post-view .blog_post_date i {
-    display: inline-block;
-    margin-right: .2rem; }
-.blog-post-view h1, .blog-post-view h2, .blog-post-view h3, .blog-post-view h4, .blog-post-view p, .blog-post-view ul, .blog-post-view ol {
-  font-family: "Noto Serif", Georgia, Cambria, "Times New Roman", serif; }
-.blog-post-view pre {
-  font-size: .2rem; }
-  .blog-post-view pre > code {
-    font-size: .9rem; }
-.blog-post-view footer {
-  font-size: 1.09375rem;
-  padding-bottom: 3rem; }
-  .blog-post-view footer .blog_post_tags {
-    margin-bottom: 1.2rem; }
-  .blog-post-view footer .blog_post_share {
-    border-top: 1px solid #e9ecef;
-    padding-top: 1rem; }
-    .blog-post-view footer .blog_post_share .share_list_label {
-      font-weight: bold;
-      font-size: .95rem; }
-    .blog-post-view footer .blog_post_share .share_list {
-      margin-top: .25rem;
-      font-size: .9rem; }
-.blog-post-view .blog_post_other {
-  padding: 4rem; }
+.books-page .books-list .book-item {
+  margin-bottom: 30px;
+  padding-top: 20px;
+  padding-bottom: 10px; }
+  .books-page .books-list .book-item a {
+    display: block; }
+    .books-page .books-list .book-item a img {
+      width: 90%;
+      margin-bottom: 10px; }
+      @media (max-width: 767.98px) {
+        .books-page .books-list .book-item a img {
+          width: 70%; } }
+  .books-page .books-list .book-item h2 {
+    font-size: 0.9943181818rem;
+    line-height: 1.5;
+    color: #343a40;
+    text-decoration: none; }
+    @media (max-width: 767.98px) {
+      .books-page .books-list .book-item h2 {
+        font-size: 1.3125rem; } }
 
 .footer {
   background: #f8f9fa;
@@ -10718,5 +10747,13 @@ and open the template in the editor.
   padding: 3rem 0;
   font-size: .8rem;
   color: #adb5bd; }
+
+.back-link {
+  font-size: 1.09375rem;
+  margin-bottom: 10px; }
+  .back-link a {
+    color: #343a40; }
+  .back-link i {
+    margin-right: 5px; }
 
 /*# sourceMappingURL=main.css.map */

@@ -67,10 +67,12 @@ class AppController extends Controller
     
     public function beforeRender(\Cake\Event\Event $event)
     {
-        if (!empty($this->request->getParam('prefix')) && $this->request->getParam('prefix') === 'admin') {
+        if (
+            !empty($this->request->getParam('prefix')) && 
+            $this->request->getParam('prefix') === 'admin'
+        ) {
             $this->viewBuilder()->setTheme('SmartAdmin');
-        }
-        
+        }  
     }
     
     public function isAuthorized($user)

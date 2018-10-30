@@ -1,38 +1,13 @@
 <?php
-use Cake\Core\Configure;
-use Cake\Error\Debugger;
-
 $this->layout = 'error';
 
-if (Configure::read('debug')) :
-    $this->layout = 'dev_error';
-
-    $this->assign('title', $message);
-    $this->assign('templateName', 'error400.ctp');
-
-    $this->start('file');
-?>
-<?php if (!empty($error->queryString)) : ?>
-    <p class="notice">
-        <strong>SQL Query: </strong>
-        <?= h($error->queryString) ?>
-    </p>
-<?php endif; ?>
-<?php if (!empty($error->params)) : ?>
-        <strong>SQL Query Params: </strong>
-        <?php Debugger::dump($error->params) ?>
-<?php endif; ?>
-<?= $this->element('auto_table_warning') ?>
-<?php
-if (extension_loaded('xdebug')) :
-    xdebug_print_function_stack();
-endif;
-
+$this->start('title');
+echo __('Page not found');
 $this->end();
-endif;
 ?>
-<h2><?= h($message) ?></h2>
-<p class="error">
-    <strong><?= __d('cake', 'Error') ?>: </strong>
-    <?= __d('cake', 'The requested address {0} was not found on this server.', "<strong>'{$url}'</strong>") ?>
+
+<h1 class="text-center"><?php echo __('Page not found'); ?></h1>
+<p class="text-center">
+    <?php echo __('The link you clicked may be damaged or the page deleted.'); ?><br/>
+    <?php echo __('Go {0} or visit {1}.', [$this->Html->link(__('back'), 'javascript:history.back()'), $this->Html->link(__('home page'), ['controller' => 'pages', 'action' => 'display'])]); ?>
 </p>

@@ -20,6 +20,10 @@ use Cake\Datasource\EntityInterface;
  * @method \App\Model\Entity\Post patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
  * @method \App\Model\Entity\Post[] patchEntities($entities, array $data, array $options = [])
  * @method \App\Model\Entity\Post findOrCreate($search, callable $callback = null, $options = [])
+ * @property \Tags\Model\Table\TaggedTable|\Cake\ORM\Association\HasMany $Tagged
+ * @property \Tags\Model\Table\TagsTable|\Cake\ORM\Association\BelongsToMany $Tags
+ * @mixin \Cake\ORM\Behavior\TimestampBehavior
+ * @mixin \Tags\Model\Behavior\TagBehavior
  */
 class PostsTable extends Table
 {
@@ -46,6 +50,8 @@ class PostsTable extends Table
                 ]
             ]
         ]);
+        
+        $this->addBehavior('Tags.Tag', ['taggedCounter' => false]);
     }
 
     /**

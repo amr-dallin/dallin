@@ -15,37 +15,35 @@ echo $this->element('meta', [
 $this->end();
 
 $this->start('header');
-echo $this->element('header');
+echo $this->element('header', ['menu' => 'blog']);
 $this->end();
 ?>
-<div class="container-fluid">
+<div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8 col-lg-7 blog-main">
+        <div class="col-md-9 col-lg-8 mt-5">
             <?php foreach($posts as $post): ?>
-            <article class="blog-post">
+            <article class="article">
                 <header class="mb-2">
-                    <h2 class="blog-post-title-heading mb-2">
+                    <h2 class="mb-2">
                         <?php
                         echo $this->Html->link(
                             h($post->title), 
                             ['action' => 'view', 'alias' => h($post->alias)], 
                             [
-                                'class' => 'blog-post-title-link',
+                                'class' => 'header-link',
                                 'title' => h($post->title)
                             ]
                         );
                         ?>
                     </h2>
-                    <div class="blog-post-date">
+                    <div class="article-date">
                         <i class="far fa-clock"></i> 
-                        <time datetime="<?php echo $this->Time->format(h($post->date_created), 'YYYY-MM-dd'); ?>"><?php echo $this->Time->format(h($post->date_created), 'dd.MM.YYYY'); ?></time>
+                        <time datetime="<?php echo $this->Time->format($post->date_created, 'yyyy-MM-dd'); ?>"><?php echo $this->Time->format($post->date_created, 'dd.MM.yyyy'); ?></time>
                     </div>
                 </header>
                 <p class="mb-3"><?php echo $post->lead; ?></p>
                 <footer>
-                    <p class="blog-post-tags">
-
-                    </p>
+                    <?php echo $this->element('tags', ['tags' => $post->tags]); ?>
                 </footer>
             </article>
             <?php endforeach; ?>

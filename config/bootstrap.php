@@ -12,7 +12,6 @@
  * @since         0.10.8
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
-
 /*
  * Configure paths required to find CakePHP + general filepath constants
  */
@@ -43,6 +42,7 @@ use Cake\Log\Log;
 use Cake\Mailer\Email;
 use Cake\Utility\Inflector;
 use Cake\Utility\Security;
+
 
 /**
  * Uncomment block of code below if you want to use `.env` file during development.
@@ -199,5 +199,3 @@ Type::build('timestamp')
 //Inflector::rules('transliteration', ['/å/' => 'aa']);
 
 Plugin::load('SmartAdmin', ['bootstrap' => false, 'routes' => true]);
-
-Plugin::load('MaratDallin', ['bootstrap' => false, 'routes' => true]);

@@ -20,7 +20,7 @@
         <div class="row">
             <div class="col text-center">
                 © 2018 Марат Даллин: проектирование и разработка веб-приложений на CakePHP<br/>
-                Почта: amr@dallin.pro
+                Почта: amr@dallin.uz
             </div>
         </div>
     </div>

@@ -76,7 +76,7 @@
 <body>
         <?php echo $this->fetch('header'); ?>
 
-    <main role="main" class="mt-5 mb-5">
+    <main role="main">
             <?php echo $this->Flash->render(); ?>
             <?php echo $this->fetch('content'); ?>
     </main>

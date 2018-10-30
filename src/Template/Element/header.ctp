@@ -29,12 +29,58 @@
         <div class="col-12 col-sm-9 collapse navbar-collapse" id="navbarSupportedContent">
             <div class="navbar-nav m-auto">
                 <?php
-                echo $this->Html->link(
-                    'Блог', 
+                if (!isset($menu)) {
+                    $menu = [];
+                }
+                
+                echo $this->Dallin->headerLink(
+                    __('Home'),
+                    ['controller' => 'pages', 'action' => 'display'],
+                    [
+                        'class' => 'nav-item nav-link',
+                        'title' => __('Home'),
+                        'alias' => 'home',
+                        'menu' => $menu
+                    ]
+                );
+                echo $this->Dallin->headerLink(
+                    __('About Me'),
+                    ['controller' => 'pages', 'action' => 'about'],
+                    [
+                        'class' => 'nav-item nav-link',
+                        'title' => __('About Me'),
+                        'alias' => 'about',
+                        'menu' => $menu
+                    ]
+                );
+                echo $this->Dallin->headerLink(
+                    __('Blog'),
                     ['controller' => 'posts', 'action' => 'index'],
                     [
                         'class' => 'nav-item nav-link',
-                        'title' => 'Блог'
+                        'title' => __('Blog'),
+                        'alias' => 'blog',
+                        'menu' => $menu
+                    ]
+                );
+                echo $this->Dallin->headerLink(
+                    __('Projects'),
+                    ['controller' => 'projects', 'action' => 'index'],
+                    [
+                        'class' => 'nav-item nav-link',
+                        'title' => __('Projects'),
+                        'alias' => 'projects',
+                        'menu' => $menu
+                    ]
+                );
+                echo $this->Dallin->headerLink(
+                    __('Books'),
+                    ['controller' => 'books', 'action' => 'index'],
+                    [
+                        'class' => 'nav-item nav-link',
+                        'title' => __('Books'),
+                        'alias' => 'books',
+                        'menu' => $menu
                     ]
                 );
                 ?>

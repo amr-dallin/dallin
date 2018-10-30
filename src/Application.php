@@ -35,6 +35,12 @@ class Application extends BaseApplication
      */
     public function bootstrap()
     {
+        $this->addPlugin('IdeHelper');
+
+        $this->addPlugin('Search');
+
+        $this->addPlugin('Tags');
+
         // Call parent to load bootstrap from files.
         parent::bootstrap();
 

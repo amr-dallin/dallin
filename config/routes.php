@@ -46,53 +46,26 @@ use Cake\Routing\Route\DashedRoute;
  */
 Router::defaultRouteClass(DashedRoute::class);
 
+Router::prefix('admin', function (RouteBuilder $routes) {
+    $routes->connect('/dashboard', ['controller' => 'Pages', 'action' => 'display']);
+    $routes->connect('/login', ['controller' => 'Users', 'action' => 'login']);
+
+    $routes->fallbacks(DashedRoute::class);
+});
+
 Router::scope('/', function (RouteBuilder $routes) {
-    
-    Router::prefix('admin', function (RouteBuilder $routes) {
-        
-        $routes->connect('/dashboard', ['controller' => 'Pages', 'action' => 'display']);
-        $routes->connect('/login', ['controller' => 'Users', 'action' => 'login']);
-        $routes->connect('/profile', ['controller' => 'Users', 'action' => 'profile']);
-        
-        $routes->fallbacks(DashedRoute::class);
-    });
-    
-    $routes->setExtensions('xml');
-    $routes->connect('/sitemap', ['controller' => 'Pages', 'action' => 'sitemap']);
-    
-    
-    $routes->connect('/posts/:alias', ['controller' => 'Posts', 'action' => 'view']);
-    /**
-     * Here, we are connecting '/' (base path) to a controller called 'Pages',
-     * its action called 'display', and we pass a param to select the view file
-     * to use (in this case, src/Template/Pages/home.ctp)...
-     */
+    $routes->connect('/:controller/:alias', ['action' => 'view'])
+        ->setPass(['alias']);
+
     $routes->connect('/', ['controller' => 'Pages', 'action' => 'display']);
-
-
-    /**
-     * ...and connect the rest of 'Pages' controller's URLs.
-     */
     $routes->connect('/about', ['controller' => 'Pages', 'action' => 'about']);
-    $routes->connect('/contacts', ['controller' => 'Pages', 'action' => 'contacts']);
     
-    $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
+    $routes->connect('/sitemap', ['controller' => 'Pages', 'action' => 'sitemap'])
+        ->setExtensions(['xml']);
+    
+    $routes->connect('/robots', ['controller' => 'Pages', 'action' => 'robots'])
+        ->setExtensions(['txt']);
+    
 
-    /**
-     * Connect catchall routes for all controllers.
-     *
-     * Using the argument `DashedRoute`, the `fallbacks` method is a shortcut for
-     *    `$routes->connect('/:controller', ['action' => 'index'], ['routeClass' => 'DashedRoute']);`
-     *    `$routes->connect('/:controller/:action/*', [], ['routeClass' => 'DashedRoute']);`
-     *
-     * Any route class can be used with this method, such as:
-     * - DashedRoute
-     * - InflectedRoute
-     * - Route
-     * - Or your own route class
-     *
-     * You can remove these routes once you've connected the
-     * routes you want in your application.
-     */
     $routes->fallbacks(DashedRoute::class);
 });

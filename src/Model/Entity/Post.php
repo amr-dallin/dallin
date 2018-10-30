@@ -17,6 +17,8 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\FrozenTime $date_created
  * @property \Cake\I18n\FrozenTime $date_modified
  * @property bool $published
+ * @property \Tags\Model\Entity\Tagged[] $tagged
+ * @property \Tags\Model\Entity\Tag[] $tags
  */
 class Post extends Entity
 {

@@ -17,6 +17,7 @@ use Cake\Validation\Validator;
  * @method \App\Model\Entity\Page patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
  * @method \App\Model\Entity\Page[] patchEntities($entities, array $data, array $options = [])
  * @method \App\Model\Entity\Page findOrCreate($search, callable $callback = null, $options = [])
+ * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
 class PagesTable extends Table
 {

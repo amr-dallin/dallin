@@ -3,32 +3,31 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Post $post
  */
-$this->start('title');
-echo h($post->title);
-$this->end();
+$this->assign('title', h($post->title));
 
 $this->start('header');
-echo $this->element('header');
+echo $this->element('header', ['menu' => 'blog']);
 $this->end();
 
-$this->start('meta');
 echo $this->element('meta', [
     'meta_keywords' => h($post->meta_keywords),
     'meta_description' => h($post->meta_description)
-]);
-$this->end();
+], ['block' => true]);
 
-$this->start('css');
-echo $this->Html->css('/vendor/highlight/styles/tomorrow-night-blue');
-$this->end();
+echo $this->Html->css([
+    '/vendor/highlight/styles/tomorrow-night-blue',
+    '/vendor/zoom.js/css/zoom'
+], ['block' => true]);
 
-$this->start('script');
-echo $this->Html->script(['/vendor/jssocials-1.4.0/dist/jssocials', '/vendor/highlight/highlight.pack']);
-$this->end();
+echo $this->Html->script([
+    '/vendor/zoom.js/js/zoom',
+    '/vendor/jssocials-1.4.0/dist/jssocials',
+    '/vendor/highlight/highlight.pack'
+], ['block' => true]);
 ?>
 <?php $this->start('script1'); ?>
 <script>
-$(".share_list").jsSocials({
+$(".share-list").jsSocials({
     showLabel: false,
     shareIn: "popup",
     showCount: false,
@@ -38,27 +37,24 @@ hljs.initHighlightingOnLoad();
 </script>
 <?php $this->end(); ?>
 
-<article class="blog-post-view">
-    <div class="container-fluid">
+<article class="article">
+    <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8 col-lg-7">
-                <header>
+            <div class="col-md-9 col-lg-8">
+                <header class="mt-5">
+                    <div class="back-link">
+                        <i class="fas fa-caret-left"></i>
+                        <?php echo $this->Html->link(__('To all articles'), ['action' => 'index'], ['title' => __('To all articles')]); ?>
+                    </div>
                     <h1><?php echo h($post->title); ?></h1>
-                    <div class="blog_post_date">
+                    <div class="article-date">
                         <i class="far fa-clock"></i> 
-                        <time datetime="<?php echo $this->Time->format(h($post->date_created), 'YYYY-MM-dd'); ?>"><?php echo $this->Time->format(h($post->date_created), 'dd.MM.YYYY'); ?></time>
+                        <time datetime="<?php echo $this->Time->format($post->date_created, 'yyyy-MM-dd'); ?>"><?php echo $this->Time->format($post->date_created, 'dd.MM.yyyy'); ?></time>
                     </div>
                 </header>
                 <p class="lead"><?php echo $post->lead; ?></p>
                 <?php echo $post->body; ?>
-                <footer>
-                    <div class="row blog_post_share">
-                        <div class="col">
-                            <div class="share_list_label">Понравилось? Поделитесь с другими.</div>
-                            <div class="share_list"></div>
-                        </div>
-                    </div>
-                </footer>
+                <?php echo $this->element('article_footer', ['tags' => $post->tags]); ?>
             </div>
         </div>
     </div>

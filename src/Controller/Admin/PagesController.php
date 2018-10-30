@@ -30,22 +30,6 @@ class PagesController extends AppController
     }
 
     /**
-     * View method
-     *
-     * @param string|null $id Page id.
-     * @return \Cake\Http\Response|void
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
-    public function view($id = null)
-    {
-        $page = $this->Pages->get($id, [
-            'contain' => []
-        ]);
-
-        $this->set('page', $page);
-    }
-
-    /**
      * Add method
      *
      * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
