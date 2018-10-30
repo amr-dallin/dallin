@@ -1,0 +1,629 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2018-10-14 11:23+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: Controller/PostsController.php:64
+msgid "No post"
+msgstr ""
+
+#: Controller/Admin/BookCategoriesController.php:55;79
+msgid "The book category has been saved."
+msgstr ""
+
+#: Controller/Admin/BookCategoriesController.php:59;83
+msgid "The book category could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/Admin/BookCategoriesController.php:100
+msgid "The book category has been deleted."
+msgstr ""
+
+#: Controller/Admin/BookCategoriesController.php:102
+msgid "The book category could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/Admin/BooksController.php:54;80
+msgid "The book has been saved."
+msgstr ""
+
+#: Controller/Admin/BooksController.php:58;84
+msgid "The book could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/Admin/BooksController.php:102
+msgid "The book has been deleted."
+msgstr ""
+
+#: Controller/Admin/BooksController.php:104
+msgid "The book could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/Admin/PagesController.php:59;83
+msgid "The page has been saved."
+msgstr ""
+
+#: Controller/Admin/PagesController.php:63;87
+msgid "The page could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/Admin/PagesController.php:104
+msgid "The page has been deleted."
+msgstr ""
+
+#: Controller/Admin/PagesController.php:106
+msgid "The page could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/Admin/PostsController.php:58;82
+msgid "The post has been saved."
+msgstr ""
+
+#: Controller/Admin/PostsController.php:62;86
+msgid "The post could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/Admin/PostsController.php:103
+msgid "The post has been deleted."
+msgstr ""
+
+#: Controller/Admin/PostsController.php:105
+msgid "The post could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/Admin/ProjectsController.php:55;80
+msgid "The project has been saved."
+msgstr ""
+
+#: Controller/Admin/ProjectsController.php:59;84
+msgid "The project could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/Admin/ProjectsController.php:103
+msgid "The project has been deleted."
+msgstr ""
+
+#: Controller/Admin/ProjectsController.php:105
+msgid "The project could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/Admin/UsersController.php:28
+msgid "Username or password is incorrect"
+msgstr ""
+
+#: Controller/Admin/UsersController.php:76;100
+msgid "The user has been saved."
+msgstr ""
+
+#: Controller/Admin/UsersController.php:80;104
+msgid "The user could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/Admin/UsersController.php:121
+msgid "The user has been deleted."
+msgstr ""
+
+#: Controller/Admin/UsersController.php:123
+msgid "The user could not be deleted. Please, try again."
+msgstr ""
+
+#: Template/Admin/BookCategories/add.ctp:7;16;22
+msgid "Add Book Category"
+msgstr ""
+
+#: Template/Admin/BookCategories/add.ctp:13
+#: Template/Admin/BookCategories/edit.ctp:14
+#: Template/Admin/BookCategories/index.ctp:8;12;17
+msgid "Book Categories"
+msgstr ""
+
+#: Template/Admin/BookCategories/add.ctp:55
+#: Template/Admin/BookCategories/edit.ctp:56
+#: Template/Admin/BookCategories/index.ctp:133
+#: Template/Admin/BookCategories/view.ctp:26;49
+#: Template/Admin/Books/add.ctp:82
+#: Template/Admin/Books/edit.ctp:92
+#: Template/Admin/Books/index.ctp:133
+#: Template/Admin/Pages/add.ctp:74
+#: Template/Admin/Pages/edit.ctp:74
+#: Template/Admin/Pages/index.ctp:133
+#: Template/Admin/Posts/add.ctp:82
+#: Template/Admin/Posts/edit.ctp:90
+#: Template/Admin/Posts/index.ctp:133
+#: Template/Admin/Posts/view.ctp:21
+#: Template/Admin/Projects/add.ctp:81
+#: Template/Admin/Projects/edit.ctp:78
+#: Template/Admin/Projects/index.ctp:133
+#: Template/Admin/Projects/view.ctp:24;74;115
+#: Template/Projects/view.ctp:24;74;115
+msgid "Title"
+msgstr ""
+
+#: Template/Admin/BookCategories/add.ctp:60
+#: Template/Admin/BookCategories/edit.ctp:61
+#: Template/Admin/BookCategories/view.ctp:22;50
+#: Template/Admin/Books/add.ctp:87
+#: Template/Admin/Books/edit.ctp:97
+#: Template/Admin/Posts/add.ctp:87
+#: Template/Admin/Posts/edit.ctp:95
+#: Template/Admin/Posts/view.ctp:25
+#: Template/Admin/Projects/add.ctp:86
+#: Template/Admin/Projects/edit.ctp:83
+#: Template/Admin/Projects/view.ctp:28;75
+#: Template/Projects/view.ctp:28;75
+msgid "Alias"
+msgstr ""
+
+#: Template/Admin/BookCategories/edit.ctp:8;17;23
+#: Template/Admin/Books/edit.ctp:10;19;25
+#: Template/Admin/Pages/edit.ctp:7;16;22
+#: Template/Admin/Posts/edit.ctp:8;17;23
+msgid "Edit "
+msgstr ""
+
+#: Template/Admin/BookCategories/index.ctp:143
+#: Template/Admin/Books/index.ctp:147
+#: Template/Admin/Posts/index.ctp:146
+#: Template/Admin/Projects/index.ctp:146
+msgid "Alias: "
+msgstr ""
+
+#: Template/Admin/BookCategories/view.ctp:9;62
+#: Template/Admin/Posts/view.ctp:10
+#: Template/Admin/Projects/view.ctp:9;84;118
+#: Template/Admin/Users/add.ctp:9
+#: Template/Projects/view.ctp:9;84;118
+msgid "Actions"
+msgstr ""
+
+#: Template/Admin/BookCategories/view.ctp:10
+msgid "Edit Book Category"
+msgstr ""
+
+#: Template/Admin/BookCategories/view.ctp:11
+msgid "Delete Book Category"
+msgstr ""
+
+#: Template/Admin/BookCategories/view.ctp:11;84
+#: Template/Admin/Books/edit.ctp:64
+#: Template/Admin/Posts/edit.ctp:62
+#: Template/Admin/Posts/view.ctp:12
+#: Template/Admin/Projects/view.ctp:11;102;129
+#: Template/Projects/view.ctp:11;102;129
+msgid "Are you sure you want to delete # {0}?"
+msgstr ""
+
+#: Template/Admin/BookCategories/view.ctp:12
+msgid "List Book Categories"
+msgstr ""
+
+#: Template/Admin/BookCategories/view.ctp:13
+msgid "New Book Category"
+msgstr ""
+
+#: Template/Admin/BookCategories/view.ctp:14
+msgid "List Books"
+msgstr ""
+
+#: Template/Admin/BookCategories/view.ctp:15
+msgid "New Book"
+msgstr ""
+
+#: Template/Admin/BookCategories/view.ctp:30;47
+#: Template/Admin/Posts/view.ctp:41
+#: Template/Admin/Projects/view.ctp:44;73;114
+#: Template/Projects/view.ctp:44;73;114
+msgid "Id"
+msgstr ""
+
+#: Template/Admin/BookCategories/view.ctp:34;59
+#: Template/Admin/Posts/view.ctp:45
+#: Template/Admin/Projects/view.ctp:48;81;116
+#: Template/Projects/view.ctp:48;81;116
+msgid "Date Created"
+msgstr ""
+
+#: Template/Admin/BookCategories/view.ctp:38;60
+#: Template/Admin/Posts/view.ctp:49
+#: Template/Admin/Projects/view.ctp:52;82;117
+#: Template/Projects/view.ctp:52;82;117
+msgid "Date Modified"
+msgstr ""
+
+#: Template/Admin/BookCategories/view.ctp:43
+msgid "Related Books"
+msgstr ""
+
+#: Template/Admin/BookCategories/view.ctp:48
+msgid "Book Category Id"
+msgstr ""
+
+#: Template/Admin/BookCategories/view.ctp:51
+#: Template/Admin/Books/add.ctp:112
+#: Template/Admin/Books/edit.ctp:122
+#: Template/Books/view.ctp:64
+msgid "Author"
+msgstr ""
+
+#: Template/Admin/BookCategories/view.ctp:52
+msgid "Year"
+msgstr ""
+
+#: Template/Admin/BookCategories/view.ctp:53
+msgid "Isbn"
+msgstr ""
+
+#: Template/Admin/BookCategories/view.ctp:54
+#: Template/Admin/Books/add.ctp:98
+#: Template/Admin/Books/edit.ctp:108
+#: Template/Admin/Pages/add.ctp:79
+#: Template/Admin/Pages/edit.ctp:79
+#: Template/Admin/Posts/add.ctp:97
+#: Template/Admin/Posts/edit.ctp:106
+#: Template/Admin/Posts/view.ctp:62
+#: Template/Admin/Projects/add.ctp:91
+#: Template/Admin/Projects/edit.ctp:88
+#: Template/Admin/Projects/view.ctp:65;77
+#: Template/Projects/view.ctp:65;77
+msgid "Body"
+msgstr ""
+
+#: Template/Admin/BookCategories/view.ctp:55
+#: Template/Admin/Books/index.ctp:135
+#: Template/Books/view.ctp:68
+msgid "Readed"
+msgstr ""
+
+#: Template/Admin/BookCategories/view.ctp:56
+msgid "Date Readed"
+msgstr ""
+
+#: Template/Admin/BookCategories/view.ctp:57
+#: Template/Admin/Books/add.ctp:131
+#: Template/Admin/Books/edit.ctp:142
+#: Template/Admin/Books/index.ctp:134
+#: Template/Admin/Pages/add.ctp:85
+#: Template/Admin/Pages/edit.ctp:85
+#: Template/Admin/Pages/index.ctp:134
+#: Template/Admin/Posts/add.ctp:112
+#: Template/Admin/Posts/edit.ctp:122
+#: Template/Admin/Posts/index.ctp:134
+#: Template/Admin/Posts/view.ctp:33
+#: Template/Admin/Projects/add.ctp:106
+#: Template/Admin/Projects/edit.ctp:103
+#: Template/Admin/Projects/index.ctp:134
+#: Template/Admin/Projects/view.ctp:36;79
+#: Template/Projects/view.ctp:36;79
+msgid "Meta Keywords"
+msgstr ""
+
+#: Template/Admin/BookCategories/view.ctp:58
+#: Template/Admin/Books/add.ctp:137
+#: Template/Admin/Books/edit.ctp:148
+#: Template/Admin/Pages/add.ctp:91
+#: Template/Admin/Pages/edit.ctp:91
+#: Template/Admin/Posts/add.ctp:118
+#: Template/Admin/Posts/edit.ctp:128
+#: Template/Admin/Posts/view.ctp:37
+#: Template/Admin/Projects/add.ctp:112
+#: Template/Admin/Projects/edit.ctp:109
+#: Template/Admin/Projects/view.ctp:40;80
+#: Template/Projects/view.ctp:40;80
+msgid "Meta Description"
+msgstr ""
+
+#: Template/Admin/BookCategories/view.ctp:61
+#: Template/Admin/Books/index.ctp:136
+#: Template/Admin/Posts/index.ctp:135
+#: Template/Admin/Posts/view.ctp:53
+#: Template/Admin/Projects/index.ctp:135
+#: Template/Admin/Projects/view.ctp:60;83
+#: Template/Projects/view.ctp:60;83
+msgid "Published"
+msgstr ""
+
+#: Template/Admin/BookCategories/view.ctp:82
+#: Template/Admin/Projects/view.ctp:100;127
+#: Template/Projects/view.ctp:100;127
+msgid "View"
+msgstr ""
+
+#: Template/Admin/BookCategories/view.ctp:83
+#: Template/Admin/Projects/view.ctp:101;128
+#: Template/Projects/view.ctp:101;128
+msgid "Edit"
+msgstr ""
+
+#: Template/Admin/BookCategories/view.ctp:84
+#: Template/Admin/Books/edit.ctp:62
+#: Template/Admin/Posts/edit.ctp:60
+#: Template/Admin/Projects/view.ctp:102;129
+#: Template/Projects/view.ctp:102;129
+msgid "Delete"
+msgstr ""
+
+#: Template/Admin/Books/add.ctp:7;16;22
+msgid "Add Book"
+msgstr ""
+
+#: Template/Admin/Books/add.ctp:13
+#: Template/Admin/Books/edit.ctp:16
+#: Template/Admin/Books/index.ctp:8;12;17
+#: Template/Admin/Element/navigation.ctp:175
+#: Template/Element/header.ctp:77;81
+msgid "Books"
+msgstr ""
+
+#: Template/Admin/Books/add.ctp:93
+#: Template/Admin/Books/edit.ctp:103
+msgid "Book category"
+msgstr ""
+
+#: Template/Admin/Books/add.ctp:107
+#: Template/Admin/Books/edit.ctp:117
+msgid "Cover URI"
+msgstr ""
+
+#: Template/Admin/Books/add.ctp:119
+#: Template/Admin/Books/edit.ctp:130
+msgid "Date publication"
+msgstr ""
+
+#: Template/Admin/Books/add.ctp:124
+#: Template/Admin/Books/edit.ctp:135
+msgid "ISBN"
+msgstr ""
+
+#: Template/Admin/Books/add.ctp:144
+#: Template/Admin/Books/edit.ctp:155
+#: Template/Admin/Posts/edit.ctp:135
+msgid "Tags"
+msgstr ""
+
+#: Template/Admin/Books/add.ctp:152
+#: Template/Admin/Books/edit.ctp:164
+msgid "Date readed"
+msgstr ""
+
+#: Template/Admin/Element/navigation.ctp:56
+#: Template/Admin/Element/ribbon.ctp:23;26
+msgid "Dashboard"
+msgstr ""
+
+#: Template/Admin/Element/navigation.ctp:73
+#: Template/Admin/Pages/add.ctp:13
+#: Template/Admin/Pages/edit.ctp:13
+#: Template/Admin/Pages/index.ctp:8;12;17
+msgid "Pages"
+msgstr ""
+
+#: Template/Admin/Element/navigation.ctp:84;118;152;186;216
+msgid "Add"
+msgstr ""
+
+#: Template/Admin/Element/navigation.ctp:91;125;159;193;223
+msgid "List"
+msgstr ""
+
+#: Template/Admin/Element/navigation.ctp:107
+#: Template/Admin/Posts/add.ctp:13
+#: Template/Admin/Posts/edit.ctp:14
+#: Template/Admin/Posts/index.ctp:8;12;17
+msgid "Posts"
+msgstr ""
+
+#: Template/Admin/Element/navigation.ctp:141
+#: Template/Admin/Projects/add.ctp:13
+#: Template/Admin/Projects/edit.ctp:13
+#: Template/Admin/Projects/index.ctp:8;12;17
+#: Template/Element/header.ctp:67;71
+msgid "Projects"
+msgstr ""
+
+#: Template/Admin/Element/navigation.ctp:205
+msgid "Categories"
+msgstr ""
+
+#: Template/Admin/Layout/error.ctp:35
+msgid "Error"
+msgstr ""
+
+#: Template/Admin/Layout/error.ctp:43
+msgid "Back"
+msgstr ""
+
+#: Template/Admin/Pages/add.ctp:7;16;22
+msgid "Add Page"
+msgstr ""
+
+#: Template/Admin/Posts/add.ctp:7;16;22
+msgid "Add Post"
+msgstr ""
+
+#: Template/Admin/Posts/add.ctp:92
+#: Template/Admin/Posts/edit.ctp:101
+#: Template/Admin/Posts/view.ctp:58
+#: Template/Admin/Projects/view.ctp:76
+#: Template/Projects/view.ctp:76
+msgid "Lead"
+msgstr ""
+
+#: Template/Admin/Posts/add.ctp:106
+#: Template/Admin/Posts/edit.ctp:115
+#: Template/Admin/Posts/view.ctp:29
+#: Template/Admin/Projects/add.ctp:100
+#: Template/Admin/Projects/edit.ctp:97
+#: Template/Admin/Projects/view.ctp:32;78
+#: Template/Projects/view.ctp:32;78
+msgid "Cover"
+msgstr ""
+
+#: Template/Admin/Posts/view.ctp:11
+msgid "Edit Post"
+msgstr ""
+
+#: Template/Admin/Posts/view.ctp:12
+msgid "Delete Post"
+msgstr ""
+
+#: Template/Admin/Posts/view.ctp:13
+#: Template/Admin/Projects/view.ctp:14
+#: Template/Projects/view.ctp:14
+msgid "List Posts"
+msgstr ""
+
+#: Template/Admin/Posts/view.ctp:14
+#: Template/Admin/Projects/view.ctp:15
+#: Template/Projects/view.ctp:15
+msgid "New Post"
+msgstr ""
+
+#: Template/Admin/Posts/view.ctp:54
+#: Template/Admin/Projects/view.ctp:61
+#: Template/Projects/view.ctp:61
+msgid "Yes"
+msgstr ""
+
+#: Template/Admin/Posts/view.ctp:54
+#: Template/Admin/Projects/view.ctp:61
+#: Template/Projects/view.ctp:61
+msgid "No"
+msgstr ""
+
+#: Template/Admin/Projects/add.ctp:7;16;22
+#: Template/Admin/Projects/edit.ctp:7;16;22
+msgid "Add Project"
+msgstr ""
+
+#: Template/Admin/Projects/view.ctp:10
+#: Template/Projects/view.ctp:10
+msgid "Edit Project"
+msgstr ""
+
+#: Template/Admin/Projects/view.ctp:11
+#: Template/Projects/view.ctp:11
+msgid "Delete Project"
+msgstr ""
+
+#: Template/Admin/Projects/view.ctp:12
+#: Template/Projects/view.ctp:12
+msgid "List Projects"
+msgstr ""
+
+#: Template/Admin/Projects/view.ctp:13
+#: Template/Projects/view.ctp:13
+msgid "New Project"
+msgstr ""
+
+#: Template/Admin/Projects/view.ctp:16
+#: Template/Projects/view.ctp:16
+msgid "List Tags"
+msgstr ""
+
+#: Template/Admin/Projects/view.ctp:17
+#: Template/Projects/view.ctp:17
+msgid "New Tag"
+msgstr ""
+
+#: Template/Admin/Projects/view.ctp:56
+#: Template/Projects/view.ctp:56
+msgid "Date Published"
+msgstr ""
+
+#: Template/Admin/Projects/view.ctp:69
+#: Template/Projects/view.ctp:69
+msgid "Related Posts"
+msgstr ""
+
+#: Template/Admin/Projects/view.ctp:110
+#: Template/Projects/view.ctp:110
+msgid "Related Tags"
+msgstr ""
+
+#: Template/Admin/Users/add.ctp:10
+msgid "List Users"
+msgstr ""
+
+#: Template/Admin/Users/add.ctp:16
+msgid "Add User"
+msgstr ""
+
+#: Template/Admin/Users/add.ctp:25
+msgid "Submit"
+msgstr ""
+
+#: Template/Admin/Users/login.ctp:7
+msgid "Login"
+msgstr ""
+
+#: Template/Books/view.ctp:52
+msgid "To all books"
+msgstr ""
+
+#: Template/Books/view.ctp:66
+msgid "First publication"
+msgstr ""
+
+#: Template/Element/article_footer.ctp:5
+msgid "Liked? Share with others."
+msgstr ""
+
+#: Template/Element/header.ctp:37;41
+msgid "Home"
+msgstr ""
+
+#: Template/Element/header.ctp:47;51
+msgid "About Me"
+msgstr ""
+
+#: Template/Element/header.ctp:57;61
+msgid "Blog"
+msgstr ""
+
+#: Template/Error/error400.ctp:5;9
+msgid "Page not found"
+msgstr ""
+
+#: Template/Error/error400.ctp:11
+msgid "The link you clicked may be damaged or the page deleted."
+msgstr ""
+
+#: Template/Error/error400.ctp:12
+msgid "Go {0} or visit {1}."
+msgstr ""
+
+#: Template/Error/error400.ctp:12
+msgid "back"
+msgstr ""
+
+#: Template/Error/error400.ctp:12
+msgid "home page"
+msgstr ""
+
+#: Template/Error/error500.ctp:5;9
+msgid "An internal error has occurred"
+msgstr ""
+
+#: Template/Pages/display.ctp:31
+msgid "Contacts"
+msgstr ""
+
+#: Template/Pages/display.ctp:49
+msgid "Latest articles"
+msgstr ""
+
+#: Template/Posts/view.ctp:55
+msgid "To all articles"
+msgstr ""
+
