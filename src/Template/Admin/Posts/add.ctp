@@ -1,41 +1,31 @@
 <?php
-/**
- * @var \App\View\AppView $this
- * @var \Cake\Datasource\EntityInterface $post
- */
-$this->start('title');
-echo __('Add Post');
-$this->end();
+$title = __('Add Post');
+
+$this->assign('title', $title);
 
 $this->start('ribbon');
 $breadcrumbs = [
-    0 => [
-        'title' => __('Posts'),
-        'url' => ['controller' => 'posts', 'action' => 'index']
-    ],
-    1 => ['title' => __('Add Post')]
+    ['title' => __('Posts'), 'url' => ['action' => 'index']],
+    ['title' => $title]
 ];
-echo $this->element('ribbon', array('breadcrumbs' => $breadcrumbs));
-$this->end();
-
-$this->start('title-heading');
-echo $this->element('title', array('title' => __('Add Post')));
+echo $this->element('ribbon', ['breadcrumbs' => $breadcrumbs]);
 $this->end();
 
 $this->start('navigation');
-$menu['posts'] = [0 => true];
-echo $this->element('navigation', array('menu' => $menu));
+$menu['posts'][0] = true;
+echo $this->element('navigation', ['menu' => $menu]);
 $this->end();
 
 $this->start('script');
 echo $this->Html->script([
     'plugin/summernote/summernote.min',
-    'plugin/select2/select2.min'
+    'plugin/select2/select2.min',
+    'plugin/bootstrap-tags/bootstrap-tagsinput.min'
 ]);
 $this->end();
 ?>
 
-<?php $this->start('script1'); ?>
+<?php $this->start('script-code'); ?>
 <script>
     $(document).ready(function() {
 		$('.summernote').summernote({
@@ -54,26 +44,25 @@ $this->end();
 </script>
 <?php $this->end(); ?>
 
+<div class="row">
+    <div class="col-md-12">
+        <h1 class="page-title txt-color-blueDark">
+            <?php echo $title; ?>
+        </h1>
+    </div>
+</div>
+
 <section id="widget-grid">
     <div class="row">
         <article class="col-md-12">
 
             <!-- Widget ID (each widget will need unique ID)-->
-            <div class="jarviswidget" id="wid-id-4" 
-                 data-widget-editbutton="false" 
-                 data-widget-colorbutton="false" 
-                 data-widget-deletebutton="false" 
-                 data-widget-custombutton="false"
-                 data-widget-fullscreenbutton="false"
-                 data-widget-togglebutton="false"
-                 data-widget-sortable="false"
-            >
+            <div class="jarviswidget" id="wid-id-1">
                 <header></header>
 
                 <!-- widget div-->
                 <div>
                     <!-- widget content -->
-                    
                     <div class="widget-body">
                         <?php
                         echo $this->Form->create($post, [
@@ -81,71 +70,70 @@ $this->end();
                             'templates' => 'SmartAdmin.app_form'
                         ]);
                         ?>
-                        <div clas="row">
-                            <div class="col-sm-12 col-md-7 col-lg-8">
-                                <?php
-                                echo $this->Form->control('title', [
-                                    'label' => ['class' => 'sr-only'],
-                                    'class' => 'form-control input-lg',
-                                    'placeholder' => __('Title')
-                                ]);
-                                echo $this->Form->control('alias', [
-                                    'label' => ['class' => 'sr-only'],
-                                    'class' => 'form-control',
-                                    'placeholder' => __('Alias')
-                                ]);
-                                echo $this->Form->control('lead', [
-                                    'label' => ['class' => 'sr-only'],
-                                    'class' => 'form-control',
-                                    'placeholder' => __('Lead')
-                                ]);
-                                echo $this->Form->control('body', [
-                                    'label' => ['class' => 'sr-only'],
-                                    'class' => 'form-control summernote',
-                                    'placeholder' => __('Body')
-                                ]);
-                                ?>
+                        <fieldset>
+                            <div clas="row">
+                                <div class="col-sm-12 col-md-7 col-lg-8">
+                                    <?php
+                                    echo $this->Form->control('title', [
+                                        'class' => 'form-control input-lg',
+                                        'placeholder' => __('Title')
+                                    ]);
+                                    echo $this->Form->control('heading', [
+                                        'placeholder' => __('Heading')
+                                    ]);
+                                    echo $this->Form->control('slug', [
+                                        'class' => 'form-control input-sm',
+                                        'placeholder' => __('Slug')
+                                    ]) . '<hr/>';
+                                    
+                                    echo $this->Form->control('lead', [
+                                        'placeholder' => __('Lead')
+                                    ]);
+                                    echo $this->Form->control('body', [
+                                        'class' => 'form-control summernote',
+                                        'placeholder' => __('Body')
+                                    ]);
+                                    ?>
+                                </div>
+                                <div class="col-sm-12 col-md-5 col-lg-4">
+                                    <?php
+                                    echo $this->Form->control('image', [
+                                        'placeholder' => __('Image')
+                                    ]) . '<hr/>';
+                                    
+                                    echo $this->Form->control('meta_keywords', [
+                                        'type' => 'textarea',
+                                        'placeholder' => __('Meta Keywords')
+                                    ]);
+                                    echo $this->Form->control('meta_description', [
+                                        'type' => 'textarea',
+                                        'placeholder' => __('Meta Description')
+                                    ]) . '<hr/>';
+
+                                    echo $this->Form->control('project_id', [
+                                        'class' => 'form-control select2',
+                                        'empty' => __('Check which project the article belongs to')
+                                    ]);
+                                    echo $this->Tag->control([
+                                        'class' => 'form-control tagsinput',
+                                        'data-role' => 'tagsinput',
+                                        'placeholder' => __('Tags')
+                                    ]) . '<hr/>';
+
+                                    echo $this->Form->control('published');
+                                    ?>
+                                </div>
                             </div>
-                            <div class="col-sm-12 col-md-5 col-lg-4">
-                                <?php
-                                echo $this->Form->control('cover', [
-                                    'label' => ['class' => 'sr-only'],
-                                    'class' => 'form-control',
-                                    'placeholder' => __('Cover')
-                                ]);
-                                echo $this->Form->control('meta_keywords', [
-                                    'label' => ['class' => 'sr-only'],
-                                    'class' => 'form-control',
-                                    'type' => 'textarea',
-                                    'placeholder' => __('Meta Keywords')
-                                ]);
-                                echo $this->Form->control('meta_description', [
-                                    'label' => ['class' => 'sr-only'],
-                                    'class' => 'form-control',
-                                    'type' => 'textarea',
-                                    'placeholder' => __('Meta Description')
-                                ]);
-                                echo $this->Form->control('tag', [
-                                    'class' => 'select2',
-                                    'style' => 'width: 100%',
-                                    'empty' => true,
-                                    'multiple' => true
-                                ]);
-                                echo $this->Form->control('published', [
-                                    'class' => 'checkbox'
-                                ]);
-                                ?>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <?php
-                                echo $this->Form->submit(null, [
-                                    'class' => 'btn btn-primary'
-                                ]);
-                                ?>
+                        </fieldset>
+                        
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <?php echo $this->Form->submit(); ?>
+                                </div>
                             </div>
                         </div>
+
                         <?php echo $this->Form->end(); ?>
                     </div>
                     <!-- end widget content -->

@@ -36,9 +36,13 @@ class Project extends Entity
      */
     protected $_accessible = [
         'title' => true,
-        'alias' => true,
+        'heading' => true,
+        'slug' => true,
+        'description' => true,
         'body' => true,
-        'cover' => true,
+        'url' => true,
+        'image' => true,
+        'weight' => true,
         'meta_keywords' => true,
         'meta_description' => true,
         'date_created' => true,

@@ -5,6 +5,8 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use Cake\ORM\TableRegistry;
+use Cake\Utility\Inflector;
 
 /**
  * Pages Model
@@ -80,5 +82,53 @@ class PagesTable extends Table
             ->allowEmpty('meta_description');
 
         return $validator;
+    }
+    
+    public function findType(Query $query, array $options)
+    {
+        return $query
+            ->where(['Pages.systemic' => $options['systemic']]);
+    }
+    
+    public function findAllPublished(Query $query, array $options)
+    {
+        return $query
+            ->where([
+                'Pages.systemic' => false,
+                'Pages.published' => true
+            ]);
+    }
+    
+    public function findPublished(Query $query, array $options)
+    {
+        return $this->find('allPublished')
+            ->where(['Pages.slug' => $options['slug']]);
+    }
+    
+    public function tagged($slug)
+    {
+        $tagged = [];
+        $records = ['books', 'posts', 'projects'];
+        foreach($records as $record) {
+            ${$record . 'Table'} = TableRegistry::getTableLocator()->get(Inflector::camelize($record));
+            ${$record} = ${$record . 'Table'}->find('tagged', [
+                'tag' => $slug,
+            ])->toArray();
+            
+            $key = 0;
+            foreach(${$record} as ${Inflector::singularize($record)}) {
+                if (${Inflector::singularize($record)}->published) {
+                    $tagged[$record][$key] = [
+                        'id' => ${Inflector::singularize($record)}->id,
+                        'alias' => ${Inflector::singularize($record)}->alias,
+                        'title' => ${Inflector::singularize($record)}->title
+                    ];
+                        
+                    $key++;
+                }
+            }
+        }
+        
+        return $tagged;
     }
 }

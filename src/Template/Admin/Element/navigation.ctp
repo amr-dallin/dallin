@@ -14,7 +14,6 @@
  */
 ?>
 <aside id="left-panel">
-
     <!-- User info -->
     <div class="login-info">
         <span> <!-- User image size is adjusted inside CSS, it should stay as is --> 
@@ -47,41 +46,36 @@
         <ul>
             <!-- Dashboard menu -->
             <li class="<?php if (isset($menu['dashboard'])) echo 'active open'; ?>">
-            <?php
-            echo $this->Html->link(
-                $this->Html->tag('i', '', ['class' => 'fa fa-lg fa-fw fa-home']).
-                ' '.
-                $this->Html->tag(
-                    'span', 
-                    __('Dashboard'), 
-                    ['class' => 'menu-item-parent']
-                ),
-                ['controller' => 'pages', 'action' => 'display'], 
-                ['escape' => false]
-            );
-            ?>
+                <?php
+                echo $this->Html->link(
+                    $this->Html->tag('i', '', ['class' => 'fa fa-lg fa-fw fa-home']).
+                    ' '.
+                    $this->Html->tag('span', __('Dashboard'), 
+                        ['class' => 'menu-item-parent']
+                    ),
+                    ['controller' => 'pages', 'action' => 'display'], 
+                    ['escape' => false]
+                );
+                ?>
             </li>
             
             <!-- Pages menu -->
             <li class="<?php if (isset($menu['pages'])) echo 'active open'; ?>">
-            <?php 
-            echo $this->Html->link(
-                $this->Html->tag('i', '', ['class' => 'fa fa-lg fa-fw fa-file']).
-                ' '.
-                $this->Html->tag(
-                    'span', 
-                    __('Pages'), 
-                    ['class' => 'menu-item-parent']
-                ),
-                '#', 
-                ['escape' => false]
-            );
-            ?>
+                <?php 
+                echo $this->Html->link(
+                    $this->Html->tag('i', '', ['class' => 'fa fa-lg fa-fw fa-file']).
+                    ' '.
+                    $this->Html->tag('span', __('Pages'), 
+                        ['class' => 'menu-item-parent']
+                    ),
+                    '#', 
+                    ['escape' => false]
+                );
+                ?>
                 <ul>
                     <li <?php if (isset($menu['pages'][0])) echo 'class="active"'; ?>>
                     <?php
-                    echo $this->Html->link(
-                        __('Add'),
+                    echo $this->Html->link(__('Add'),
                         ['controller' => 'pages', 'action' => 'add']
                     );
                     ?>
@@ -98,140 +92,128 @@
             
             <!-- Posts menu -->
             <li class="<?php if (isset($menu['posts'])) echo 'active open'; ?>">
-            <?php 
-            echo $this->Html->link(
-                $this->Html->tag('i', '', ['class' => 'fa fa-lg fa-fw fa-feed']).
-                ' '.
-                $this->Html->tag(
-                    'span', 
-                    __('Posts'), 
-                    ['class' => 'menu-item-parent']
-                ),
-                '#', 
-                ['escape' => false]
-            );
-            ?>
+                <?php 
+                echo $this->Html->link(
+                    $this->Html->tag('i', '', ['class' => 'fa fa-lg fa-fw fa-feed']).
+                    ' '.
+                    $this->Html->tag('span', __('Posts'), 
+                        ['class' => 'menu-item-parent']
+                    ),
+                    '#', 
+                    ['escape' => false]
+                );
+                ?>
                 <ul>
                     <li <?php if (isset($menu['posts'][0])) echo 'class="active"'; ?>>
-                    <?php
-                    echo $this->Html->link(
-                        __('Add'),
-                        ['controller' => 'posts', 'action' => 'add']
-                    );
-                    ?>
-                    </li>
-                    <li <?php if (isset($menu['posts'][1])) echo 'class="active"'; ?>>
-                    <?php
-                    echo $this->Html->link(__('List'), 
-                        ['controller' => 'posts', 'action' => 'index']
-                    );
-                    ?>
+                        <?php
+                        echo $this->Html->link(__('Add'),
+                            ['controller' => 'posts', 'action' => 'add']
+                        );
+                        ?>
+                        </li>
+                        <li <?php if (isset($menu['posts'][1])) echo 'class="active"'; ?>>
+                        <?php
+                        echo $this->Html->link(__('List'), 
+                            ['controller' => 'posts', 'action' => 'index']
+                        );
+                        ?>
                     </li>
                 </ul>
             </li>
             
             <!-- Projects menu -->
             <li class="<?php if (isset($menu['projects'])) echo 'active open'; ?>">
-            <?php 
-            echo $this->Html->link(
-                $this->Html->tag('i', '', ['class' => 'fa fa-lg fa-fw fa-globe']).
-                ' '.
-                $this->Html->tag(
-                    'span', 
-                    __('Projects'), 
-                    ['class' => 'menu-item-parent']
-                ),
-                '#', 
-                ['escape' => false]
-            );
-            ?>
+                <?php 
+                echo $this->Html->link(
+                    $this->Html->tag('i', '', ['class' => 'fa fa-lg fa-fw fa-globe']).
+                    ' '.
+                    $this->Html->tag('span', __('Projects'), 
+                        ['class' => 'menu-item-parent']
+                    ),
+                    '#', 
+                    ['escape' => false]
+                );
+                ?>
                 <ul>
                     <li <?php if (isset($menu['projects'][0])) echo 'class="active"'; ?>>
-                    <?php
-                    echo $this->Html->link(
-                        __('Add'),
-                        ['controller' => 'projects', 'action' => 'add']
-                    );
-                    ?>
-                    </li>
-                    <li <?php if (isset($menu['projects'][1])) echo 'class="active"'; ?>>
-                    <?php
-                    echo $this->Html->link(__('List'), 
-                        ['controller' => 'projects', 'action' => 'index']
-                    );
-                    ?>
+                        <?php
+                        echo $this->Html->link(__('Add'),
+                            ['controller' => 'projects', 'action' => 'add']
+                        );
+                        ?>
+                        </li>
+                        <li <?php if (isset($menu['projects'][1])) echo 'class="active"'; ?>>
+                        <?php
+                        echo $this->Html->link(__('List'), 
+                            ['controller' => 'projects', 'action' => 'index']
+                        );
+                        ?>
                     </li>
                 </ul>
             </li>
             
-            <!-- Books menu -->
-            <li class="<?php if (isset($menu['books'])) echo 'active open'; ?>">
-            <?php 
-            echo $this->Html->link(
-                $this->Html->tag('i', '', ['class' => 'fa fa-lg fa-fw fa-book']).
-                ' '.
-                $this->Html->tag(
-                    'span', 
-                    __('Books'), 
-                    ['class' => 'menu-item-parent']
-                ),
-                '#', 
-                ['escape' => false]
-            );
-            ?>
+            
+            <!-- Gallery menu -->
+            <li class="<?php if (isset($menu['gallery'])) echo 'active open'; ?>">
+                <?php
+                echo $this->Html->link(
+                    $this->Html->tag('i', '', ['class' => 'fa fa-lg fa-fw fa-picture-o']).
+                    ' '.
+                    $this->Html->tag('span', __('Gallery'), 
+                        ['class' => 'menu-item-parent']
+                    ),
+                    ['controller' => 'files', 'action' => 'index'], 
+                    ['escape' => false]
+                );
+                ?>
+            </li>
+            
+            <!-- Settings menu -->
+            <li class="<?php if (isset($menu['settings'])) echo 'active open'; ?>">
+                <?php 
+                echo $this->Html->link(
+                    $this->Html->tag('i', '', ['class' => 'fa fa-lg fa-fw fa-gear']).
+                    ' '.
+                    $this->Html->tag('span', __('Settings'), 
+                        ['class' => 'menu-item-parent']
+                    ),
+                    '#', 
+                    ['escape' => false]
+                );
+                ?>
                 <ul>
-                    <li <?php if (isset($menu['books'][0])) echo 'class="active"'; ?>>
+                    <li <?php if (isset($menu['settings'][0])) echo 'class="active"'; ?>>
                     <?php
-                    echo $this->Html->link(
-                        __('Add'),
-                        ['controller' => 'books', 'action' => 'add']
+                    echo $this->Html->link(__('Add'),
+                        ['controller' => 'settings', 'action' => 'add']
                     );
                     ?>
                     </li>
-                    <li <?php if (isset($menu['books'][1])) echo 'class="active"'; ?>>
-                    <?php
-                    echo $this->Html->link(__('List'), 
-                        ['controller' => 'books', 'action' => 'index']
-                    );
-                    ?>
-                    </li>
-                    <li <?php if (isset($menu['books'][2])) echo 'class="active"'; ?>>
-                    <?php 
-                    echo $this->Html->link(
-                        $this->Html->tag('i', '', ['class' => 'fa fa-lg fa-fw fa-folder-open']).
-                        ' '.
-                        $this->Html->tag(
-                            'span', 
-                            __('Categories'), 
-                            ['class' => 'menu-item-parent']
-                        ),
-                        '#', 
-                        ['escape' => false]
-                    );
-                    ?>
+                    <li class="<?php if (isset($menu['settings'][1])) echo 'active open'; ?>">
+                        <?php 
+                        echo $this->Html->link(
+                            $this->Html->tag('span', __('List'),
+                                ['class' => 'menu-item-parent']
+                            ),
+                            '#', 
+                            ['escape' => false]
+                        );
+                        ?>
                         <ul>
-                            <li <?php if (isset($menu['books'][2][0])) echo 'class="active"'; ?>>
-                            <?php
-                            echo $this->Html->link(
-                                __('Add'),
-                                ['controller' => 'book_categories', 'action' => 'add']
-                            );
-                            ?>
+                            <?php foreach($configure['Settings'] as $key => $setting_group): ?>
+                            <li <?php if (isset($menu['settings'][1][$key])) echo 'class="active"'; ?>>
+                                <?php
+                                echo $this->Html->link($key,
+                                    ['controller' => 'settings', 'action' => 'index', $key]
+                                );
+                                ?>
                             </li>
-                            <li <?php if (isset($menu['books'][2][1])) echo 'class="active"'; ?>>
-                            <?php
-                            echo $this->Html->link(__('List'), 
-                                ['controller' => 'book_categories', 'action' => 'index']
-                            );
-                            ?>
-                            </li>
+                            <?php endforeach; ?>
                         </ul>
                     </li>
                 </ul>
             </li>
         </ul>
     </nav>
-
     <span class="minifyme" data-action="minifyMenu"> <i class="fa fa-arrow-circle-left hit"></i> </span>
-
 </aside>

@@ -6,9 +6,12 @@
     "license": "MIT",
     "require": {
         "php": ">=5.6",
+        "burzum/cakephp-imagine-plugin": "3.x-dev",
+        "burzum/file-storage": "2.*",
         "cakephp/cakephp": "3.6.*",
         "cakephp/migrations": "^2.0.0",
         "cakephp/plugin-installer": "^1.0",
+        "dereuromark/cakephp-ajax": "^1.2",
         "dereuromark/cakephp-tags": "^0.4.2",
         "friendsofcake/search": "^4.5",
         "josegonzalez/dotenv": "3.*",

@@ -14,6 +14,7 @@
 namespace App\View;
 
 use Cake\View\View;
+use Cake\Core\Configure;
 
 /**
  * Application View
@@ -38,5 +39,11 @@ class AppView extends View
     {
         parent::initialize();
         $this->loadHelper('Tags.Tag');
+        $this->loadHelper('Burzum/FileStorage.Image');
+        $this->loadHelper('Paginator', ['templates' => 'paginator-templates']);
+        
+        $configure = Configure::read();
+        
+        $this->set('configure', $configure);
     }
 }

@@ -24,9 +24,10 @@ class PagesController extends AppController
      */
     public function index()
     {
-        $pages = $this->paginate($this->Pages);
-
-        $this->set(compact('pages'));
+        $systemic_pages = $this->Pages->find('type', ['systemic' => true]);
+        $pages = $this->Pages->find('type', ['systemic' => false]);
+        
+        $this->set(compact('systemic_pages', 'pages'));
     }
 
     /**

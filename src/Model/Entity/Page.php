@@ -31,13 +31,14 @@ class Page extends Entity
      */
     protected $_accessible = [
         'title' => true,
-        'alias' => true,
+        'slug' => true,
         'body' => true,
+        'image' => true,
         'meta_keywords' => true,
         'meta_description' => true,
-        'home' => true,
         'date_created' => true,
         'date_modified' => true,
+        'systemic' => true,
         'published' => true
     ];
 }

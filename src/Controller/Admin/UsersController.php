@@ -12,6 +12,11 @@ use App\Controller\AppController;
  */
 class UsersController extends AppController
 {
+    public function beforeFilter(\Cake\Event\Event $event)
+    {
+        parent::beforeFilter($event);
+    }
+    
     public function login()
     {
         if ($this->request->is('post')) {
@@ -19,11 +24,7 @@ class UsersController extends AppController
             $user = $this->Auth->identify();
             if ($user) {
                 $this->Auth->setUser($user);
-                return $this->redirect([
-                    'controller' => 'posts', 
-                    'action' => 'index', 
-                    'prefix' => 'admin'
-                ]);
+                return $this->redirect($this->Auth->redirectUrl());
             } else {
                 $this->Flash->error(__('Username or password is incorrect'));
             }

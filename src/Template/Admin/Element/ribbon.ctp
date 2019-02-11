@@ -15,27 +15,36 @@
 ?>
 
 <div id="ribbon">
-
+    <span class="ribbon-button-alignment"> 
+        <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh" rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
+            <i class="fa fa-refresh"></i>
+        </span> 
+    </span>
     <!-- breadcrumb -->
     <ol class="breadcrumb">
-    <?php
-    if ($this->request->getParam('controller') == 'pages' && $this->request->getParam('action') == 'display') {
-        echo $this->Html->tag('li', __('Dashboard'));
-    } else {
-        echo $this->Html->tag('li',
-            $this->Html->link(__('Dashboard'), array('controller' => 'pages', 'action' => 'display')));
-    }
- 
-    if (isset($breadcrumbs) && !empty($breadcrumbs)) {
-        foreach($breadcrumbs as $breadcrumb) {
-            if (empty($breadcrumb['url'])) {
-                echo $this->Html->tag('li', $breadcrumb['title']);
-            } else {
-                echo $this->Html->tag('li', $this->Html->link($breadcrumb['title'], $breadcrumb['url']));
+        <?php
+        if ($this->request->getParam('controller') == 'Pages' && $this->request->getParam('action') == 'display') {
+            echo $this->Html->tag('li', __('Dashboard'));
+        } else {
+            echo $this->Html->tag('li',
+                $this->Html->link(__('Dashboard'),
+                    ['controller' => 'Pages', 'action' => 'display']
+                )
+            );
+        }
+
+        if (isset($breadcrumbs) && !empty($breadcrumbs)) {
+            foreach($breadcrumbs as $breadcrumb) {
+                if (empty($breadcrumb['url'])) {
+                    echo $this->Html->tag('li', $breadcrumb['title']);
+                } else {
+                    echo $this->Html->tag('li',
+                        $this->Html->link($breadcrumb['title'], $breadcrumb['url'])
+                    );
+                }
             }
         }
-    }
-    ?>
+        ?>
     </ol>
     <!-- end breadcrumb -->
 

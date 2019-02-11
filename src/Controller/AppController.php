@@ -16,6 +16,9 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+use Cake\Core\Configure;
+use Cake\ORM\TableRegistry;
+
 
 /**
  * Application Controller
@@ -53,10 +56,6 @@ class AppController extends Controller
             ]
         ]);
 
-        /*
-         * Enable the following component for recommended CakePHP security settings.
-         * see https://book.cakephp.org/3.0/en/controllers/components/security.html
-         */
         //$this->loadComponent('Security');
     }
     
@@ -72,7 +71,9 @@ class AppController extends Controller
             $this->request->getParam('prefix') === 'admin'
         ) {
             $this->viewBuilder()->setTheme('SmartAdmin');
-        }  
+        }
+        
+        $this->__setSettings();
     }
     
     public function isAuthorized($user)
@@ -81,6 +82,15 @@ class AppController extends Controller
             return true;
         }
         return false;
+    }
+    
+    private function __setSettings()
+    {
+        $settingsTable = TableRegistry::getTableLocator()->get('Settings');
+        $settings = $settingsTable->find()->toArray();
+        foreach($settings as $setting) {
+            Configure::write('Settings.' . $setting->field_key, $setting->value);
+        }
     }
 
 }

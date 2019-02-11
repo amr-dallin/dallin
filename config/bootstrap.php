@@ -42,7 +42,11 @@ use Cake\Log\Log;
 use Cake\Mailer\Email;
 use Cake\Utility\Inflector;
 use Cake\Utility\Security;
-
+use Cake\Event\EventManager;
+use Burzum\FileStorage\Storage\StorageUtils;
+use Burzum\FileStorage\Storage\StorageManager;
+use Burzum\FileStorage\Storage\Listener\ImageProcessingListener;
+use Burzum\FileStorage\Storage\Listener\LocalListener;
 
 /**
  * Uncomment block of code below if you want to use `.env` file during development.
@@ -199,3 +203,30 @@ Type::build('timestamp')
 //Inflector::rules('transliteration', ['/å/' => 'aa']);
 
 Plugin::load('SmartAdmin', ['bootstrap' => false, 'routes' => true]);
+
+
+StorageManager::config('Local', [
+	'adapterOptions' => [ROOT . DS . 'file_storage', true],
+	'adapterClass' => '\Gaufrette\Adapter\Local',
+	'class' => '\Gaufrette\Filesystem'
+]);
+
+$listener = new LocalListener();
+EventManager::instance()->on($listener);
+
+// For automated image processing you'll have to attach this listener as well
+$listener = new ImageProcessingListener();
+EventManager::instance()->on($listener);
+
+Configure::write('FileStorage', [
+    'imageSizes' => [
+        'Files' => [
+            'crop160' => [
+                'squareCenterCrop' => [
+                    'size' => 160
+                ]
+            ]
+        ]
+    ]
+]);
+StorageUtils::generateHashes();

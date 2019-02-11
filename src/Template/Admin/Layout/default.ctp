@@ -1,18 +1,3 @@
-<?php
-/**
- * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link          https://cakephp.org CakePHP(tm) Project
- * @since         0.10.0
- * @license       https://opensource.org/licenses/mit-license.php MIT License
- */
-?>
 <!DOCTYPE html>
 <html lang="en-us">
     <head>
@@ -28,7 +13,7 @@
         <?php echo $this->Html->css(['bootstrap.min', 'font-awesome.min']) ?>
 
         <!-- SmartAdmin Styles : Caution! DO NOT change the order -->
-        <?php echo $this->Html->css(['smartadmin-production.min', 'smartadmin-production-plugins.min', 'smartadmin-skins.min']) ?>
+        <?php echo $this->Html->css(['smartadmin-production-plugins.min', 'smartadmin-production.min', 'smartadmin-skins.min']) ?>
         
         <?php echo $this->fetch('css') ?>
 
@@ -40,24 +25,23 @@
         <?php echo $this->Html->meta('icon') ?>
 
         <!-- #GOOGLE FONT -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+        <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">-->
 
         <!-- #APP SCREEN / ICONS -->
         <!-- Specifying a Webpage Icon for Web Clip 
                  Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
-        <link rel="apple-touch-icon" href="img/splash/sptouch-icon-iphone.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="img/splash/touch-icon-ipad.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="img/splash/touch-icon-iphone-retina.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="img/splash/touch-icon-ipad-retina.png">
 
         <!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-        <!-- Startup image for web apps -->
-        <link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
-        <link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
-        <link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+        
+        <link rel="apple-touch-icon" href="/img/touch-icon-iphone.png" type="image/png">
+		<link rel="apple-touch-icon" href="/img/touch-icon-ipad.png" type="image/png" sizes="76x76">
+		<link rel="apple-touch-icon" href="/img/touch-icon-iphone-retina.png" type="image/png" sizes="120x120">
+		<link rel="apple-touch-icon" href="/img/touch-icon-ipad-retina.png" type="image/png" sizes="152x152">
+		
+		<link rel="icon" href="/img/favicon-16x16.png" type="image/png" sizes="16x16">  
+		<link rel="icon" href="/img/favicon-32x32.png" type="image/png" sizes="32x32">  
 
     </head>
 
@@ -127,9 +111,9 @@
 
             <!-- #MAIN CONTENT -->
             <div id="content">
-                <?php echo $this->Flash->render() ?>
-                <?php echo $this->fetch('title-heading') ?>
-                <?php echo $this->fetch('content') ?>
+                <?php echo $this->Flash->render(); ?>
+                <?php echo $this->fetch('title-heading'); ?>
+                <?php echo $this->fetch('content'); ?>
             </div>
             
             <!-- END #MAIN CONTENT -->
@@ -143,7 +127,7 @@
 
         <!-- #SHORTCUT AREA : With large tiles (activated via clicking user name tag)
                  Note: These tiles are completely responsive, you can add as many as you like -->
-        <?php echo $this->element('footer'); ?>
+        <?php echo $this->element('shortcut'); ?>
         <!-- END SHORTCUT AREA -->
 
         <!--================================================== -->
@@ -154,19 +138,7 @@
 
         <!-- #PLUGINS -->
         <!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script>
-            if (!window.jQuery) {
-                document.write('<script src="js/libs/jquery-3.2.1.min.js"><\/script>');
-            }
-        </script>
-
-        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-        <script>
-            if (!window.jQuery.ui) {
-                document.write('<script src="js/libs/jquery-ui.min.js"><\/script>');
-            }
-        </script>
+        <?php echo $this->Html->script(['libs/jquery-3.2.1.min', 'libs/jquery-ui.min']); ?>
 
            <!-- IMPORTANT: APP CONFIG -->
     <?php echo $this->Html->script('app.config'); ?>
@@ -230,6 +202,7 @@
             });
         </script>
     <?php echo $this->fetch('script1'); ?>
+    <?php echo $this->fetch('script-code'); ?>
     </body>
 
 </html>

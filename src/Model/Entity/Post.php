@@ -33,11 +33,13 @@ class Post extends Entity
      * @var array
      */
     protected $_accessible = [
+        'project_id' => true,
         'title' => true,
-        'alias' => true,
+        'heading' => true,
+        'slug' => true,
         'lead' => true,
         'body' => true,
-        'cover' => true,
+        'image' => true,
         'meta_keywords' => true,
         'meta_description' => true,
         'date_created' => true,

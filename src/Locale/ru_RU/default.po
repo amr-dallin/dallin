@@ -4,372 +4,254 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2018-10-14 16:23+0500\n"
-"PO-Revision-Date: 2018-10-14 16:54+0500\n"
+"POT-Creation-Date: 2019-02-11 14:02+0500\n"
+"PO-Revision-Date: 2019-02-11 14:07+0500\n"
+"Last-Translator: Marat Dallin <amr.dallin@gmail.com>\n"
 "Language-Team: EMAIL@ADDRESS\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 1.8.7.1\n"
-"Last-Translator: Marat Dallin <amr.dallin@gmail.com>\n"
-"Language: ru\n"
 
-#: Controller/PostsController.php:64
+#: Controller/PagesController.php:38
+#, fuzzy
+msgid "No page"
+msgstr "Добавить страницу"
+
+#: Controller/PagesController.php:52;75
+msgid "Not found page"
+msgstr "Страница не найдена"
+
+#: Controller/PostsController.php:45;74
 msgid "No post"
-msgstr "Нет статьи"
+msgstr "Нет статей"
 
-#: Controller/Admin/BookCategoriesController.php:55;79
-msgid "The book category has been saved."
+#: Controller/ProjectsController.php:58
+#, fuzzy
+msgid "No project"
+msgstr "Добавить проект"
+
+#: Controller/Admin/FilesController.php:62;86
+msgid "The file has been saved."
+msgstr "Медиафайл был сохранен."
+
+#: Controller/Admin/FilesController.php:66;90
+msgid "The file could not be saved. Please, try again."
+msgstr "Медиафайл не может быть сохранен. Пожалуйста, попробуйте еще раз."
+
+#: Controller/Admin/FilesController.php:107
+msgid "The file has been deleted."
 msgstr ""
 
-#: Controller/Admin/BookCategoriesController.php:59;83
-msgid "The book category could not be saved. Please, try again."
+#: Controller/Admin/FilesController.php:109
+msgid "The file could not be deleted. Please, try again."
 msgstr ""
 
-#: Controller/Admin/BookCategoriesController.php:100
-msgid "The book category has been deleted."
-msgstr ""
-
-#: Controller/Admin/BookCategoriesController.php:102
-msgid "The book category could not be deleted. Please, try again."
-msgstr ""
-
-#: Controller/Admin/BooksController.php:54;80
-msgid "The book has been saved."
-msgstr ""
-
-#: Controller/Admin/BooksController.php:58;84
-msgid "The book could not be saved. Please, try again."
-msgstr ""
-
-#: Controller/Admin/BooksController.php:102
-msgid "The book has been deleted."
-msgstr ""
-
-#: Controller/Admin/BooksController.php:104
-msgid "The book could not be deleted. Please, try again."
-msgstr ""
-
-#: Controller/Admin/PagesController.php:59;83
+#: Controller/Admin/PagesController.php:44;68
 msgid "The page has been saved."
 msgstr ""
 
-#: Controller/Admin/PagesController.php:63;87
+#: Controller/Admin/PagesController.php:48;72
 msgid "The page could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/Admin/PagesController.php:104
+#: Controller/Admin/PagesController.php:89
 msgid "The page has been deleted."
 msgstr ""
 
-#: Controller/Admin/PagesController.php:106
+#: Controller/Admin/PagesController.php:91
 msgid "The page could not be deleted. Please, try again."
 msgstr ""
 
-#: Controller/Admin/PostsController.php:58;82
+#: Controller/Admin/PostsController.php:42;68
 msgid "The post has been saved."
 msgstr ""
 
-#: Controller/Admin/PostsController.php:62;86
+#: Controller/Admin/PostsController.php:46;72
 msgid "The post could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/Admin/PostsController.php:103
+#: Controller/Admin/PostsController.php:91
 msgid "The post has been deleted."
 msgstr ""
 
-#: Controller/Admin/PostsController.php:105
+#: Controller/Admin/PostsController.php:93
 msgid "The post could not be deleted. Please, try again."
 msgstr ""
 
-#: Controller/Admin/ProjectsController.php:55;80
+#: Controller/Admin/ProjectsController.php:39;64
 msgid "The project has been saved."
 msgstr ""
 
-#: Controller/Admin/ProjectsController.php:59;84
+#: Controller/Admin/ProjectsController.php:43;68
 msgid "The project could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/Admin/ProjectsController.php:103
+#: Controller/Admin/ProjectsController.php:85
 msgid "The project has been deleted."
 msgstr ""
 
-#: Controller/Admin/ProjectsController.php:105
+#: Controller/Admin/ProjectsController.php:87
 msgid "The project could not be deleted. Please, try again."
 msgstr ""
 
-#: Controller/Admin/UsersController.php:28
+#: Controller/Admin/SettingsController.php:27
+#, fuzzy
+msgid "No settings"
+msgstr "Настройки"
+
+#: Controller/Admin/SettingsController.php:45
+msgid "The setting has been saved."
+msgstr ""
+
+#: Controller/Admin/SettingsController.php:49
+msgid "The setting could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/Admin/SettingsController.php:86
+msgid "The setting has been deleted."
+msgstr ""
+
+#: Controller/Admin/SettingsController.php:88
+msgid "The setting could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/Admin/UsersController.php:29
+#, fuzzy
 msgid "Username or password is incorrect"
-msgstr ""
+msgstr "Неверное имя пользователя или пароль."
 
-#: Controller/Admin/UsersController.php:76;100
-msgid "The user has been saved."
-msgstr ""
-
-#: Controller/Admin/UsersController.php:80;104
-msgid "The user could not be saved. Please, try again."
-msgstr ""
-
-#: Controller/Admin/UsersController.php:121
-msgid "The user has been deleted."
-msgstr ""
-
-#: Controller/Admin/UsersController.php:123
-msgid "The user could not be deleted. Please, try again."
-msgstr ""
-
-#: Template/Admin/BookCategories/add.ctp:7;16;22
-msgid "Add Book Category"
-msgstr ""
-
-#: Template/Admin/BookCategories/add.ctp:13
-#: Template/Admin/BookCategories/edit.ctp:14
-#: Template/Admin/BookCategories/index.ctp:8;12;17
-msgid "Book Categories"
-msgstr ""
-
-#: Template/Admin/BookCategories/add.ctp:55
-#: Template/Admin/BookCategories/edit.ctp:56
-#: Template/Admin/BookCategories/index.ctp:133
-#: Template/Admin/BookCategories/view.ctp:26;49 Template/Admin/Books/add.ctp:82
-#: Template/Admin/Books/edit.ctp:92 Template/Admin/Books/index.ctp:133
-#: Template/Admin/Pages/add.ctp:74 Template/Admin/Pages/edit.ctp:74
-#: Template/Admin/Pages/index.ctp:133 Template/Admin/Posts/add.ctp:82
-#: Template/Admin/Posts/edit.ctp:90 Template/Admin/Posts/index.ctp:133
-#: Template/Admin/Posts/view.ctp:21 Template/Admin/Projects/add.ctp:81
-#: Template/Admin/Projects/edit.ctp:78 Template/Admin/Projects/index.ctp:133
-#: Template/Admin/Projects/view.ctp:24;74;115
-#: Template/Projects/view.ctp:24;74;115
-msgid "Title"
-msgstr "Заголовок"
-
-#: Template/Admin/BookCategories/add.ctp:60
-#: Template/Admin/BookCategories/edit.ctp:61
-#: Template/Admin/BookCategories/view.ctp:22;50 Template/Admin/Books/add.ctp:87
-#: Template/Admin/Books/edit.ctp:97 Template/Admin/Posts/add.ctp:87
-#: Template/Admin/Posts/edit.ctp:95 Template/Admin/Posts/view.ctp:25
-#: Template/Admin/Projects/add.ctp:86 Template/Admin/Projects/edit.ctp:83
-#: Template/Admin/Projects/view.ctp:28;75 Template/Projects/view.ctp:28;75
-msgid "Alias"
-msgstr "Alias"
-
-#: Template/Admin/BookCategories/edit.ctp:8;17;23
-#: Template/Admin/Books/edit.ctp:10;19;25 Template/Admin/Pages/edit.ctp:7;16;22
-#: Template/Admin/Posts/edit.ctp:8;17;23
-msgid "Edit "
-msgstr "Изменить "
-
-#: Template/Admin/BookCategories/index.ctp:143
-#: Template/Admin/Books/index.ctp:147 Template/Admin/Posts/index.ctp:146
-#: Template/Admin/Projects/index.ctp:146
-msgid "Alias: "
-msgstr "Alias: "
-
-#: Template/Admin/BookCategories/view.ctp:9;62 Template/Admin/Posts/view.ctp:10
-#: Template/Admin/Projects/view.ctp:9;84;118 Template/Admin/Users/add.ctp:9
-#: Template/Projects/view.ctp:9;84;118
-msgid "Actions"
-msgstr "Действия"
-
-#: Template/Admin/BookCategories/view.ctp:10
-msgid "Edit Book Category"
-msgstr ""
-
-#: Template/Admin/BookCategories/view.ctp:11
-msgid "Delete Book Category"
-msgstr ""
-
-#: Template/Admin/BookCategories/view.ctp:11;84
-#: Template/Admin/Books/edit.ctp:64 Template/Admin/Posts/edit.ctp:62
-#: Template/Admin/Posts/view.ctp:12 Template/Admin/Projects/view.ctp:11;102;129
-#: Template/Projects/view.ctp:11;102;129
-msgid "Are you sure you want to delete # {0}?"
-msgstr "Вы уверены, что хотите удалить # {0}?"
-
-#: Template/Admin/BookCategories/view.ctp:12
-msgid "List Book Categories"
-msgstr ""
-
-#: Template/Admin/BookCategories/view.ctp:13
-msgid "New Book Category"
-msgstr ""
-
-#: Template/Admin/BookCategories/view.ctp:14
-msgid "List Books"
-msgstr ""
-
-#: Template/Admin/BookCategories/view.ctp:15
-msgid "New Book"
-msgstr ""
-
-#: Template/Admin/BookCategories/view.ctp:30;47
-#: Template/Admin/Posts/view.ctp:41 Template/Admin/Projects/view.ctp:44;73;114
-#: Template/Projects/view.ctp:44;73;114
-msgid "Id"
-msgstr ""
-
-#: Template/Admin/BookCategories/view.ctp:34;59
-#: Template/Admin/Posts/view.ctp:45 Template/Admin/Projects/view.ctp:48;81;116
-#: Template/Projects/view.ctp:48;81;116
-msgid "Date Created"
-msgstr ""
-
-#: Template/Admin/BookCategories/view.ctp:38;60
-#: Template/Admin/Posts/view.ctp:49 Template/Admin/Projects/view.ctp:52;82;117
-#: Template/Projects/view.ctp:52;82;117
-msgid "Date Modified"
-msgstr ""
-
-#: Template/Admin/BookCategories/view.ctp:43
-msgid "Related Books"
-msgstr ""
-
-#: Template/Admin/BookCategories/view.ctp:48
-msgid "Book Category Id"
-msgstr ""
-
-#: Template/Admin/BookCategories/view.ctp:51 Template/Admin/Books/add.ctp:112
-#: Template/Admin/Books/edit.ctp:122 Template/Books/view.ctp:64
-msgid "Author"
-msgstr "Автор"
-
-#: Template/Admin/BookCategories/view.ctp:52
-msgid "Year"
-msgstr ""
-
-#: Template/Admin/BookCategories/view.ctp:53
-msgid "Isbn"
-msgstr ""
-
-#: Template/Admin/BookCategories/view.ctp:54 Template/Admin/Books/add.ctp:98
-#: Template/Admin/Books/edit.ctp:108 Template/Admin/Pages/add.ctp:79
-#: Template/Admin/Pages/edit.ctp:79 Template/Admin/Posts/add.ctp:97
-#: Template/Admin/Posts/edit.ctp:106 Template/Admin/Posts/view.ctp:62
-#: Template/Admin/Projects/add.ctp:91 Template/Admin/Projects/edit.ctp:88
-#: Template/Admin/Projects/view.ctp:65;77 Template/Projects/view.ctp:65;77
-msgid "Body"
-msgstr "Описание"
-
-#: Template/Admin/BookCategories/view.ctp:55 Template/Admin/Books/index.ctp:135
-#: Template/Books/view.ctp:68
-msgid "Readed"
-msgstr "Прочитал"
-
-#: Template/Admin/BookCategories/view.ctp:56
-msgid "Date Readed"
-msgstr ""
-
-#: Template/Admin/BookCategories/view.ctp:57 Template/Admin/Books/add.ctp:131
-#: Template/Admin/Books/edit.ctp:142 Template/Admin/Books/index.ctp:134
-#: Template/Admin/Pages/add.ctp:85 Template/Admin/Pages/edit.ctp:85
-#: Template/Admin/Pages/index.ctp:134 Template/Admin/Posts/add.ctp:112
-#: Template/Admin/Posts/edit.ctp:122 Template/Admin/Posts/index.ctp:134
-#: Template/Admin/Posts/view.ctp:33 Template/Admin/Projects/add.ctp:106
-#: Template/Admin/Projects/edit.ctp:103 Template/Admin/Projects/index.ctp:134
-#: Template/Admin/Projects/view.ctp:36;79 Template/Projects/view.ctp:36;79
-msgid "Meta Keywords"
-msgstr "Мета теги"
-
-#: Template/Admin/BookCategories/view.ctp:58 Template/Admin/Books/add.ctp:137
-#: Template/Admin/Books/edit.ctp:148 Template/Admin/Pages/add.ctp:91
-#: Template/Admin/Pages/edit.ctp:91 Template/Admin/Posts/add.ctp:118
-#: Template/Admin/Posts/edit.ctp:128 Template/Admin/Posts/view.ctp:37
-#: Template/Admin/Projects/add.ctp:112 Template/Admin/Projects/edit.ctp:109
-#: Template/Admin/Projects/view.ctp:40;80 Template/Projects/view.ctp:40;80
-msgid "Meta Description"
-msgstr "Мета описание"
-
-#: Template/Admin/BookCategories/view.ctp:61 Template/Admin/Books/index.ctp:136
-#: Template/Admin/Posts/index.ctp:135 Template/Admin/Posts/view.ctp:53
-#: Template/Admin/Projects/index.ctp:135 Template/Admin/Projects/view.ctp:60;83
-#: Template/Projects/view.ctp:60;83
-msgid "Published"
-msgstr ""
-
-#: Template/Admin/BookCategories/view.ctp:82
-#: Template/Admin/Projects/view.ctp:100;127 Template/Projects/view.ctp:100;127
-msgid "View"
-msgstr ""
-
-#: Template/Admin/BookCategories/view.ctp:83
-#: Template/Admin/Projects/view.ctp:101;128 Template/Projects/view.ctp:101;128
-msgid "Edit"
-msgstr ""
-
-#: Template/Admin/BookCategories/view.ctp:84 Template/Admin/Books/edit.ctp:62
-#: Template/Admin/Posts/edit.ctp:60 Template/Admin/Projects/view.ctp:102;129
-#: Template/Projects/view.ctp:102;129
-msgid "Delete"
-msgstr ""
-
-#: Template/Admin/Books/add.ctp:7;16;22
-msgid "Add Book"
-msgstr "Добавить книгу"
-
-#: Template/Admin/Books/add.ctp:13 Template/Admin/Books/edit.ctp:16
-#: Template/Admin/Books/index.ctp:8;12;17
-#: Template/Admin/Element/navigation.ctp:175 Template/Element/header.ctp:77;81
-msgid "Books"
-msgstr "Книги"
-
-#: Template/Admin/Books/add.ctp:93 Template/Admin/Books/edit.ctp:103
-msgid "Book category"
-msgstr ""
-
-#: Template/Admin/Books/add.ctp:107 Template/Admin/Books/edit.ctp:117
-msgid "Cover URI"
-msgstr ""
-
-#: Template/Admin/Books/add.ctp:119 Template/Admin/Books/edit.ctp:130
-msgid "Date publication"
-msgstr ""
-
-#: Template/Admin/Books/add.ctp:124 Template/Admin/Books/edit.ctp:135
-msgid "ISBN"
-msgstr ""
-
-#: Template/Admin/Books/add.ctp:144 Template/Admin/Books/edit.ctp:155
-#: Template/Admin/Posts/edit.ctp:135
-msgid "Tags"
-msgstr "Теги"
-
-#: Template/Admin/Books/add.ctp:152 Template/Admin/Books/edit.ctp:164
-msgid "Date readed"
-msgstr ""
-
-#: Template/Admin/Element/navigation.ctp:56
-#: Template/Admin/Element/ribbon.ctp:23;26
+#: Template/Admin/Element/navigation.ctp:53
+#: Template/Admin/Element/ribbon.ctp:27;30 Template/Admin/Pages/display.ctp:2
 msgid "Dashboard"
 msgstr ""
 
-#: Template/Admin/Element/navigation.ctp:73 Template/Admin/Pages/add.ctp:13
-#: Template/Admin/Pages/edit.ctp:13 Template/Admin/Pages/index.ctp:8;12;17
+#: Template/Admin/Element/navigation.ctp:68 Template/Admin/Pages/add.ctp:8
+#: Template/Admin/Pages/edit.ctp:6 Template/Admin/Pages/index.ctp:2
 msgid "Pages"
 msgstr "Страницы"
 
-#: Template/Admin/Element/navigation.ctp:84;118;152;186;216
+#: Template/Admin/Element/navigation.ctp:78;109;140;187
 msgid "Add"
 msgstr "Добавить"
 
-#: Template/Admin/Element/navigation.ctp:91;125;159;193;223
+#: Template/Admin/Element/navigation.ctp:85;116;147;195
 msgid "List"
 msgstr "Список"
 
-#: Template/Admin/Element/navigation.ctp:107 Template/Admin/Posts/add.ctp:13
-#: Template/Admin/Posts/edit.ctp:14 Template/Admin/Posts/index.ctp:8;12;17
+#: Template/Admin/Element/navigation.ctp:99 Template/Admin/Posts/add.ctp:8
+#: Template/Admin/Posts/edit.ctp:6 Template/Admin/Posts/index.ctp:2
+#: Template/Element/header.ctp:53;57
 msgid "Posts"
 msgstr "Статьи"
 
-#: Template/Admin/Element/navigation.ctp:141 Template/Admin/Projects/add.ctp:13
-#: Template/Admin/Projects/edit.ctp:13
-#: Template/Admin/Projects/index.ctp:8;12;17 Template/Element/header.ctp:67;71
+#: Template/Admin/Element/navigation.ctp:130 Template/Admin/Projects/add.ctp:8
+#: Template/Admin/Projects/edit.ctp:6 Template/Admin/Projects/index.ctp:2
+#: Template/Element/footer.ctp:46;50 Template/Element/header.ctp:62;66
 msgid "Projects"
 msgstr "Проекты"
 
-#: Template/Admin/Element/navigation.ctp:205
-msgid "Categories"
-msgstr "Категории"
+#: Template/Admin/Element/navigation.ctp:162 Template/Admin/Files/add.ctp:9
+#: Template/Admin/Files/index.ctp:3;7;32
+msgid "Gallery"
+msgstr "Галерея"
+
+#: Template/Admin/Element/navigation.ctp:177
+#, fuzzy
+msgid "Settings"
+msgstr "Настройки"
+
+#: Template/Admin/Element/title.ctp:28 Template/Admin/Files/edit.ctp:11
+#: Template/Admin/Files/index.ctp:65 Template/Admin/Pages/edit.ctp:65
+#: Template/Admin/Posts/edit.ctp:71 Template/Admin/Projects/edit.ctp:66
+#, fuzzy
+msgid "Delete"
+msgstr "Удалить"
+
+#: Template/Admin/Element/title.ctp:31 Template/Admin/Files/edit.ctp:13
+#: Template/Admin/Files/index.ctp:68 Template/Admin/Files/view.ctp:11
+#: Template/Admin/Pages/edit.ctp:68 Template/Admin/Posts/edit.ctp:74
+#: Template/Admin/Projects/edit.ctp:69
+msgid "Are you sure you want to delete # {0}?"
+msgstr "Вы уверены, что хотите удалить # {0}?"
+
+#: Template/Admin/Element/Flash/error.ctp:6
+#, fuzzy
+msgid "Error!"
+msgstr "Ошибка"
+
+#: Template/Admin/Element/Flash/success.ctp:6
+msgid "Success"
+msgstr ""
+
+#: Template/Admin/Files/add.ctp:3;12;25
+msgid "Add Files"
+msgstr ""
+
+#: Template/Admin/Files/add.ctp:32
+msgid "Library"
+msgstr "Библиотека"
+
+#: Template/Admin/Files/add.ctp:47
+#, fuzzy
+msgid "Add File"
+msgstr "Добавить страницу"
+
+#: Template/Admin/Files/add.ctp:53
+msgid "Cover"
+msgstr "Обложка"
+
+#: Template/Admin/Files/add.ctp:57 Template/Admin/Files/edit.ctp:30
+msgid "Submit"
+msgstr "Отправить"
+
+#: Template/Admin/Files/edit.ctp:9 Template/Admin/Files/view.ctp:9
+msgid "Actions"
+msgstr "Действия"
+
+#: Template/Admin/Files/edit.ctp:16;17 Template/Admin/Files/view.ctp:12;14
+#, fuzzy
+msgid "List Files"
+msgstr "Список тегов"
+
+#: Template/Admin/Files/edit.ctp:18 Template/Admin/Files/view.ctp:13;15
+msgid "New File"
+msgstr ""
+
+#: Template/Admin/Files/edit.ctp:24 Template/Admin/Files/view.ctp:10
+#, fuzzy
+msgid "Edit File"
+msgstr "Изменить "
+
+#: Template/Admin/Files/index.ctp:39
+msgid "Upload"
+msgstr "Загрузить"
+
+#: Template/Admin/Files/view.ctp:11
+#, fuzzy
+msgid "Delete File"
+msgstr "Удалить проект"
+
+#: Template/Admin/Files/view.ctp:22
+#, fuzzy
+msgid "File"
+msgstr "Медиафайл исключен из альбома."
+
+#: Template/Admin/Files/view.ctp:26
+msgid "Id"
+msgstr ""
+
+#: Template/Admin/Files/view.ctp:30 Template/Admin/Pages/index.ctp:167
+#: Template/Admin/Posts/index.ctp:95 Template/Admin/Projects/index.ctp:94
+msgid "Date Created"
+msgstr "Дата создания"
+
+#: Template/Admin/Files/view.ctp:34
+msgid "Date Modified"
+msgstr "Дата обновления"
 
 #: Template/Admin/Layout/error.ctp:35
 msgid "Error"
@@ -379,135 +261,158 @@ msgstr "Ошибка"
 msgid "Back"
 msgstr "Назад"
 
-#: Template/Admin/Pages/add.ctp:7;16;22
+#: Template/Admin/Pages/add.ctp:2
 msgid "Add Page"
 msgstr "Добавить страницу"
 
-#: Template/Admin/Posts/add.ctp:7;16;22
+#: Template/Admin/Pages/add.ctp:4 Template/Admin/Posts/add.ctp:2
 msgid "Add Post"
 msgstr "Добавить статью"
 
-#: Template/Admin/Posts/add.ctp:92 Template/Admin/Posts/edit.ctp:101
-#: Template/Admin/Posts/view.ctp:58 Template/Admin/Projects/view.ctp:76
-#: Template/Projects/view.ctp:76
+#: Template/Admin/Pages/add.ctp:69 Template/Admin/Pages/edit.ctp:89
+#: Template/Admin/Pages/index.ctp:105;165 Template/Admin/Posts/add.ctp:79
+#: Template/Admin/Posts/edit.ctp:95 Template/Admin/Projects/add.ctp:77
+#: Template/Admin/Projects/edit.ctp:90 Template/Admin/Projects/index.ctp:92
+#: Template/Admin/Settings/add.ctp:54
+msgid "Title"
+msgstr "Заголовок"
+
+#: Template/Admin/Pages/add.ctp:73 Template/Admin/Pages/edit.ctp:93
+#: Template/Admin/Posts/add.ctp:86 Template/Admin/Posts/edit.ctp:102
+#: Template/Admin/Projects/add.ctp:84 Template/Admin/Projects/edit.ctp:97
+msgid "Slug"
+msgstr ""
+
+#: Template/Admin/Pages/add.ctp:78 Template/Admin/Pages/edit.ctp:98
+#: Template/Admin/Posts/add.ctp:94 Template/Admin/Posts/edit.ctp:110
+#: Template/Admin/Projects/add.ctp:93 Template/Admin/Projects/edit.ctp:105
+msgid "Body"
+msgstr "Описание"
+
+#: Template/Admin/Pages/add.ctp:85 Template/Admin/Pages/edit.ctp:105
+#: Template/Admin/Posts/add.ctp:101 Template/Admin/Posts/edit.ctp:117
+#: Template/Admin/Projects/add.ctp:100 Template/Admin/Projects/edit.ctp:112
+msgid "Image"
+msgstr "Изображение"
+
+#: Template/Admin/Pages/add.ctp:90 Template/Admin/Pages/edit.ctp:110
+#: Template/Admin/Pages/index.ctp:106;166 Template/Admin/Posts/add.ctp:106
+#: Template/Admin/Posts/edit.ctp:122 Template/Admin/Posts/index.ctp:94
+#: Template/Admin/Projects/add.ctp:111 Template/Admin/Projects/edit.ctp:123
+msgid "Meta Keywords"
+msgstr "Мета теги"
+
+#: Template/Admin/Pages/add.ctp:94 Template/Admin/Pages/edit.ctp:114
+#: Template/Admin/Posts/add.ctp:110 Template/Admin/Posts/edit.ctp:126
+#: Template/Admin/Projects/add.ctp:117 Template/Admin/Projects/edit.ctp:129
+msgid "Meta Description"
+msgstr "Мета описание"
+
+#: Template/Admin/Pages/index.ctp:88
+msgid "Systemic"
+msgstr "Системный"
+
+#: Template/Admin/Pages/index.ctp:104
+msgid "ID"
+msgstr ""
+
+#: Template/Admin/Pages/index.ctp:149
+msgid "Not Systemic"
+msgstr "Не системный"
+
+#: Template/Admin/Pages/index.ctp:168 Template/Admin/Posts/index.ctp:96
+#: Template/Admin/Projects/index.ctp:95
+#, fuzzy
+msgid "Published"
+msgstr "Опубликованный"
+
+#: Template/Admin/Posts/add.ctp:82 Template/Admin/Posts/edit.ctp:98
+#: Template/Admin/Posts/index.ctp:93 Template/Admin/Projects/add.ctp:80
+#: Template/Admin/Projects/edit.ctp:93
+msgid "Heading"
+msgstr ""
+
+#: Template/Admin/Posts/add.ctp:90 Template/Admin/Posts/edit.ctp:106
 msgid "Lead"
 msgstr ""
 
-#: Template/Admin/Posts/add.ctp:106 Template/Admin/Posts/edit.ctp:115
-#: Template/Admin/Posts/view.ctp:29 Template/Admin/Projects/add.ctp:100
-#: Template/Admin/Projects/edit.ctp:97 Template/Admin/Projects/view.ctp:32;78
-#: Template/Projects/view.ctp:32;78
-msgid "Cover"
-msgstr "Обложка"
+#: Template/Admin/Posts/add.ctp:115 Template/Admin/Posts/edit.ctp:131
+msgid "Check which project the article belongs to"
+msgstr ""
 
-#: Template/Admin/Posts/view.ctp:11
-msgid "Edit Post"
-msgstr "Изменить статью"
+#: Template/Admin/Posts/add.ctp:120 Template/Admin/Posts/edit.ctp:136
+#: Template/Admin/Projects/add.ctp:124 Template/Admin/Projects/edit.ctp:136
+msgid "Tags"
+msgstr "Теги"
 
-#: Template/Admin/Posts/view.ctp:12
-msgid "Delete Post"
-msgstr "Удалить статью"
-
-#: Template/Admin/Posts/view.ctp:13 Template/Admin/Projects/view.ctp:14
-#: Template/Projects/view.ctp:14
-msgid "List Posts"
-msgstr "Список статей"
-
-#: Template/Admin/Posts/view.ctp:14 Template/Admin/Projects/view.ctp:15
-#: Template/Projects/view.ctp:15
-msgid "New Post"
-msgstr "Новая статья"
-
-#: Template/Admin/Posts/view.ctp:54 Template/Admin/Projects/view.ctp:61
-#: Template/Projects/view.ctp:61
-msgid "Yes"
-msgstr "Да"
-
-#: Template/Admin/Posts/view.ctp:54 Template/Admin/Projects/view.ctp:61
-#: Template/Projects/view.ctp:61
-msgid "No"
-msgstr "Нет"
-
-#: Template/Admin/Projects/add.ctp:7;16;22
-#: Template/Admin/Projects/edit.ctp:7;16;22
+#: Template/Admin/Projects/add.ctp:2
 msgid "Add Project"
 msgstr "Добавить проект"
 
-#: Template/Admin/Projects/view.ctp:10 Template/Projects/view.ctp:10
-msgid "Edit Project"
-msgstr "Изменить проект"
+#: Template/Admin/Projects/add.ctp:89 Template/Admin/Projects/edit.ctp:101
+#: Template/Admin/Projects/index.ctp:93
+msgid "Description"
+msgstr "Мета описание"
 
-#: Template/Admin/Projects/view.ctp:11 Template/Projects/view.ctp:11
-msgid "Delete Project"
-msgstr "Удалить проект"
-
-#: Template/Admin/Projects/view.ctp:12 Template/Projects/view.ctp:12
-msgid "List Projects"
-msgstr "Список проектов"
-
-#: Template/Admin/Projects/view.ctp:13 Template/Projects/view.ctp:13
-msgid "New Project"
-msgstr "Новый проект"
-
-#: Template/Admin/Projects/view.ctp:16 Template/Projects/view.ctp:16
-msgid "List Tags"
-msgstr "Список тегов"
-
-#: Template/Admin/Projects/view.ctp:17 Template/Projects/view.ctp:17
-msgid "New Tag"
+#: Template/Admin/Projects/add.ctp:104 Template/Admin/Projects/edit.ctp:116
+msgid "URL"
 msgstr ""
 
-#: Template/Admin/Projects/view.ctp:56 Template/Projects/view.ctp:56
-msgid "Date Published"
+#: Template/Admin/Settings/add.ctp:2
+msgid "Add Setting"
 msgstr ""
 
-#: Template/Admin/Projects/view.ctp:69 Template/Projects/view.ctp:69
-msgid "Related Posts"
-msgstr ""
+#: Template/Admin/Settings/add.ctp:42
+msgid "Key"
+msgstr "Ключ"
 
-#: Template/Admin/Projects/view.ctp:110 Template/Projects/view.ctp:110
-msgid "Related Tags"
-msgstr ""
+#: Template/Admin/Settings/add.ctp:57
+msgid "Value"
+msgstr "Значение"
 
-#: Template/Admin/Users/add.ctp:10
-msgid "List Users"
-msgstr ""
+#: Template/Admin/Settings/index.ctp:2
+msgid "Settings {0}"
+msgstr "Настройки {0}"
 
-#: Template/Admin/Users/add.ctp:16
-msgid "Add User"
-msgstr ""
-
-#: Template/Admin/Users/add.ctp:25
-msgid "Submit"
-msgstr "Отправить"
-
-#: Template/Admin/Users/login.ctp:7
+#: Template/Admin/Users/login.ctp:5
 msgid "Login"
 msgstr "Войти"
 
-#: Template/Books/view.ctp:52
-msgid "To all books"
-msgstr "Ко всем книгам"
+#: Template/Admin/Users/login.ctp:21
+msgid "Username"
+msgstr "Username"
 
-#: Template/Books/view.ctp:66
-msgid "First publication"
-msgstr "Первая публикация"
+#: Template/Admin/Users/login.ctp:24
+msgid "Password"
+msgstr "Пароль"
 
-#: Template/Element/article_footer.ctp:5
+#: Template/Admin/Users/login.ctp:31
+msgid "Log In"
+msgstr "Войти"
+
+#: Template/Element/article_footer.ctp:22
 msgid "Liked? Share with others."
 msgstr "Понравилось? Поделитесь с другими."
 
-#: Template/Element/header.ctp:37;41
-msgid "Home"
-msgstr "Главная"
+#: Template/Element/footer.ctp:18
+msgid "Mail: {0}"
+msgstr "Почта: {0}"
 
-#: Template/Element/header.ctp:47;51
+#: Template/Element/footer.ctp:24;32 Template/Element/header.ctp:40;48
 msgid "About Me"
 msgstr "Обо мне"
 
-#: Template/Element/header.ctp:57;61
-msgid "Blog"
-msgstr "Блог"
+#: Template/Element/footer.ctp:57
+msgid "Social"
+msgstr "Соц. сети"
+
+#: Template/Element/header.ctp:5;6
+msgid "Main navigation"
+msgstr "Базовая навигация"
+
+#: Template/Element/header.ctp:31;35
+msgid "Home"
+msgstr "Главная"
 
 #: Template/Error/error400.ctp:5;9
 msgid "Page not found"
@@ -533,14 +438,87 @@ msgstr "главную страницу"
 msgid "An internal error has occurred"
 msgstr "Произошла внутренняя ошибка"
 
-#: Template/Pages/display.ctp:31
-msgid "Contacts"
-msgstr "Контакты"
+#: Template/Pages/display.ctp:41
+msgid "Read more"
+msgstr "Подробнее"
 
-#: Template/Pages/display.ctp:49
-msgid "Latest articles"
-msgstr "Последние статьи"
+#: Template/Posts/index.ctp:65;66 Template/Projects/index.ctp:67;68
+msgid "Page navigation"
+msgstr "Постраничная навигация"
 
-#: Template/Posts/view.ctp:55
+#: Template/Posts/index.ctp:69 Template/Projects/index.ctp:71
+msgid "previous"
+msgstr "Предыдущие"
+
+#: Template/Posts/index.ctp:71 Template/Projects/index.ctp:73
+msgid "next"
+msgstr "Следующие"
+
+#: Template/Posts/index.ctp:77
+msgid "No articles"
+msgstr "Нет статей"
+
+#: Template/Posts/view.ctp:46;48
 msgid "To all articles"
 msgstr "Ко всем статьям"
+
+#: Template/Projects/index.ctp:79
+msgid "No projects"
+msgstr "Нет проектов"
+
+#~ msgid "Alias"
+#~ msgstr "Alias"
+
+#~ msgid "Alias: "
+#~ msgstr "Alias: "
+
+#~ msgid "Author"
+#~ msgstr "Автор"
+
+#~ msgid "Add Book"
+#~ msgstr "Добавить книгу"
+
+#~ msgid "Books"
+#~ msgstr "Книги"
+
+#~ msgid "Categories"
+#~ msgstr "Категории"
+
+#~ msgid "Edit Post"
+#~ msgstr "Изменить статью"
+
+#~ msgid "Delete Post"
+#~ msgstr "Удалить статью"
+
+#~ msgid "List Posts"
+#~ msgstr "Список статей"
+
+#~ msgid "New Post"
+#~ msgstr "Новая статья"
+
+#~ msgid "Yes"
+#~ msgstr "Да"
+
+#~ msgid "No"
+#~ msgstr "Нет"
+
+#~ msgid "Edit Project"
+#~ msgstr "Изменить проект"
+
+#~ msgid "List Projects"
+#~ msgstr "Список проектов"
+
+#~ msgid "To all books"
+#~ msgstr "Ко всем книгам"
+
+#~ msgid "First publication"
+#~ msgstr "Первая публикация"
+
+#~ msgid "Blog"
+#~ msgstr "Блог"
+
+#~ msgid "Contacts"
+#~ msgstr "Контакты"
+
+#~ msgid "Latest articles"
+#~ msgstr "Последние статьи"

@@ -2,13 +2,8 @@
 namespace App\Model\Table;
 
 use Cake\ORM\Query;
-use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
-use Cake\Event\Event;
-use ArrayObject;
-use Cake\Datasource\EntityInterface;
-
 /**
  * Posts Model
  *
@@ -41,6 +36,11 @@ class PostsTable extends Table
         $this->setTable('posts');
         $this->setDisplayField('title');
         $this->setPrimaryKey('id');
+        
+        $this->belongsTo('Projects', [
+            'foreignKey' => 'project_id',
+            'joinType' => 'INNER'
+        ]);
 
         $this->addBehavior('Timestamp', [
             'events' => [
@@ -71,12 +71,18 @@ class PostsTable extends Table
             ->maxLength('title', 255)
             ->requirePresence('title', 'create')
             ->notEmpty('title');
+        
+        $validator
+            ->scalar('heading')
+            ->maxLength('heading', 255)
+            ->requirePresence('heading', 'create')
+            ->notEmpty('heading');
 
         $validator
-            ->scalar('alias')
-            ->maxLength('alias', 255)
-            ->requirePresence('alias', 'create')
-            ->notEmpty('alias');
+            ->scalar('slug')
+            ->maxLength('slug', 255)
+            ->requirePresence('slug', 'create')
+            ->notEmpty('slug');
 
         $validator
             ->scalar('lead')
@@ -105,9 +111,28 @@ class PostsTable extends Table
         return $validator;
     }
     
-    
-    public function beforeMarshal(Event $event, ArrayObject $data, ArrayObject $options)
+    public function findAllPublished(Query $query, array $options)
     {
-        
+        return $query
+            ->where(['Posts.published' => true])
+            ->order(['Posts.id' => 'DESC'])
+            ->contain('Tags');
+    }
+    
+    public function findPublished(Query $query, array $options)
+    {
+        return $query
+            ->where([
+                'Posts.slug' => $options['slug'],
+                'Posts.published' => true
+            ])
+            ->contain('Tags');
+    }
+    
+    public function findTaggedAllPublished(Query $query, array $options)
+    {
+        return $this
+            ->find('allPublished')
+            ->find('tagged', ['tag' => $options['slug']]); 
     }
 }

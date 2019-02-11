@@ -45,7 +45,9 @@ class PostsController extends AppController
             }
             $this->Flash->error(__('The post could not be saved. Please, try again.'));
         }
-        $this->set(compact('post'));
+        
+        $projects = $this->Posts->Projects->find('list');
+        $this->set(compact('post', 'projects'));
     }
 
     /**
@@ -69,7 +71,9 @@ class PostsController extends AppController
             }
             $this->Flash->error(__('The post could not be saved. Please, try again.'));
         }
-        $this->set(compact('post'));
+        
+        $projects = $this->Posts->Projects->find('list');
+        $this->set(compact('post', 'projects'));
     }
 
     /**

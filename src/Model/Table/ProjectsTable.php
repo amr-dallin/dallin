@@ -6,6 +6,7 @@ use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 use Cake\Event\Event;
+use Cake\Core\Configure;
 
 /**
  * Projects Model
@@ -42,11 +43,9 @@ class ProjectsTable extends Table
         $this->setTable('projects');
         $this->setDisplayField('title');
         $this->setPrimaryKey('id');
-
-        $this->belongsToMany('Posts', [
-            'foreignKey' => 'project_id',
-            'targetForeignKey' => 'post_id',
-            'joinTable' => 'posts_projects'
+        
+        $this->hasMany('Posts', [
+            'foreignKey' => 'project_id'
         ]);
         
         $this->addBehavior('Timestamp', [
@@ -83,24 +82,29 @@ class ProjectsTable extends Table
             ->maxLength('title', 255)
             ->requirePresence('title', 'create')
             ->notEmpty('title');
+        
+        $validator
+            ->scalar('heading')
+            ->maxLength('heading', 255)
+            ->requirePresence('heading', 'create')
+            ->notEmpty('heading');
 
         $validator
-            ->scalar('alias')
-            ->maxLength('alias', 255)
-            ->requirePresence('alias', 'create')
-            ->notEmpty('alias');
+            ->scalar('slug')
+            ->maxLength('slug', 255)
+            ->requirePresence('slug', 'create')
+            ->notEmpty('slug');
+
+        $validator
+            ->scalar('description')
+            ->requirePresence('description', 'create')
+            ->notEmpty('description');
 
         $validator
             ->scalar('body')
             ->requirePresence('body', 'create')
             ->notEmpty('body');
-
-        $validator
-            ->scalar('cover')
-            ->maxLength('cover', 255)
-            ->requirePresence('cover', 'create')
-            ->notEmpty('cover');
-
+        
         $validator
             ->scalar('meta_keywords')
             ->maxLength('meta_keywords', 255)
@@ -117,5 +121,22 @@ class ProjectsTable extends Table
             ->notEmpty('published');
 
         return $validator;
+    }
+    
+    public function findAllPublished(Query $query, array $options)
+    {
+        return $query
+            ->where(['Projects.published' => true])
+            ->order(['Projects.weight' => 'DESC', 'Projects.id' => 'DESC'])
+            ->contain('Tags');
+    }
+    
+    public function findPublished(Query $query, array $options)
+    {
+        return $query
+            ->where([
+                'Projects.slug' => $options['slug'],
+                'Projects.published' => true
+            ]);
     }
 }

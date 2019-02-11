@@ -42,8 +42,8 @@ class ProjectsController extends AppController
             }
             $this->Flash->error(__('The project could not be saved. Please, try again.'));
         }
-        $tags = $this->Projects->Tags->find('list');
-        $this->set(compact('project', 'tags'));
+
+        $this->set(compact('project'));
     }
 
     /**
@@ -56,7 +56,7 @@ class ProjectsController extends AppController
     public function edit($id = null)
     {
         $project = $this->Projects->get($id, [
-            'contain' => ['Posts', 'Tags']
+            'contain' => ['Tags']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $project = $this->Projects->patchEntity($project, $this->request->getData());
@@ -67,9 +67,7 @@ class ProjectsController extends AppController
             }
             $this->Flash->error(__('The project could not be saved. Please, try again.'));
         }
-        $posts = $this->Projects->Posts->find('list', ['limit' => 200]);
-        $tags = $this->Projects->Tags->find('list', ['limit' => 200]);
-        $this->set(compact('project', 'posts', 'tags'));
+        $this->set(compact('project'));
     }
 
     /**

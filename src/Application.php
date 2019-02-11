@@ -40,6 +40,10 @@ class Application extends BaseApplication
         $this->addPlugin('Search');
 
         $this->addPlugin('Tags');
+        $this->addPlugin('Ajax', ['bootstrap' => true]);
+        
+        $this->addPlugin('Burzum/FileStorage', ['bootstrap' => true]);
+        $this->addPlugin('Burzum/Imagine');
 
         // Call parent to load bootstrap from files.
         parent::bootstrap();

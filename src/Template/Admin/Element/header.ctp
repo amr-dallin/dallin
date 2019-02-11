@@ -63,9 +63,7 @@
                 echo $this->Html->link(
                     $this->Html->tag('i', '', ['class' => 'fa fa-sign-out']),
                     ['controller' => 'users', 'action' => 'logout'],
-                    [
-                        'escape' => false
-                    ]
+                    ['escape' => false]
                 );
                 ?>
             </span>
