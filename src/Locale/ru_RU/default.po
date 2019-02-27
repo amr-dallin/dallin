@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2019-02-11 14:02+0500\n"
-"PO-Revision-Date: 2019-02-11 14:07+0500\n"
+"POT-Creation-Date: 2019-02-27 22:09+0500\n"
+"PO-Revision-Date: 2019-02-27 22:09+0500\n"
 "Last-Translator: Marat Dallin <amr.dallin@gmail.com>\n"
 "Language-Team: EMAIL@ADDRESS\n"
 "Language: ru\n"
@@ -25,7 +25,7 @@ msgstr "Добавить страницу"
 msgid "Not found page"
 msgstr "Страница не найдена"
 
-#: Controller/PostsController.php:45;74
+#: Controller/PostsController.php:44;74
 msgid "No post"
 msgstr "Нет статей"
 
@@ -144,7 +144,6 @@ msgstr "Список"
 
 #: Template/Admin/Element/navigation.ctp:99 Template/Admin/Posts/add.ctp:8
 #: Template/Admin/Posts/edit.ctp:6 Template/Admin/Posts/index.ctp:2
-#: Template/Element/header.ctp:53;57
 msgid "Posts"
 msgstr "Статьи"
 
@@ -155,7 +154,7 @@ msgid "Projects"
 msgstr "Проекты"
 
 #: Template/Admin/Element/navigation.ctp:162 Template/Admin/Files/add.ctp:9
-#: Template/Admin/Files/index.ctp:3;7;32
+#: Template/Admin/Files/index.ctp:2
 msgid "Gallery"
 msgstr "Галерея"
 
@@ -165,14 +164,14 @@ msgid "Settings"
 msgstr "Настройки"
 
 #: Template/Admin/Element/title.ctp:28 Template/Admin/Files/edit.ctp:11
-#: Template/Admin/Files/index.ctp:65 Template/Admin/Pages/edit.ctp:65
+#: Template/Admin/Files/index.ctp:62 Template/Admin/Pages/edit.ctp:65
 #: Template/Admin/Posts/edit.ctp:71 Template/Admin/Projects/edit.ctp:66
 #, fuzzy
 msgid "Delete"
 msgstr "Удалить"
 
 #: Template/Admin/Element/title.ctp:31 Template/Admin/Files/edit.ctp:13
-#: Template/Admin/Files/index.ctp:68 Template/Admin/Files/view.ctp:11
+#: Template/Admin/Files/index.ctp:65 Template/Admin/Files/view.ctp:11
 #: Template/Admin/Pages/edit.ctp:68 Template/Admin/Posts/edit.ctp:74
 #: Template/Admin/Projects/edit.ctp:69
 msgid "Are you sure you want to delete # {0}?"
@@ -414,6 +413,11 @@ msgstr "Базовая навигация"
 msgid "Home"
 msgstr "Главная"
 
+#: Template/Element/header.ctp:53;57 Template/Posts/index.ctp:15
+#: Template/Posts/view.ctp:16
+msgid "Blog"
+msgstr "Блог"
+
 #: Template/Error/error400.ctp:5;9
 msgid "Page not found"
 msgstr "Страница не найдена"
@@ -442,29 +446,28 @@ msgstr "Произошла внутренняя ошибка"
 msgid "Read more"
 msgstr "Подробнее"
 
-#: Template/Posts/index.ctp:65;66 Template/Projects/index.ctp:67;68
+#: Template/Posts/index.ctp:78;79 Template/Projects/index.ctp:67;68
 msgid "Page navigation"
 msgstr "Постраничная навигация"
 
-#: Template/Posts/index.ctp:69 Template/Projects/index.ctp:71
+#: Template/Posts/index.ctp:82 Template/Projects/index.ctp:71
 msgid "previous"
 msgstr "Предыдущие"
 
-#: Template/Posts/index.ctp:71 Template/Projects/index.ctp:73
+#: Template/Posts/index.ctp:84 Template/Projects/index.ctp:73
 msgid "next"
 msgstr "Следующие"
 
-#: Template/Posts/index.ctp:77
+#: Template/Posts/index.ctp:90
 msgid "No articles"
 msgstr "Нет статей"
-
-#: Template/Posts/view.ctp:46;48
-msgid "To all articles"
-msgstr "Ко всем статьям"
 
 #: Template/Projects/index.ctp:79
 msgid "No projects"
 msgstr "Нет проектов"
+
+#~ msgid "To all articles"
+#~ msgstr "Ко всем статьям"
 
 #~ msgid "Alias"
 #~ msgstr "Alias"
@@ -513,9 +516,6 @@ msgstr "Нет проектов"
 
 #~ msgid "First publication"
 #~ msgstr "Первая публикация"
-
-#~ msgid "Blog"
-#~ msgstr "Блог"
 
 #~ msgid "Contacts"
 #~ msgstr "Контакты"

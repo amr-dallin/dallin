@@ -36,8 +36,7 @@ class PostsController extends AppController
      * @return \Cake\Http\Response|void
      */
     public function index()
-    {   
-        $page_id = 2;
+    {
         if (null !== $this->request->getQuery('tag')) {
             $slug = $this->request->getQuery('tag');
             $tag = $this->Posts->Tags->findBySlug($slug)->first();
@@ -47,18 +46,19 @@ class PostsController extends AppController
             $this->set('tag', $tag);
             
             $query = $this->Posts->find('taggedAllPublished', ['slug' => $slug]);
-            
-            $page_id = 3;
         } else {
+            $page_id = 2;
             $query = $this->Posts->find('allPublished');
         }
         
         $posts = $this->paginate($query);
+        $this->set('posts', $posts);
 
-        $pagesTable = TableRegistry::getTableLocator()->get('Pages');
-        $page = $pagesTable->get($page_id);
-
-        $this->set(compact('page', 'posts'));
+        if (isset($page_id)) {
+            $pagesTable = TableRegistry::getTableLocator()->get('Pages');
+            $page = $pagesTable->get($page_id);
+            $this->set('page', $page);
+        }
     }
 
     /**

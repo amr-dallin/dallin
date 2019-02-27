@@ -39,7 +39,7 @@ class FilesTable extends Table
             'events' => [
                 'Model.beforeSave' => [
                     'date_created' => 'new',
-                    'date_modified' => 'always',
+                    'date_modified' => 'always'
                 ]
             ]
         ]);

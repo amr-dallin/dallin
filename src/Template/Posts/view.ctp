@@ -12,6 +12,12 @@ echo $this->element('meta', [
 ]);
 $this->end();
 
+$breadcrumbs = [
+    ['title' => __('Blog'), 'url' => ['action' => 'index']],
+    ['title' => h($post->title)]
+];
+$this->set('breadcrumbs', $breadcrumbs);
+
 echo $this->Html->css([
     '/vendor/highlight/styles/tomorrow-night-blue',
 ], ['block' => true]);
@@ -40,18 +46,10 @@ hljs.initHighlightingOnLoad();
             <div class="row justify-content-center">
                 <div class="col col-md-11 col-lg-10">
                     <header>
-                        <div class="back-link">
-                            <i class="fas fa-caret-left"></i> 
-                            <?php
-                            echo $this->Html->link(__('To all articles'),
-                                ['action' => 'index'],
-                                ['title' => __('To all articles')]
-                            );
-                            ?>
-                        </div>
+                        <?php echo $this->element('breadcrumbs'); ?>
                         <h1><?php echo h($post->title); ?></h1>
                         <div class="article-date">
-                            <i class="far fa-clock"></i> 
+                            <i class="far fa-calendar-alt"></i> 
                             <time datetime="<?php echo $this->Time->format($post->date_created, 'yyyy-MM-dd'); ?>">
                                 <?php echo $this->Time->format($post->date_created, 'dd.MM.yyyy'); ?>
                             </time>

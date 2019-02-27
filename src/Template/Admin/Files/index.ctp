@@ -1,16 +1,16 @@
 <?php
-$this->start('title');
-echo __('Gallery');
-$this->end();
+$title = __('Gallery');
+
+$this->assign('title', $title);
 
 $this->start('ribbon');
-$breadcrumbs = [0 => ['title' => __('Gallery')]];
-echo $this->element('ribbon', array('breadcrumbs' => $breadcrumbs));
+$breadcrumbs[0] = ['title' => $title];
+echo $this->element('ribbon', ['breadcrumbs' => $breadcrumbs]);
 $this->end();
 
 $this->start('navigation');
 $menu['gallery'] = true;
-echo $this->element('navigation', array('menu' => $menu));
+echo $this->element('navigation', ['menu' => $menu]);
 $this->end();
 
 $this->start('script');
@@ -29,7 +29,7 @@ $this->end();
 
 <div class="row hidden-mobile">
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-        <h1 class="page-title txt-color-blueDark"><?php echo __('Gallery'); ?></h1>
+        <h1 class="page-title txt-color-blueDark"><?php echo $title; ?></h1>
     </div>
 
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 text-align-right">
@@ -55,23 +55,20 @@ $this->end();
         <?php foreach ($files as $file): ?>
         <div class="superbox-list">
             <?php
-            echo $this->Image->display(
-                $file['file'], 
-                'crop160', 
-                [
-                    'class' => 'superbox-img',
-                    'data-img' => $this->Image->imageUrl($file['file']),
-                    'data-delete-link' => $this->Form->postLink(
-                        $this->Html->tag('i', '', ['class' => 'fa fa-trash']) . ' ' . __('Delete'),
-                        ['action' => 'delete', $file->id],
-                        [
-                            'confirm' => __('Are you sure you want to delete # {0}?', $file->id),
-                            'class' => 'btn btn-danger btn-sm',
-                            'escape' => false
-                        ]
-                    )
-                ]
-            ); ?>
+            echo $this->Image->display($file['file'], 'crop160', [
+                'class' => 'superbox-img',
+                'data-img' => ASSETS . $file['file']['path'],
+                'data-delete-link' => $this->Form->postLink(
+                    $this->Html->tag('i', '', ['class' => 'fa fa-trash']) . ' ' . __('Delete'),
+                    ['action' => 'delete', $file->id],
+                    [
+                        'confirm' => __('Are you sure you want to delete # {0}?', $file->id),
+                        'class' => 'btn btn-danger btn-sm',
+                        'escape' => false
+                    ]
+                )
+            ]);
+            ?>
         </div>
         <?php endforeach; ?>
         

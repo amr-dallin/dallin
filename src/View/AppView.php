@@ -39,7 +39,9 @@ class AppView extends View
     {
         parent::initialize();
         $this->loadHelper('Tags.Tag');
-        $this->loadHelper('Burzum/FileStorage.Image');
+        $this->loadHelper('Burzum/FileStorage.Image', [
+            'pathPrefix' => DS . 'assets' . DS
+        ]);
         $this->loadHelper('Paginator', ['templates' => 'paginator-templates']);
         
         $configure = Configure::read();

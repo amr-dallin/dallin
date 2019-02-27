@@ -1,9 +1,21 @@
 <?php
+use Cake\Core\Configure;
+
 $title = h($page->title);
 $body = $page->body;
+
 if (isset($tag)) {
-    $title = __(h($page->title), h($tag->label));
-    $body = __($page->body, h($tag->label));
+    $label = '#' . h($tag->label);
+    
+    $title = $label . ' | ' . Configure::read('Settings.Site.author');
+    $body = $this->Html->tag('h1', $label) . 
+        $this->Html->tag('p', h($tag->description), ['class' => 'lead mb-0']);
+    
+    $breadcrumbs = [
+        ['title' => __('Blog'), 'url' => ['action' => 'index']],
+        ['title' => $label]
+    ];
+    $this->set('breadcrumbs', $breadcrumbs);
 } 
 
 $this->assign('title', $title);
@@ -24,6 +36,7 @@ $this->set('menu', 'posts');
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9 col-lg-8">
+                <?php echo $this->element('breadcrumbs'); ?>
                 <?php echo $body; ?>
             </div>
         </div>

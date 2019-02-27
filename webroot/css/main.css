@@ -3330,19 +3330,21 @@ input[type="button"].btn-block {
   border-top-right-radius: 0; }
 
 .breadcrumb {
+  font-size: 0.6730769231rem;
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif !important;
   display: flex;
   flex-wrap: wrap;
-  padding: 0.75rem 1rem;
-  margin-bottom: 1rem;
+  padding: 0 0 !important;
+  margin-bottom: 0.3rem !important;
   list-style: none;
-  background-color: #e9ecef;
-  border-radius: 0.25rem; }
+  background-color: transparent;
+  border-radius: transparent; }
 
 .breadcrumb-item + .breadcrumb-item {
-  padding-left: 0.5rem; }
+  padding-left: 0.3rem; }
   .breadcrumb-item + .breadcrumb-item::before {
     display: inline-block;
-    padding-right: 0.5rem;
+    padding-right: 0.3rem;
     color: #6c757d;
     content: "/"; }
 .breadcrumb-item + .breadcrumb-item:hover::before {
@@ -3350,7 +3352,7 @@ input[type="button"].btn-block {
 .breadcrumb-item + .breadcrumb-item:hover::before {
   text-decoration: none; }
 .breadcrumb-item.active {
-  color: #6c757d; }
+  color: #343a40; }
 
 .pagination {
   display: flex;
@@ -10731,13 +10733,5 @@ html {
 .footer {
   padding: 2rem 0;
   font-size: .8rem; }
-
-.back-link {
-  font-size: 0.875rem;
-  margin-bottom: 10px; }
-  .back-link a {
-    color: #343a40; }
-  .back-link i {
-    margin-right: 5px; }
 
 /*# sourceMappingURL=main.css.map */

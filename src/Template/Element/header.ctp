@@ -50,11 +50,11 @@ use Cake\Core\Configure;
                         'menu' => $menu
                     ]
                 );
-                echo $this->Dallin->headerLink(__('Posts'),
+                echo $this->Dallin->headerLink(__('Blog'),
                     ['controller' => 'Posts', 'action' => 'index'],
                     [
                         'class' => 'nav-item nav-link',
-                        'title' => __('Posts'),
+                        'title' => __('Blog'),
                         'slug' => 'posts',
                         'menu' => $menu
                     ]

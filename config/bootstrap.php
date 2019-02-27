@@ -211,12 +211,10 @@ StorageManager::config('Local', [
 	'class' => '\Gaufrette\Filesystem'
 ]);
 
-$listener = new LocalListener();
-EventManager::instance()->on($listener);
+EventManager::instance()->on(new LocalListener());
 
 // For automated image processing you'll have to attach this listener as well
-$listener = new ImageProcessingListener();
-EventManager::instance()->on($listener);
+EventManager::instance()->on(new ImageProcessingListener());
 
 Configure::write('FileStorage', [
     'imageSizes' => [
@@ -228,5 +226,6 @@ Configure::write('FileStorage', [
             ]
         ]
     ]
+    
 ]);
 StorageUtils::generateHashes();

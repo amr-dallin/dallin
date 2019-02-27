@@ -7,11 +7,14 @@ echo $this->Html->meta('Resource-type', 'Document') . PHP_EOL;
 echo $this->Html->meta('author', Configure::read('Settings.Site.author')) . PHP_EOL;
 echo $this->Html->meta('copyright', Configure::read('Settings.Site.copyright')) . PHP_EOL;
 
+// Begin meta keywords and description -----------------------------
 if (isset($meta_keywords) && !empty($meta_keywords)) {
     echo $this->Html->meta('keywords', $meta_keywords) . PHP_EOL;
 }
 echo $this->Html->meta('description', $meta_description) . PHP_EOL;
+// End meta keywords and description -----------------------------
 
+// Begin Open Graph -----------------------------
 $type = 'website';
 if (isset($og_type) && !empty($og_type)) {
     $type = $og_type;
@@ -29,8 +32,9 @@ if (!isset($og_description) || empty($og_description)) {
     $og_description = $meta_description;
 }
 echo $this->Html->meta(['property' => 'og:description', 'content' => $og_description]) . PHP_EOL;
+// End Open Graph -----------------------------
 
-
+// Begin twitter cards -----------------------------
 $card = 'summary';
 if (isset($twitter_card) && !empty($twitter_card)) {
     $card = $twitter_card;
@@ -45,6 +49,7 @@ echo $this->Html->meta([
     'name' => 'twitter:creator', 
     'content' => '@' . Configure::read('Settings.Contacts.twitter')
 ]) . PHP_EOL;
+// End twitter cards -----------------------------
 
 
 echo $this->Html->meta([
