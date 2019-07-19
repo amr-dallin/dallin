@@ -22,7 +22,6 @@ use Cake\Validation\Validator;
  */
 class PostsTable extends Table
 {
-
     /**
      * Initialize method
      *
@@ -36,7 +35,7 @@ class PostsTable extends Table
         $this->setTable('posts');
         $this->setDisplayField('title');
         $this->setPrimaryKey('id');
-        
+
         $this->belongsTo('Projects', [
             'foreignKey' => 'project_id',
             'joinType' => 'INNER'
@@ -50,7 +49,7 @@ class PostsTable extends Table
                 ]
             ]
         ]);
-        
+
         $this->addBehavior('Tags.Tag', ['taggedCounter' => false]);
     }
 
@@ -71,7 +70,7 @@ class PostsTable extends Table
             ->maxLength('title', 255)
             ->requirePresence('title', 'create')
             ->notEmpty('title');
-        
+
         $validator
             ->scalar('heading')
             ->maxLength('heading', 255)
@@ -110,7 +109,7 @@ class PostsTable extends Table
 
         return $validator;
     }
-    
+
     public function findAllPublished(Query $query, array $options)
     {
         return $query
@@ -118,7 +117,7 @@ class PostsTable extends Table
             ->order(['Posts.id' => 'DESC'])
             ->contain('Tags');
     }
-    
+
     public function findPublished(Query $query, array $options)
     {
         return $query
@@ -128,11 +127,11 @@ class PostsTable extends Table
             ])
             ->contain('Tags');
     }
-    
+
     public function findTaggedAllPublished(Query $query, array $options)
     {
         return $this
             ->find('allPublished')
-            ->find('tagged', ['tag' => $options['slug']]); 
+            ->find('tagged', ['tag' => $options['slug']]);
     }
 }

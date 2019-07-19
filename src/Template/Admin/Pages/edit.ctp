@@ -14,12 +14,10 @@ $menu['pages'][1] = true;
 echo $this->element('navigation', ['menu' => $menu]);
 $this->end();
 
-$this->start('script');
-echo $this->Html->script('plugin/summernote/summernote.min');
-$this->end();
+echo $this->Html->script('plugin/summernote/summernote.min', ['block' => true]);
 ?>
 
-<?php $this->start('script1'); ?>
+<?php $this->start('script-code'); ?>
 <script>
     $(document).ready(function() {
 		$('.summernote').summernote({
@@ -61,7 +59,7 @@ $this->end();
                                 <div class="col-sm-12 text-align-right">
                                     <?php
                                     echo $this->Form->postLink(
-                                        $this->Html->tag('i', '', ['class' => 'fa fa-trash']) . ' ' . 
+                                        $this->Html->tag('i', '', ['class' => 'fa fa-trash']) . ' ' .
                                         __('Delete'),
                                         ['action' => 'delete', h($page->id)],
                                         [
@@ -92,7 +90,7 @@ $this->end();
                                         'class' => 'form-control input-sm',
                                         'placeholder' => __('Slug')
                                     ]) . '<hr/>';
-                                    
+
                                     echo $this->Form->control('body', [
                                         'class' => 'form-control summernote',
                                         'placeholder' => __('Body')
@@ -104,7 +102,7 @@ $this->end();
                                     echo $this->Form->control('image', [
                                         'placeholder' => __('Image')
                                     ]) . '<hr/>';
-                                    
+
                                     echo $this->Form->control('meta_keywords', [
                                         'type' => 'textarea',
                                         'placeholder' => __('Meta Keywords')

@@ -5,11 +5,11 @@ $this->end();
 
 $this->start('ribbon');
 $breadcrumbs = [
-    0 => [
+    [
         'title' => __('Gallery'),
-        'url' => ['controller' => 'files', 'action' => 'index']
+        'url' => ['controller' => 'Files', 'action' => 'index']
     ],
-    1 => ['title' => __('Add Files')]
+    ['title' => __('Add Files')]
 ];
 echo $this->element('ribbon', array('breadcrumbs' => $breadcrumbs));
 $this->end();
@@ -28,12 +28,8 @@ $this->end();
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 text-align-right">
         <div class="page-title">
             <?php
-            echo $this->Html->link(
-                 __('Library'),
-                [
-                    'controller' => 'files',
-                    'action' => 'index'
-                ],
+            echo $this->Html->link(__('Library'),
+                ['controller' => 'Files', 'action' => 'index'],
                 ['class' => 'btn btn-default']
             );
             ?>
@@ -42,18 +38,18 @@ $this->end();
 </div>
 
 <div class="files form large-9 medium-8 columns content">
-    <?= $this->Form->create($file, ['type' => 'file']) ?>
+    <?php echo $this->Form->create($file, ['type' => 'file']); ?>
     <fieldset>
         <legend><?= __('Add File') ?></legend>
         <?php
-                                echo $this->Form->control('file.file', [
-                                    'label' => ['class' => 'sr-only'],
-                                    'type' => 'file',
-                                    'class' => 'form-control',
-                                    'placeholder' => __('Cover')
-                                ]);
+        echo $this->Form->control('file.file', [
+            'label' => ['class' => 'sr-only'],
+            'type' => 'file',
+            'class' => 'form-control',
+            'placeholder' => __('Cover')
+        ]);
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
-    <?= $this->Form->end() ?>
+    <?php echo $this->Form->button(__('Submit')); ?>
+    <?php echo $this->Form->end(); ?>
 </div>

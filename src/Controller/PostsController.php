@@ -17,13 +17,13 @@ class PostsController extends AppController
     public $paginate = [
         'limit' => 10
     ];
-    
+
     public function initialize()
     {
         parent::initialize();
         $this->loadComponent('Paginator');
     }
-    
+
     public function beforeFilter(\Cake\Event\Event $event)
     {
         parent::beforeFilter($event);
@@ -44,13 +44,13 @@ class PostsController extends AppController
                 throw new RecordNotFoundException(__('No post'));
             }
             $this->set('tag', $tag);
-            
+
             $query = $this->Posts->find('taggedAllPublished', ['slug' => $slug]);
         } else {
             $page_id = 2;
             $query = $this->Posts->find('allPublished');
         }
-        
+
         $posts = $this->paginate($query);
         $this->set('posts', $posts);
 
@@ -68,7 +68,7 @@ class PostsController extends AppController
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function view($slug)
-    {        
+    {
         $post = $this->Posts->find('published', ['slug' => $slug])->first();
         if (empty($post)) {
             throw new RecordNotFoundException(__('No post'));

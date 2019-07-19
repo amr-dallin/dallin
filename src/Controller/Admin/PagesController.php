@@ -14,9 +14,8 @@ class PagesController extends AppController
 {
     public function display()
     {
-        
     }
-    
+
     /**
      * Index method
      *
@@ -26,7 +25,7 @@ class PagesController extends AppController
     {
         $systemic_pages = $this->Pages->find('type', ['systemic' => true]);
         $pages = $this->Pages->find('type', ['systemic' => false]);
-        
+
         $this->set(compact('systemic_pages', 'pages'));
     }
 

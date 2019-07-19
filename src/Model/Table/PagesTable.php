@@ -23,7 +23,6 @@ use Cake\Utility\Inflector;
  */
 class PagesTable extends Table
 {
-
     /**
      * Initialize method
      *
@@ -37,7 +36,7 @@ class PagesTable extends Table
         $this->setTable('pages');
         $this->setDisplayField('title');
         $this->setPrimaryKey('id');
-        
+
         $this->addBehavior('Timestamp', [
             'events' => [
                 'Model.beforeSave' => [
@@ -83,13 +82,13 @@ class PagesTable extends Table
 
         return $validator;
     }
-    
+
     public function findType(Query $query, array $options)
     {
         return $query
             ->where(['Pages.systemic' => $options['systemic']]);
     }
-    
+
     public function findAllPublished(Query $query, array $options)
     {
         return $query
@@ -98,13 +97,13 @@ class PagesTable extends Table
                 'Pages.published' => true
             ]);
     }
-    
+
     public function findPublished(Query $query, array $options)
     {
         return $this->find('allPublished')
             ->where(['Pages.slug' => $options['slug']]);
     }
-    
+
     public function tagged($slug)
     {
         $tagged = [];
@@ -114,7 +113,7 @@ class PagesTable extends Table
             ${$record} = ${$record . 'Table'}->find('tagged', [
                 'tag' => $slug,
             ])->toArray();
-            
+
             $key = 0;
             foreach(${$record} as ${Inflector::singularize($record)}) {
                 if (${Inflector::singularize($record)}->published) {
@@ -123,12 +122,12 @@ class PagesTable extends Table
                         'alias' => ${Inflector::singularize($record)}->alias,
                         'title' => ${Inflector::singularize($record)}->title
                     ];
-                        
+
                     $key++;
                 }
             }
         }
-        
+
         return $tagged;
     }
 }

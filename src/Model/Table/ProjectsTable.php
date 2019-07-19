@@ -29,7 +29,6 @@ use Cake\Core\Configure;
  */
 class ProjectsTable extends Table
 {
-
     /**
      * Initialize method
      *
@@ -43,11 +42,11 @@ class ProjectsTable extends Table
         $this->setTable('projects');
         $this->setDisplayField('title');
         $this->setPrimaryKey('id');
-        
+
         $this->hasMany('Posts', [
             'foreignKey' => 'project_id'
         ]);
-        
+
         $this->addBehavior('Timestamp', [
             'events' => [
                 'Model.beforeSave' => [
@@ -56,13 +55,12 @@ class ProjectsTable extends Table
                 ]
             ]
         ]);
-        
+
         $this->addBehavior('Tags.Tag', ['taggedCounter' => false]);
     }
 
     public function buildValidator(Event $event, Validator $validator, $name)
     {
-	
     }
 
     /**
@@ -82,7 +80,7 @@ class ProjectsTable extends Table
             ->maxLength('title', 255)
             ->requirePresence('title', 'create')
             ->notEmpty('title');
-        
+
         $validator
             ->scalar('heading')
             ->maxLength('heading', 255)
@@ -104,7 +102,7 @@ class ProjectsTable extends Table
             ->scalar('body')
             ->requirePresence('body', 'create')
             ->notEmpty('body');
-        
+
         $validator
             ->scalar('meta_keywords')
             ->maxLength('meta_keywords', 255)
@@ -122,7 +120,7 @@ class ProjectsTable extends Table
 
         return $validator;
     }
-    
+
     public function findAllPublished(Query $query, array $options)
     {
         return $query
@@ -130,7 +128,7 @@ class ProjectsTable extends Table
             ->order(['Projects.weight' => 'DESC', 'Projects.id' => 'DESC'])
             ->contain('Tags');
     }
-    
+
     public function findPublished(Query $query, array $options)
     {
         return $query

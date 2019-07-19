@@ -12,7 +12,6 @@ use App\Controller\AppController;
  */
 class ProjectsController extends AppController
 {
-
     /**
      * Index method
      *

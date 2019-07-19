@@ -13,12 +13,10 @@ $menu['gallery'] = true;
 echo $this->element('navigation', ['menu' => $menu]);
 $this->end();
 
-$this->start('script');
-echo $this->Html->script(['superbox', 'clipboard.min']);
-$this->end();
+echo $this->Html->script(['superbox', 'clipboard.min'], ['mode' => true]);
 ?>
 
-<?php $this->start('script1'); ?>
+<?php $this->start('script-code'); ?>
 <script type="text/javascript">
     $(document).ready(function () {
         $('.superbox').SuperBox();
@@ -71,13 +69,11 @@ $this->end();
             ?>
         </div>
         <?php endforeach; ?>
-        
+
         <div class="superbox-float"></div>
     </div>
     <!-- /SuperBox -->
 
     <div class="superbox-show" style="height:300px; display: none"></div>
-
 </div>
-
 <!-- end row -->

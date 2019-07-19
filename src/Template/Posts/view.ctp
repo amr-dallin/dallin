@@ -49,7 +49,7 @@ hljs.initHighlightingOnLoad();
                         <?php echo $this->element('breadcrumbs'); ?>
                         <h1><?php echo h($post->title); ?></h1>
                         <div class="article-date">
-                            <i class="far fa-calendar-alt"></i> 
+                            <i class="far fa-calendar-alt"></i>
                             <time datetime="<?php echo $this->Time->format($post->date_created, 'yyyy-MM-dd'); ?>">
                                 <?php echo $this->Time->format($post->date_created, 'dd.MM.yyyy'); ?>
                             </time>

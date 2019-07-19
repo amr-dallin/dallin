@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="ru_RU">
     <head>
         <?php echo $this->Html->charset() ?>
         <title><?php echo $this->fetch('title') ?></title>
@@ -14,45 +14,45 @@
 
         <!-- SmartAdmin Styles : Caution! DO NOT change the order -->
         <?php echo $this->Html->css(['smartadmin-production-plugins.min', 'smartadmin-production.min', 'smartadmin-skins.min']) ?>
-        
+
         <?php echo $this->fetch('css') ?>
 
         <!-- We recommend you use "your_style.css" to override SmartAdmin
-             specific styles this will also ensure you retrain your customization with each SmartAdmin update.
+        specific styles this will also ensure you retrain your customization with each SmartAdmin update.
         <link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
 
         <!-- #FAVICONS -->
         <?php echo $this->Html->meta('icon') ?>
 
         <!-- #GOOGLE FONT -->
-        <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
 
         <!-- #APP SCREEN / ICONS -->
-        <!-- Specifying a Webpage Icon for Web Clip 
-                 Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
+        <!-- Specifying a Webpage Icon for Web Clip
+        Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
 
         <!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        
+
         <link rel="apple-touch-icon" href="/img/touch-icon-iphone.png" type="image/png">
 		<link rel="apple-touch-icon" href="/img/touch-icon-ipad.png" type="image/png" sizes="76x76">
 		<link rel="apple-touch-icon" href="/img/touch-icon-iphone-retina.png" type="image/png" sizes="120x120">
 		<link rel="apple-touch-icon" href="/img/touch-icon-ipad-retina.png" type="image/png" sizes="152x152">
-		
-		<link rel="icon" href="/img/favicon-16x16.png" type="image/png" sizes="16x16">  
-		<link rel="icon" href="/img/favicon-32x32.png" type="image/png" sizes="32x32">  
+
+		<link rel="icon" href="/img/favicon-16x16.png" type="image/png" sizes="16x16">
+		<link rel="icon" href="/img/favicon-32x32.png" type="image/png" sizes="32x32">
 
     </head>
 
     <!--
 
     TABLE OF CONTENTS.
-    
+
     Use search to find needed section.
-    
+
     ===================================================================
-    
+
     |  01. #CSS Links                |  all CSS links and file paths  |
     |  02. #FAVICONS                 |  Favicon links and file paths  |
     |  03. #GOOGLE FONT              |  Google font link              |
@@ -69,9 +69,9 @@
     |  14. #PAGE FOOTER              |  page footer                   |
     |  15. #SHORTCUT AREA            |  dropdown shortcuts area       |
     |  16. #PLUGINS                  |  all scripts and plugins       |
-    
+
     ===================================================================
-    
+
     -->
 
     <!-- #BODY -->
@@ -106,8 +106,6 @@
             <!-- RIBBON -->
             <?php echo $this->fetch('ribbon'); ?>
             <!-- END RIBBON -->
-            
-            
 
             <!-- #MAIN CONTENT -->
             <div id="content">
@@ -115,7 +113,7 @@
                 <?php echo $this->fetch('title-heading'); ?>
                 <?php echo $this->fetch('content'); ?>
             </div>
-            
+
             <!-- END #MAIN CONTENT -->
 
         </div>
@@ -126,7 +124,7 @@
         <!-- END FOOTER -->
 
         <!-- #SHORTCUT AREA : With large tiles (activated via clicking user name tag)
-                 Note: These tiles are completely responsive, you can add as many as you like -->
+        Note: These tiles are completely responsive, you can add as many as you like -->
         <?php echo $this->element('shortcut'); ?>
         <!-- END SHORTCUT AREA -->
 
@@ -140,44 +138,44 @@
         <!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
         <?php echo $this->Html->script(['libs/jquery-3.2.1.min', 'libs/jquery-ui.min']); ?>
 
-           <!-- IMPORTANT: APP CONFIG -->
-    <?php echo $this->Html->script('app.config'); ?>
+        <!-- IMPORTANT: APP CONFIG -->
+        <?php echo $this->Html->script('app.config'); ?>
 
         <!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
-    <?php echo $this->Html->script('plugin/jquery-touch/jquery.ui.touch-punch.min'); ?>
+        <?php echo $this->Html->script('plugin/jquery-touch/jquery.ui.touch-punch.min'); ?>
 
         <!-- BOOTSTRAP JS -->
-    <?php echo $this->Html->script('bootstrap/bootstrap.min'); ?>
+        <?php echo $this->Html->script('bootstrap/bootstrap.min'); ?>
 
         <!-- CUSTOM NOTIFICATION -->
-    <?php echo $this->Html->script('notification/SmartNotification.min'); ?>
+        <?php echo $this->Html->script('notification/SmartNotification.min'); ?>
 
         <!-- JARVIS WIDGETS -->
-    <?php echo $this->Html->script('smartwidgets/jarvis.widget.min'); ?>
+        <?php echo $this->Html->script('smartwidgets/jarvis.widget.min'); ?>
 
         <!-- EASY PIE CHARTS -->
-    <?php echo $this->Html->script('plugin/easy-pie-chart/jquery.easy-pie-chart.min'); ?>
+        <?php echo $this->Html->script('plugin/easy-pie-chart/jquery.easy-pie-chart.min'); ?>
 
         <!-- SPARKLINES -->
-    <?php echo $this->Html->script('plugin/sparkline/jquery.sparkline.min'); ?>
+        <?php echo $this->Html->script('plugin/sparkline/jquery.sparkline.min'); ?>
 
         <!-- JQUERY VALIDATE -->
-    <?php echo $this->Html->script('plugin/jquery-validate/jquery.validate.min'); ?>
+        <?php echo $this->Html->script('plugin/jquery-validate/jquery.validate.min'); ?>
 
         <!-- JQUERY MASKED INPUT -->
-    <?php echo $this->Html->script('plugin/masked-input/jquery.maskedinput.min'); ?>
+        <?php echo $this->Html->script('plugin/masked-input/jquery.maskedinput.min'); ?>
 
         <!-- JQUERY SELECT2 INPUT -->
-    <?php echo $this->Html->script('plugin/select2/select2.min'); ?>
+        <?php echo $this->Html->script('plugin/select2/select2.min'); ?>
 
         <!-- JQUERY UI + Bootstrap Slider -->
-    <?php echo $this->Html->script('plugin/bootstrap-slider/bootstrap-slider.min'); ?>
+        <?php echo $this->Html->script('plugin/bootstrap-slider/bootstrap-slider.min'); ?>
 
         <!-- browser msie issue fix -->
-    <?php echo $this->Html->script('plugin/msie-fix/jquery.mb.browser.min'); ?>
+        <?php echo $this->Html->script('plugin/msie-fix/jquery.mb.browser.min'); ?>
 
         <!-- FastClick: For mobile devices -->
-    <?php echo $this->Html->script('plugin/fastclick/fastclick.min'); ?>
+        <?php echo $this->Html->script('plugin/fastclick/fastclick.min'); ?>
 
         <!--[if IE 8]>
 
@@ -186,23 +184,21 @@
         <![endif]-->
 
         <!-- MAIN APP JS FILE -->
-    <?php echo $this->Html->script('app.min'); ?>
+        <?php echo $this->Html->script('app.min'); ?>
 
         <!-- ENHANCEMENT PLUGINS : NOT A REQUIREMENT -->
         <!-- Voice command : plugin -->
-    <?php echo $this->Html->script('speech/voicecommand.min'); ?>
+        <?php echo $this->Html->script('speech/voicecommand.min'); ?>
 
         <!-- PAGE RELATED PLUGIN(S) -->
 
-
-    <?php echo $this->fetch('script'); ?>
+        <?php echo $this->fetch('script'); ?>
         <script type="text/javascript">
             $(document).ready(function () {
                 pageSetUp();
             });
         </script>
-    <?php echo $this->fetch('script1'); ?>
-    <?php echo $this->fetch('script-code'); ?>
+        <?php echo $this->fetch('script1'); ?>
+        <?php echo $this->fetch('script-code'); ?>
     </body>
-
 </html>

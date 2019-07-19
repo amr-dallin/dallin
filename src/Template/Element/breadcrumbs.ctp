@@ -13,15 +13,15 @@
                     $this->Html->link(
                         $this->Html->tag('span', $breadcrumb['title'],
                             ['itemprop' => 'name']
-                        ), 
-                        $breadcrumb['url'], 
+                        ),
+                        $breadcrumb['url'],
                         [
                             'title' => $breadcrumb['title'],
                             'itemtype' => 'https://schema.org/Thing',
                             'itemprop' => 'item',
                             'escape' => false
                         ]
-                    ) . 
+                    ) .
                     $this->Html->meta(['itemprop' => 'position', 'content' => $key + 1]),
                     [
                         'class' => 'breadcrumb-item',

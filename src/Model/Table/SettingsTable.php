@@ -20,7 +20,6 @@ use Cake\Validation\Validator;
  */
 class SettingsTable extends Table
 {
-
     /**
      * Initialize method
      *
@@ -34,7 +33,7 @@ class SettingsTable extends Table
         $this->setTable('settings');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
-        
+
         $this->addBehavior('Timestamp', [
             'events' => [
                 'Model.beforeSave' => [
@@ -85,7 +84,7 @@ class SettingsTable extends Table
 
         return $validator;
     }
-    
+
     public function findPrefixSettings(Query $query, array $options)
     {
         return $query

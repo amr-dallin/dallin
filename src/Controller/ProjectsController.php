@@ -17,13 +17,13 @@ class ProjectsController extends AppController
     public $paginate = [
         'limit' => 10
     ];
-    
+
     public function initialize()
     {
         parent::initialize();
         $this->loadComponent('Paginator');
     }
-    
+
     public function beforeFilter(\Cake\Event\Event $event)
     {
         parent::beforeFilter($event);
@@ -38,13 +38,13 @@ class ProjectsController extends AppController
     {
         $query = $this->Projects->find('allPublished');
         $projects = $this->paginate($query);
-        
+
         $pagesTable = TableRegistry::getTableLocator()->get('Pages');
         $page = $pagesTable->get(4);
 
         $this->set(compact('page', 'projects'));
     }
-    
+
     /**
      * View method
      *
@@ -52,7 +52,7 @@ class ProjectsController extends AppController
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function view($slug)
-    {        
+    {
         $project = $this->Projects->find('published', ['slug' => $slug])->first();
         if (empty($project)) {
             throw new RecordNotFoundException(__('No project'));

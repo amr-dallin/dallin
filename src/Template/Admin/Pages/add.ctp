@@ -1,7 +1,7 @@
 <?php
 $title = __('Add Page');
 
-$this->assign('title', __('Add Post'));
+$this->assign('title', $title);
 
 $this->start('ribbon');
 $breadcrumbs = [
@@ -20,12 +20,10 @@ $menu['pages'][0] = true;
 echo $this->element('navigation', ['menu' => $menu]);
 $this->end();
 
-$this->start('script');
-echo $this->Html->script('plugin/summernote/summernote.min');
-$this->end();
+echo $this->Html->script('plugin/summernote/summernote.min', ['block' => true]);
 ?>
 
-<?php $this->start('script1'); ?>
+<?php $this->start('script-code'); ?>
 <script>
     $(document).ready(function() {
 		$('.summernote').summernote({
@@ -72,7 +70,7 @@ $this->end();
                                         'class' => 'form-control input-sm',
                                         'placeholder' => __('Slug')
                                     ]) . '<hr/>';
-                                    
+
                                     echo $this->Form->control('body', [
                                         'class' => 'form-control summernote',
                                         'placeholder' => __('Body')
@@ -84,7 +82,7 @@ $this->end();
                                     echo $this->Form->control('image', [
                                         'placeholder' => __('Image')
                                     ]) . '<hr/>';
-                                    
+
                                     echo $this->Form->control('meta_keywords', [
                                         'type' => 'textarea',
                                         'placeholder' => __('Meta Keywords')

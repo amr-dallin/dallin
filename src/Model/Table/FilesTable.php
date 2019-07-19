@@ -20,7 +20,6 @@ use Cake\Validation\Validator;
  */
 class FilesTable extends Table
 {
-
     /**
      * Initialize method
      *
@@ -34,7 +33,7 @@ class FilesTable extends Table
         $this->setTable('files');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
-        
+
         $this->addBehavior('Timestamp', [
             'events' => [
                 'Model.beforeSave' => [
@@ -43,7 +42,7 @@ class FilesTable extends Table
                 ]
             ]
         ]);
-        
+
         $this->hasOne('File', [
             'className' => 'Burzum/FileStorage.FileStorage',
             'foreignKey' => 'foreign_key',

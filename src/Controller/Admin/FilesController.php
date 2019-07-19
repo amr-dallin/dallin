@@ -12,7 +12,6 @@ use App\Controller\AppController;
  */
 class FilesController extends AppController
 {
-
     /**
      * Index method
      *
@@ -53,11 +52,11 @@ class FilesController extends AppController
         $file = $this->Files->newEntity();
         if ($this->request->is('post')) {
             $file = $this->Files->patchEntity($file, $this->request->getData());
-            
+
             if (!empty($file->file->file)) {
                 $file->file->set('model', 'Files');
             }
-            
+
             if ($this->Files->save($file)) {
                 $this->Flash->success(__('The file has been saved.'));
 

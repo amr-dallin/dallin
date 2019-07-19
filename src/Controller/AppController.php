@@ -53,29 +53,34 @@ class AppController extends Controller
                 'controller' => 'users',
                 'action' => 'login',
                 'prefix' => 'admin'
+            ],
+            'loginRedirect' => [
+                'controller' => 'Pages',
+                'action' => 'index',
+                'prefix' => 'admin'
             ]
         ]);
 
         //$this->loadComponent('Security');
     }
-    
+
     public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
     }
-    
+
     public function beforeRender(\Cake\Event\Event $event)
     {
         if (
-            !empty($this->request->getParam('prefix')) && 
+            !empty($this->request->getParam('prefix')) &&
             $this->request->getParam('prefix') === 'admin'
         ) {
             $this->viewBuilder()->setTheme('SmartAdmin');
         }
-        
+
         $this->__setSettings();
     }
-    
+
     public function isAuthorized($user)
     {
         if (!empty($user)) {
@@ -83,7 +88,7 @@ class AppController extends Controller
         }
         return false;
     }
-    
+
     private function __setSettings()
     {
         $settingsTable = TableRegistry::getTableLocator()->get('Settings');
@@ -92,5 +97,4 @@ class AppController extends Controller
             Configure::write('Settings.' . $setting->field_key, $setting->value);
         }
     }
-
 }

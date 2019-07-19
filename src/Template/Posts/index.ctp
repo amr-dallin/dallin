@@ -6,17 +6,17 @@ $body = $page->body;
 
 if (isset($tag)) {
     $label = '#' . h($tag->label);
-    
+
     $title = $label . ' | ' . Configure::read('Settings.Site.author');
-    $body = $this->Html->tag('h1', $label) . 
+    $body = $this->Html->tag('h1', $label) .
         $this->Html->tag('p', h($tag->description), ['class' => 'lead mb-0']);
-    
+
     $breadcrumbs = [
         ['title' => __('Blog'), 'url' => ['action' => 'index']],
         ['title' => $label]
     ];
     $this->set('breadcrumbs', $breadcrumbs);
-} 
+}
 
 $this->assign('title', $title);
 
@@ -44,7 +44,7 @@ $this->set('menu', 'posts');
 </div>
 
 <div class="container">
-    <?php if ($this->request['paging']['Posts']['count'] > 0): ?>
+    <?php if ($this->request->getParam('paging.Posts.count') > 0): ?>
     <div class="row justify-content-center">
         <div class="col-md-9 col-lg-8">
             <?php foreach($posts as $post): ?>

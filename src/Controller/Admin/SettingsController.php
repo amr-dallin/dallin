@@ -12,7 +12,7 @@ use Cake\Datasource\Exception\RecordNotFoundException;
  * @method \App\Model\Entity\Setting[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
 class SettingsController extends AppController
-{   
+{
     /**
      * Index method
      *
@@ -26,7 +26,7 @@ class SettingsController extends AppController
         if (empty($settings)) {
             throw new RecordNotFoundException(__('No settings'));
         }
-        
+
         $this->set('settings', $settings);
     }
 
@@ -39,7 +39,7 @@ class SettingsController extends AppController
     {
         $setting = $this->Settings->newEntity();
         if ($this->request->is('post')) {
-            
+
             $setting = $this->Settings->patchEntity($setting, $this->request->getData());
             if ($this->Settings->save($setting)) {
                 $this->Flash->success(__('The setting has been saved.'));
@@ -59,12 +59,12 @@ class SettingsController extends AppController
     public function edit()
     {
         $this->request->allowMethod('ajax');
-        
+
         $setting = $this->Settings->get($this->request->getData('pk'));
-        
+
         $setting->value = $this->request->getData('value');
         $this->Settings->save($setting);
-        
+
         $this->set([
             'valid' => null,
             '_serialize' => 'valid'

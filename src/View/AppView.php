@@ -43,9 +43,8 @@ class AppView extends View
             'pathPrefix' => DS . 'assets' . DS
         ]);
         $this->loadHelper('Paginator', ['templates' => 'paginator-templates']);
-        
+
         $configure = Configure::read();
-        
         $this->set('configure', $configure);
     }
 }

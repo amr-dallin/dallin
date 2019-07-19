@@ -1,19 +1,3 @@
-<?php
-/**
- * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link          https://cakephp.org CakePHP(tm) Project
- * @since         0.10.0
- * @license       https://opensource.org/licenses/mit-license.php MIT License
- */
-?>
-
 <header id="header">
 
     <!-- #TOGGLE LAYOUT BUTTONS -->
@@ -30,7 +14,7 @@
         <!-- Top menu profile link : this shows only when top menu is active -->
         <ul id="mobile-profile-img" class="header-dropdown-list hidden-xs padding-5">
             <li class="">
-                <a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown"> 
+                <a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown">
                 </a>
                 <ul class="dropdown-menu pull-right">
                     <li>
@@ -69,10 +53,6 @@
             </span>
         </div>
         <!-- end logout button -->
-
-        
-
     </div>
     <!-- end pulled right: nav area -->
-
 </header>

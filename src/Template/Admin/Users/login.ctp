@@ -1,13 +1,7 @@
 <?php
 $this->layout = 'login';
-
-$this->start('title');
-echo __('Login');
-$this->end();
+$this->assign('title', __('Login'));
 ?>
-
-<div class="row">
-    <div class="col-md-offset-4 col-xs-12 col-sm-12 col-md-5 col-lg-4">
         <div class="well">
             <?php
             echo $this->Form->create('Users', [

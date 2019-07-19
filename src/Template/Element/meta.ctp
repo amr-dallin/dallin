@@ -41,19 +41,19 @@ if (isset($twitter_card) && !empty($twitter_card)) {
 }
 echo $this->Html->meta(['name' => 'twitter:card', 'content' => $card]) . PHP_EOL;
 echo $this->Html->meta([
-    'name' => 'twitter:site', 
+    'name' => 'twitter:site',
     'content' => '@' . Configure::read('Settings.Contacts.twitter')
 ]) . PHP_EOL;
 
 echo $this->Html->meta([
-    'name' => 'twitter:creator', 
+    'name' => 'twitter:creator',
     'content' => '@' . Configure::read('Settings.Contacts.twitter')
 ]) . PHP_EOL;
 // End twitter cards -----------------------------
 
 
 echo $this->Html->meta([
-    'property' => 'fb:app_id', 
+    'property' => 'fb:app_id',
     'content' => Configure::read('Settings.App.facebook')
 ]) . PHP_EOL;
 
