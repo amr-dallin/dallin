@@ -7,7 +7,9 @@
 /vendor/*
 
 /webroot/~
+/webroot/assets
 /file_storage/*
+
 
 # OS generated files #
 ######################
