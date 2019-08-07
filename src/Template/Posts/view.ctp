@@ -27,7 +27,7 @@ $this->end();
 
 $breadcrumbs = [
     ['title' => __('Blog'), 'url' => ['action' => 'index']],
-    ['title' => h($post->title)]
+    ['title' => h($post->heading)]
 ];
 $this->set('breadcrumbs', $breadcrumbs);
 
