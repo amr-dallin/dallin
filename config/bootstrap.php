@@ -229,6 +229,13 @@ Configure::write('FileStorage', [
                 ]
             ]
         ],
+        'PageImages' => [
+            't382x200' => [
+                'thumbnail' => [
+                    'width' => 382, 'height' => 200
+                ]
+            ]
+        ],
         'PostImages' => [
             't382x200' => [
                 'thumbnail' => [

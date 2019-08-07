@@ -14,7 +14,10 @@ $menu['pages'][1] = true;
 echo $this->element('navigation', ['menu' => $menu]);
 $this->end();
 
-echo $this->Html->script('plugin/summernote/summernote.min', ['block' => true]);
+echo $this->Html->script([
+    'plugin/summernote/summernote.min',
+    'https://cdn.jsdelivr.net/npm/transliteration@2.1.3/dist/browser/bundle.umd.min.js'
+], ['block' => true]);
 ?>
 
 <?php $this->start('script-code'); ?>
@@ -32,6 +35,12 @@ echo $this->Html->script('plugin/summernote/summernote.min', ['block' => true]);
                 ['view', ['fullscreen', 'codeview']]
             ]
 		});
+
+        $('#title').on('input', function() {
+            var text = $(this).val();
+            var msg = slugify(text, { lowercase: true, separator: '_' });
+            $("#slug").val(msg);
+        });
     });
 </script>
 <?php $this->end(); ?>
@@ -75,7 +84,8 @@ echo $this->Html->script('plugin/summernote/summernote.min', ['block' => true]);
                         <?php
                         echo $this->Form->create($page, [
                             'autocomplete' => 'off',
-                            'templates' => 'SmartAdmin.app_form'
+                            'templates' => 'SmartAdmin.app_form',
+                            'type' => 'file'
                         ]);
                         ?>
                         <fieldset>
@@ -86,30 +96,47 @@ echo $this->Html->script('plugin/summernote/summernote.min', ['block' => true]);
                                         'class' => 'form-control input-lg',
                                         'placeholder' => __('Title')
                                     ]);
-                                    echo $this->Form->control('slug', [
-                                        'class' => 'form-control input-sm',
-                                        'placeholder' => __('Slug')
-                                    ]) . '<hr/>';
 
                                     echo $this->Form->control('body', [
                                         'class' => 'form-control summernote',
                                         'placeholder' => __('Body')
+                                    ]) . '<hr/>';
+
+                                    echo $this->Form->control('slug', [
+                                        'placeholder' => __('Slug')
                                     ]);
                                     ?>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <?php
+                                            echo $this->Form->control('meta_keywords', [
+                                                'type' => 'textarea',
+                                                'placeholder' => __('Meta Keywords')
+                                            ]);
+                                            ?>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <?php
+                                            echo $this->Form->control('meta_description', [
+                                                'type' => 'textarea',
+                                                'placeholder' => __('Meta Description')
+                                            ]);
+                                            ?>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-sm-12 col-md-5 col-lg-4">
                                     <?php
-                                    echo $this->Form->control('image', [
-                                        'placeholder' => __('Image')
-                                    ]) . '<hr/>';
-
-                                    echo $this->Form->control('meta_keywords', [
-                                        'type' => 'textarea',
-                                        'placeholder' => __('Meta Keywords')
-                                    ]);
-                                    echo $this->Form->control('meta_description', [
-                                        'type' => 'textarea',
-                                        'placeholder' => __('Meta Description')
+                                    echo '<legend>' . __('Open Graph Image') . '</legend>';
+                                    if (!empty($page->image)) {
+                                        echo $this->Image->display($page->image, 't382x200', ['class' => 'img-responsive']);
+                                        echo $this->Form->control('image.old_file_id', [
+                                            'type' => 'hidden',
+                                            'value' => $page->image->id
+                                        ]);
+                                    }
+                                    echo $this->Form->control('image.file', [
+                                        'type' => 'file'
                                     ]) . '<hr/>';
 
                                     echo $this->Form->control('published');

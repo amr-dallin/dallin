@@ -45,6 +45,14 @@ class PagesTable extends Table
                 ]
             ]
         ]);
+
+        $this->hasOne('Image', [
+            'className' => 'Burzum/FileStorage.FileStorage',
+            'foreignKey' => 'foreign_key',
+            'conditions' => ['Image.model' => 'PageImages'],
+            'cascadeCallbacks' => true,
+            'dependent' => true
+        ]);
     }
 
     /**
