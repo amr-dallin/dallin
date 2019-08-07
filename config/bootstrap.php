@@ -242,6 +242,13 @@ Configure::write('FileStorage', [
                     'width' => 382, 'height' => 200
                 ]
             ]
+        ],
+        'ProjectImages' => [
+            't382x200' => [
+                'thumbnail' => [
+                    'width' => 382, 'height' => 200
+                ]
+            ]
         ]
     ]
 ]);

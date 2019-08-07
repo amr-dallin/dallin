@@ -57,6 +57,14 @@ class ProjectsTable extends Table
         ]);
 
         $this->addBehavior('Tags.Tag', ['taggedCounter' => false]);
+
+        $this->hasOne('Image', [
+            'className' => 'Burzum/FileStorage.FileStorage',
+            'foreignKey' => 'foreign_key',
+            'conditions' => ['Image.model' => 'ProjectImages'],
+            'cascadeCallbacks' => true,
+            'dependent' => true
+        ]);
     }
 
     public function buildValidator(Event $event, Validator $validator, $name)
@@ -93,10 +101,10 @@ class ProjectsTable extends Table
             ->requirePresence('slug', 'create')
             ->notEmpty('slug');
 
-        $validator
-            ->scalar('description')
-            ->requirePresence('description', 'create')
-            ->notEmpty('description');
+            $validator
+            ->scalar('lead')
+            ->requirePresence('lead', 'create')
+            ->notEmpty('lead');
 
         $validator
             ->scalar('body')
