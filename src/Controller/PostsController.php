@@ -69,7 +69,10 @@ class PostsController extends AppController
      */
     public function view($slug)
     {
-        $post = $this->Posts->find('published', ['slug' => $slug])->first();
+        $post = $this->Posts
+            ->find('published', ['slug' => $slug])
+            ->contain('Image')
+            ->first();
         if (empty($post)) {
             throw new RecordNotFoundException(__('No post'));
         }

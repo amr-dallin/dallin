@@ -1,14 +1,27 @@
 <?php
-$this->assign('title', h($post->title));
+$title = h($post->title);
 
 $this->set('menu', 'posts');
 
 $this->start('meta');
 echo $this->element('meta', [
-    'title' => h($post->title),
-    'url' =>  $this->Url->build(['action' => 'view', 'slug' => h($post->slug)], true),
-    'meta_keywords' => h($post->meta_keywords),
-    'meta_description' => h($post->meta_description)
+    'title' => $title,
+    'meta' => [
+        'keywords' => h($post->meta_keywords),
+        'description' => h($post->meta_description)
+    ],
+    'og' => [
+        'title' => $title,
+        'description' => h($post->meta_description),
+        'image' => [
+            'url' => $this->Url->build($this->Image->imageUrl($post->image), true)
+        ],
+        'url' => $this->Url->build(['slug' => h($post->slug)], true)
+    ],
+    'twitter' => [
+        'card' => 'summary_large_image'
+    ],
+    'canonical' => $this->Url->build(['slug' => h($post->slug)], true)
 ]);
 $this->end();
 
@@ -30,13 +43,13 @@ echo $this->Html->script([
 
 <?php $this->start('script-code'); ?>
 <script>
-$(".share-list").jsSocials({
-    showLabel: false,
-    shareIn: "popup",
-    showCount: false,
-    shares: ["email", "linkedin", "facebook", "vkontakte", "twitter", "telegram", "whatsapp"]
-});
-hljs.initHighlightingOnLoad();
+    $(".share-list").jsSocials({
+        showLabel: false,
+        shareIn: "popup",
+        showCount: false,
+        shares: ["email", "linkedin", "facebook", "vkontakte", "twitter", "telegram", "whatsapp"]
+    });
+    hljs.initHighlightingOnLoad();
 </script>
 <?php $this->end(); ?>
 
@@ -47,7 +60,7 @@ hljs.initHighlightingOnLoad();
                 <div class="col col-md-11 col-lg-10">
                     <header>
                         <?php echo $this->element('breadcrumbs'); ?>
-                        <h1><?php echo h($post->title); ?></h1>
+                        <h1><?php echo h($post->heading); ?></h1>
                         <div class="article-date">
                             <i class="far fa-calendar-alt"></i>
                             <time datetime="<?php echo $this->Time->format($post->date_created, 'yyyy-MM-dd'); ?>">

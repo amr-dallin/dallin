@@ -18,14 +18,25 @@ if (isset($tag)) {
     $this->set('breadcrumbs', $breadcrumbs);
 }
 
-$this->assign('title', $title);
-
 $this->start('meta');
 echo $this->element('meta', [
     'title' => $title,
-    'url' =>  $this->Url->build(['action' => 'index'], true),
-    'meta_keywords' => h($page->meta_keywords),
-    'meta_description' => h($page->meta_description)
+    'meta' => [
+        'keywords' => h($page->meta_keywords),
+        'description' => h($page->meta_description)
+    ],
+    'og' => [
+        'title' => $title,
+        'description' => h($page->meta_description),
+        'image' => [
+            //'url' => $this->Url->build($this->Image->imageUrl($page->image), true)
+        ],
+        'url' => $this->Url->build(['action' => 'index'], true)
+    ],
+    'twitter' => [
+        'card' => 'summary_large_image'
+    ],
+    'canonical' => $this->Url->build(['action' => 'index'], true)
 ]);
 $this->end();
 
