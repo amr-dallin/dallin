@@ -8,9 +8,8 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string $title
- * @property string $alias
+ * @property string $slug
  * @property string $body
- * @property string $cover
  * @property string $meta_keywords
  * @property string $meta_description
  * @property \Cake\I18n\FrozenTime $date_created
@@ -38,7 +37,7 @@ class Project extends Entity
         'title' => true,
         'heading' => true,
         'slug' => true,
-        'description' => true,
+        'lead' => true,
         'body' => true,
         'url' => true,
         'image' => true,

@@ -16,12 +16,11 @@ $menu['projects'][0] = true;
 echo $this->element('navigation', ['menu' => $menu]);
 $this->end();
 
-$this->start('script');
 echo $this->Html->script([
     'plugin/summernote/summernote.min',
-    'plugin/bootstrap-tags/bootstrap-tagsinput.min'
-]);
-$this->end();
+    'plugin/bootstrap-tags/bootstrap-tagsinput.min',
+    'https://cdn.jsdelivr.net/npm/transliteration@2.1.3/dist/browser/bundle.umd.min.js'
+], ['block' => true]);
 ?>
 
 <?php $this->start('script-code'); ?>
@@ -39,6 +38,13 @@ $this->end();
                 ['view', ['fullscreen', 'codeview']]
             ]
 		});
+
+        $('#heading').on('input', function() {
+            var text = $(this).val();
+            var msg = slugify(text, { lowercase: true, separator: '_' });
+            $("#title").val(text);
+            $("#slug").val(msg);
+        });
     });
 </script>
 <?php $this->end(); ?>
@@ -65,56 +71,66 @@ $this->end();
                         <?php
                         echo $this->Form->create($project, [
                             'autocomplete' => 'off',
-                            'templates' => 'SmartAdmin.app_form'
+                            'templates' => 'SmartAdmin.app_form',
+                            'type' => 'file'
                         ]);
                         ?>
                         <fieldset>
                             <div clas="row">
                                 <div class="col-sm-12 col-md-7 col-lg-8">
                                     <?php
-                                    echo $this->Form->control('title', [
-                                        'class' => 'form-control input-lg',
-                                        'placeholder' => __('Title')
-                                    ]);
                                     echo $this->Form->control('heading', [
+                                        'class' => 'form-control input-lg',
                                         'placeholder' => __('Heading')
                                     ]);
-                                    echo $this->Form->control('slug', [
-                                        'class' => 'form-control input-sm',
-                                        'placeholder' => __('Slug')
-                                    ]) . '<hr/>';
-                                    
-                                    echo $this->Form->control('description', [
-                                        'type' => 'textarea',
-                                        'placeholder' => __('Description')
+
+                                    echo $this->Form->control('lead', [
+                                        'placeholder' => __('Lead')
                                     ]);
                                     echo $this->Form->control('body', [
                                         'class' => 'form-control summernote',
                                         'placeholder' => __('Body')
+                                    ]) . '<hr/>';
+
+                                    echo $this->Form->control('title', [
+                                        'placeholder' => __('Title')
                                     ]);
+                                    echo $this->Form->control('slug', [
+                                        'placeholder' => __('Slug')
+                                    ]) . '<hr/>';
                                     ?>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <?php
+                                            echo $this->Form->control('meta_keywords', [
+                                                'type' => 'textarea',
+                                                'placeholder' => __('Meta Keywords')
+                                            ]);
+                                            ?>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <?php
+                                            echo $this->Form->control('meta_description', [
+                                                'type' => 'textarea',
+                                                'placeholder' => __('Meta Description')
+                                            ]);
+                                            ?>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-sm-12 col-md-5 col-lg-4">
                                     <?php
-                                    echo $this->Form->control('image', [
-                                        'placeholder' => __('Image')
+                                    echo '<legend>' . __('Open Graph Image') . '</legend>';
+                                    echo $this->Form->control('image.file', [
+                                        'type' => 'file'
                                     ]) . '<hr/>';
-                                    
+
                                     echo $this->Form->control('url', [
                                         'placeholder' => __('URL')
                                     ]) . '<hr/>';
-                                    
-                                    echo $this->Form->control('meta_keywords', [
-                                        'label' => ['class' => 'sr-only'],
-                                        'class' => 'form-control',
-                                        'type' => 'textarea',
-                                        'placeholder' => __('Meta Keywords')
-                                    ]);
-                                    echo $this->Form->control('meta_description', [
-                                        'label' => ['class' => 'sr-only'],
-                                        'class' => 'form-control',
-                                        'type' => 'textarea',
-                                        'placeholder' => __('Meta Description')
+
+                                    echo $this->Form->control('weight', [
+                                        'placeholder' => __('Weight')
                                     ]) . '<hr/>';
 
                                     echo $this->Tag->control([
@@ -138,17 +154,13 @@ $this->end();
                                 </div>
                             </div>
                         </div>
-                        
                         <?php echo $this->Form->end(); ?>
                     </div>
                     <!-- end widget content -->
-
                 </div>
                 <!-- end widget div -->
-
             </div>
             <!-- end widget -->
-
         </article>
     </div>
 </section>

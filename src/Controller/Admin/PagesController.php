@@ -39,6 +39,11 @@ class PagesController extends AppController
         $page = $this->Pages->newEntity();
         if ($this->request->is('post')) {
             $page = $this->Pages->patchEntity($page, $this->request->getData());
+
+            if (!empty($page->image->file)) {
+                $page->image->set('model', 'PageImages');
+            }
+
             if ($this->Pages->save($page)) {
                 $this->Flash->success(__('The page has been saved.'));
 
@@ -59,10 +64,15 @@ class PagesController extends AppController
     public function edit($id = null)
     {
         $page = $this->Pages->get($id, [
-            'contain' => []
+            'contain' => ['Image']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $page = $this->Pages->patchEntity($page, $this->request->getData());
+
+            if (!empty($page->image->file)) {
+                $page->image->set('model', 'PageImages');
+            }
+
             if ($this->Pages->save($page)) {
                 $this->Flash->success(__('The page has been saved.'));
 

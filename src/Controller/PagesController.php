@@ -33,7 +33,11 @@ class PagesController extends AppController
 
     public function view($slug)
     {
-        $page = $this->Pages->find('published', ['slug' => $slug])->first();
+        $page = $this->Pages
+            ->find('published', ['slug' => $slug])
+            ->contain('Image')
+            ->first();
+
         if (empty($page)) {
             throw new RecordNotFoundException(__('No page'));
         }
