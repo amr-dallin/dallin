@@ -51,6 +51,14 @@ class PostsTable extends Table
         ]);
 
         $this->addBehavior('Tags.Tag', ['taggedCounter' => false]);
+
+        $this->hasOne('Image', [
+            'className' => 'Burzum/FileStorage.FileStorage',
+            'foreignKey' => 'foreign_key',
+            'conditions' => ['Image.model' => 'PostImages'],
+            'cascadeCallbacks' => true,
+            'dependent' => true
+        ]);
     }
 
     /**

@@ -1,5 +1,5 @@
 <?php echo $this->Html->docType(); ?>
-<html lang="en" prefix="http://ogp.me/ns#">
+<html lang="ru_RU" prefix="http://ogp.me/ns#">
     <head>
         <?php
         echo $this->fetch('meta');

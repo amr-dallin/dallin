@@ -8,12 +8,11 @@
         "php": ">=5.6",
         "burzum/cakephp-imagine-plugin": "3.x-dev",
         "burzum/file-storage": "2.*",
-        "cakephp/cakephp": "3.6.*",
+        "cakephp/cakephp": "3.8.*",
         "cakephp/migrations": "^2.0.0",
         "cakephp/plugin-installer": "^1.0",
-        "dereuromark/cakephp-ajax": "^1.2",
-        "dereuromark/cakephp-tags": "^0.4.2",
-        "friendsofcake/search": "^4.5",
+        "dereuromark/cakephp-ajax": "1.4.*",
+        "dereuromark/cakephp-tags": "0.*",
         "josegonzalez/dotenv": "3.*",
         "mobiledetect/mobiledetectlib": "2.*"
     },
@@ -21,7 +20,6 @@
         "cakephp/bake": "^1.1",
         "cakephp/cakephp-codesniffer": "^3.0",
         "cakephp/debug_kit": "^3.15.0",
-        "dereuromark/cakephp-ide-helper": "^0.12.7",
         "psy/psysh": "@stable"
     },
     "suggest": {
@@ -32,16 +30,14 @@
     "autoload": {
         "psr-4": {
             "App\\": "src/",
-            "SmartAdmin\\": "./plugins/SmartAdmin/src/",
-            "MaratDallin\\": "./plugins/MaratDallin/src/"
+            "SmartAdmin\\": "./plugins/SmartAdmin/src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
             "App\\Test\\": "tests/",
             "Cake\\Test\\": "vendor/cakephp/cakephp/tests/",
-            "SmartAdmin\\Test\\": "./plugins/SmartAdmin/tests/",
-            "MaratDallin\\Test\\": "./plugins/MaratDallin/tests/"
+            "SmartAdmin\\Test\\": "./plugins/SmartAdmin/tests/"
         }
     },
     "scripts": {

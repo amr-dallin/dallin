@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php echo $this->Html->docType(); ?>
 <html lang="ru_RU">
     <head>
         <?php echo $this->Html->charset() ?>
@@ -18,7 +18,7 @@
         <?php echo $this->fetch('css') ?>
 
         <!-- We recommend you use "your_style.css" to override SmartAdmin
-        specific styles this will also ensure you retrain your customization with each SmartAdmin update.
+            specific styles this will also ensure you retrain your customization with each SmartAdmin update.
         <link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
 
         <!-- #FAVICONS -->
@@ -29,7 +29,7 @@
 
         <!-- #APP SCREEN / ICONS -->
         <!-- Specifying a Webpage Icon for Web Clip
-        Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
+                Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
 
         <!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -124,7 +124,7 @@
         <!-- END FOOTER -->
 
         <!-- #SHORTCUT AREA : With large tiles (activated via clicking user name tag)
-        Note: These tiles are completely responsive, you can add as many as you like -->
+                Note: These tiles are completely responsive, you can add as many as you like -->
         <?php echo $this->element('shortcut'); ?>
         <!-- END SHORTCUT AREA -->
 
@@ -192,13 +192,15 @@
 
         <!-- PAGE RELATED PLUGIN(S) -->
 
+
         <?php echo $this->fetch('script'); ?>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                pageSetUp();
-            });
-        </script>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    pageSetUp();
+                });
+            </script>
         <?php echo $this->fetch('script1'); ?>
         <?php echo $this->fetch('script-code'); ?>
     </body>
+
 </html>

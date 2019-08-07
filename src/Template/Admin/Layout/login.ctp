@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en-us">
+<?php echo $this->Html->docType(); ?>
+<html lang="ru_RU">
     <head>
         <?php echo $this->Html->charset() ?>
         <title><?php echo $this->fetch('title') ?></title>
         <meta name="robots" content="noindex">
-        <?php echo $this->fetch('meta') ?>
-
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
         <!-- #CSS Links -->
@@ -59,7 +57,7 @@
             <!-- MAIN CONTENT -->
             <div id="content" class="container">
             <div class="row">
-                <div class="col-md-offset-3 col-xs-12 col-sm-12 col-md-5 col-lg-6">
+                <div class="col-xs-12 col-md-offset-3 col-md-6">
                     <?php
                     echo $this->Flash->render();
                     echo $this->fetch('content');

@@ -3,5 +3,5 @@ setfacl -R -m u:${HTTPDUSER}:rwx tmp
 setfacl -R -d -m u:${HTTPDUSER}:rwx tmp
 setfacl -R -m u:${HTTPDUSER}:rwx logs
 setfacl -R -d -m u:${HTTPDUSER}:rwx logs
-setfacl -R -m u:${HTTPDUSER}:rwx webroot/assets
-setfacl -R -d -m u:${HTTPDUSER}:rwx webroot/assets
+setfacl -R -m u:${HTTPDUSER}:rwx file_storage
+setfacl -R -d -m u:${HTTPDUSER}:rwx file_storage

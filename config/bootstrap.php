@@ -41,6 +41,7 @@ use Cake\Error\ErrorHandler;
 use Cake\Http\ServerRequest;
 use Cake\Log\Log;
 use Cake\Mailer\Email;
+use Cake\Mailer\TransportFactory;
 use Cake\Utility\Inflector;
 use Cake\Utility\Security;
 use Cake\Event\EventManager;
@@ -48,6 +49,7 @@ use Burzum\FileStorage\Storage\StorageUtils;
 use Burzum\FileStorage\Storage\StorageManager;
 use Burzum\FileStorage\Storage\Listener\ImageProcessingListener;
 use Burzum\FileStorage\Storage\Listener\LocalListener;
+use Cake\ORM\TableRegistry;
 
 /**
  * Uncomment block of code below if you want to use `.env` file during development.
@@ -150,7 +152,7 @@ if (!Configure::read('App.fullBaseUrl')) {
 
 Cache::setConfig(Configure::consume('Cache'));
 ConnectionManager::setConfig(Configure::consume('Datasources'));
-Email::setConfigTransport(Configure::consume('EmailTransport'));
+TransportFactory::setConfig(Configure::consume('EmailTransport'));
 Email::setConfig(Configure::consume('Email'));
 Log::setConfig(Configure::consume('Log'));
 Security::setSalt(Configure::consume('Security.salt'));
@@ -203,9 +205,6 @@ Type::build('timestamp')
 //Inflector::rules('uninflected', ['dontinflectme']);
 //Inflector::rules('transliteration', ['/å/' => 'aa']);
 
-Plugin::load('SmartAdmin', ['bootstrap' => false, 'routes' => true]);
-
-
 StorageManager::config('Local', [
 	'adapterOptions' => [ROOT . DS . 'file_storage', true],
 	'adapterClass' => '\Gaufrette\Adapter\Local',
@@ -213,6 +212,10 @@ StorageManager::config('Local', [
 ]);
 
 EventManager::instance()->on(new LocalListener());
+
+EventManager::instance()->on('FileStorage.afterSave', function ($event, $entity) {
+    TableRegistry::get('Burzum/FileStorage.FileStorage')->deleteOldFileOnSave($entity);
+});
 
 // For automated image processing you'll have to attach this listener as well
 EventManager::instance()->on(new ImageProcessingListener());
@@ -225,8 +228,14 @@ Configure::write('FileStorage', [
                     'size' => 160
                 ]
             ]
+        ],
+        'PostImages' => [
+            't382x200' => [
+                'thumbnail' => [
+                    'width' => 382, 'height' => 200
+                ]
+            ]
         ]
     ]
-    
 ]);
 StorageUtils::generateHashes();
