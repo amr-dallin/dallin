@@ -41,8 +41,8 @@ echo $this->Html->meta(['property' => 'og:description', 'content' => $og['descri
 echo $this->Html->meta(['property' => 'og:url', 'content' => $og['url']]) . PHP_EOL;
 
 $og_image = $this->Url->build('/img/thumbnail.png', true);
-if (isset($og['image']['url'])) {
-    $og_image = $og['image']['url'];
+if (null !== $og['image']['url']) {
+    $og_image = $this->Url->build($this->Image->imageUrl($og['image']['url']), true);
 }
 
 echo $this->Html->meta(['property' => 'og:image', 'content' => $og_image]) . PHP_EOL;

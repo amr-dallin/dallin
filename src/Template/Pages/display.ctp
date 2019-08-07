@@ -1,12 +1,25 @@
 <?php
-$this->assign('title', h($page->title));
+$title = h($page->title);
 
 $this->start('meta');
 echo $this->element('meta', [
-    'title' => h($page->title),
-    'url' =>  $this->Url->build(['controller' => 'Pages', 'action' => 'display'], true),
-    'meta_keywords' => h($page->meta_keywords),
-    'meta_description' => h($page->meta_description)
+    'title' => $title,
+    'meta' => [
+        'keywords' => h($page->meta_keywords),
+        'description' => h($page->meta_description)
+    ],
+    'og' => [
+        'title' => $title,
+        'description' => h($page->meta_description),
+        'image' => [
+            'url' => $page->image
+        ],
+        'url' => $this->Url->build(['controller' => 'Pages', 'action' => 'display'], true)
+    ],
+    'twitter' => [
+        'card' => 'summary_large_image'
+    ],
+    'canonical' => $this->Url->build(['controller' => 'Pages', 'action' => 'display'], true)
 ]);
 $this->end();
 

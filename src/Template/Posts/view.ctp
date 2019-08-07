@@ -11,10 +11,10 @@ echo $this->element('meta', [
         'description' => h($post->meta_description)
     ],
     'og' => [
-        'title' => $title,
+        'title' => h($post->heading),
         'description' => h($post->meta_description),
         'image' => [
-            'url' => $this->Url->build($this->Image->imageUrl($post->image), true)
+            'url' => $post->image
         ],
         'url' => $this->Url->build(['slug' => h($post->slug)], true)
     ],

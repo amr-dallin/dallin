@@ -1,12 +1,22 @@
 <?php
-$this->assign('title', h($page->title));
+$title = h($page->title);
+
 $this->start('meta');
 echo $this->element('meta', [
-    'title' => h($page->title),
-    'url' => $this->Url->build(['slug' => h($page->slug)], true),
-    'og_image' => $this->Url->build('/assets/Files/dc/af/15/6a468e78e2924ef29f3d05652699b9b4/6a468e78e2924ef29f3d05652699b9b4.jpg', true),
-    'meta_keywords' => h($page->meta_keywords),
-    'meta_description' => h($page->meta_description)
+    'title' => $title,
+    'meta' => [
+        'keywords' => h($page->meta_keywords),
+        'description' => h($page->meta_description)
+    ],
+    'og' => [
+        'title' => $title,
+        'description' => h($page->meta_description),
+        'image' => [
+            'url' => $page->image
+        ],
+        'url' => $this->Url->build(['slug' => h($page->slug)], true)
+    ],
+    'canonical' => $this->Url->build(['slug' => h($page->slug)], true)
 ]);
 $this->end();
 

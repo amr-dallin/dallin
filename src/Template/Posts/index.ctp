@@ -29,7 +29,7 @@ echo $this->element('meta', [
         'title' => $title,
         'description' => h($page->meta_description),
         'image' => [
-            //'url' => $this->Url->build($this->Image->imageUrl($page->image), true)
+            'url' => $page->image
         ],
         'url' => $this->Url->build(['action' => 'index'], true)
     ],

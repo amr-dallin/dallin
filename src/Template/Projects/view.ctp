@@ -1,14 +1,27 @@
 <?php
-$this->assign('title', h($project->title));
+$title = h($project->title);
 
 $this->set('menu', 'projects');
 
 $this->start('meta');
 echo $this->element('meta', [
-    'title' => h($project->title),
-    'url' =>  $this->Url->build(['action' => 'view', 'slug' => h($project->slug)], true),
-    'meta_keywords' => h($project->meta_keywords),
-    'meta_description' => h($project->meta_description)
+    'title' => $title,
+    'meta' => [
+        'keywords' => h($project->meta_keywords),
+        'description' => h($project->meta_description)
+    ],
+    'og' => [
+        'title' => h($project->heading),
+        'description' => h($project->meta_description),
+        'image' => [
+            'url' => $project->image
+        ],
+        'url' => $this->Url->build(['slug' => h($project->slug)], true)
+    ],
+    'twitter' => [
+        'card' => 'summary_large_image'
+    ],
+    'canonical' => $this->Url->build(['slug' => h($project->slug)], true)
 ]);
 $this->end();
 
