@@ -22,13 +22,22 @@
 
         echo $this->Html->script([
             '/vendor/jquery-slim.min',
+            'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js',
             '/vendor/popper.min',
             '/vendor/bootstrap-4.1.2/dist/js/bootstrap.min',
-            '/vendor/zoom.js/js/zoom'
+            '/vendor/zoom.js/js/zoom',
+            'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js'
         ]);
 
         echo $this->fetch('script');
-        echo $this->fetch('script-code');
         ?>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                moment.locale('ru');
+            });
+        </script>
+
+        <?php echo $this->fetch('script-code'); ?>
     </body>
 </html>
