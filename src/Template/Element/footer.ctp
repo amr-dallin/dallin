@@ -1,6 +1,3 @@
-<?php
-use Cake\Core\Configure;
-?>
 <footer class="footer bg-dark mt-auto">
     <div class="container">
         <div class="row">
@@ -8,29 +5,22 @@ use Cake\Core\Configure;
                 <?php
                 echo $this->Html->image('logo.png', [
                     'width' => 20,
-                    'alt' => Configure::read('Settings.Site.title'),
-                    'title' => Configure::read('Settings.Site.title')
+                    'alt' => $configure['Settings']['Site']['title'],
+                    'title' => $configure['Settings']['Site']['title']
                 ]);
                 ?>
                 <br/><br/>
                 <p class="text-white-50">
-                    © 2008 - 2019. <?php echo Configure::read('Settings.Site.title'); ?><br/>
-                    <?php echo __('Mail: {0}', Configure::read('Settings.Contacts.mail')); ?>
+                    © 2008 - <?php echo date('Y'); ?>. <?php echo $configure['Settings']['Site']['title']; ?><br/>
+                    <?php echo __('Mail: {0}', $configure['Settings']['Contacts']['mail']); ?>
                 </p>
             </div>
             <div class="col-6 col-md-3">
                 <div class="h6">
                     <?php
                     echo $this->Html->link(__('About Me'),
-                        [
-                            'controller' => 'Pages', 
-                            'action' => 'view', 
-                            'slug' => 'about'
-                        ],
-                        [
-                            'class' => 'text-muted',
-                            'title' => __('About Me')
-                        ]
+                        ['controller' => 'Pages', 'action' => 'view', 'slug' => 'about'],
+                        ['class' => 'text-muted', 'title' => __('About Me')]
                     );
                     ?>
                 </div>
@@ -40,30 +30,17 @@ use Cake\Core\Configure;
                     </li>
                 </ul>
             </div>
-            <div class="col-6 col-md-3">
-                <div class="h6">
-                    <?php
-                    echo $this->Html->link(__('Projects'),
-                        ['controller' => 'Projects', 'action' => 'index'],
-                        [
-                            'class' => 'text-muted',
-                            'title' => __('Projects')
-                        ]
-                    );
-                    ?>
-                </div>
-            </div>
             <div class="col-6 col-md">
                 <div class="h6 text-muted"><?php echo __('Social'); ?></div>
                 <ul class="list-unstyled text-small">
-                    <li><a class="text-white-50" href="https://medium.com/@<?php echo Configure::read('Settings.Contacts.medium'); ?>" target="_blank">Medium</a></li>
-                    <li><a class="text-white-50" href="https://www.linkedin.com/in/<?php echo Configure::read('Settings.Contacts.linkedin'); ?>/" target="_blank">LinkedIn</a></li>
-                    <li><a class="text-white-50" href="https://github.com/<?php echo Configure::read('Settings.Contacts.github'); ?>" target="_blank">Github</a></li>
-                    <li><a class="text-white-50" href="https://www.facebook.com/<?php echo Configure::read('Settings.Contacts.facebook'); ?>" target="_blank">Facebook</a></li>
-                    <li><a class="text-white-50" href="https://vk.com/<?php echo Configure::read('Settings.Contacts.vk'); ?>" target="_blank">ВКонтакте</a></li>
-                    <li><a class="text-white-50" href="https://twitter.com/<?php echo Configure::read('Settings.Contacts.twitter'); ?>" target="_blank">Twitter</a></li>
+                    <li><a class="text-white-50" href="https://medium.com/@<?php echo $configure['Settings']['Contacts']['medium']; ?>" target="_blank">Medium</a></li>
+                    <li><a class="text-white-50" href="https://www.linkedin.com/in/<?php echo $configure['Settings']['Contacts']['linkedin']; ?>/" target="_blank">LinkedIn</a></li>
+                    <li><a class="text-white-50" href="https://github.com/<?php echo $configure['Settings']['Contacts']['github']; ?>" target="_blank">Github</a></li>
+                    <li><a class="text-white-50" href="https://www.facebook.com/<?php echo $configure['Settings']['Contacts']['facebook']; ?>" target="_blank">Facebook</a></li>
+                    <li><a class="text-white-50" href="https://vk.com/<?php echo $configure['Settings']['Contacts']['vk']; ?>" target="_blank">ВКонтакте</a></li>
+                    <li><a class="text-white-50" href="https://twitter.com/<?php echo $configure['Settings']['Contacts']['twitter']; ?>" target="_blank">Twitter</a></li>
                 </ul>
             </div>
         </div>
-    </div>   
+    </div>
 </footer>

@@ -54,8 +54,8 @@ echo $this->Html->script([
 <?php $this->end(); ?>
 
 <article class="article">
-    <div class="jumbotron jumbotron-fluid bg-light">
-        <div class="container">
+    <div class="jumbotron jumbotron-fluid bg-light mb-5">
+        <div class="container py-3">
             <div class="row justify-content-center">
                 <div class="col col-md-11 col-lg-10">
                     <header>
@@ -63,8 +63,8 @@ echo $this->Html->script([
                         <h1><?php echo h($post->heading); ?></h1>
                         <div class="article-date">
                             <i class="far fa-calendar-alt"></i>
-                            <time datetime="<?php echo $this->Time->format($post->date_created, 'yyyy-MM-dd'); ?>">
-                                <?php echo $this->Time->format($post->date_created, 'dd.MM.yyyy'); ?>
+                            <time datetime="<?php echo $post->date_created->format('Y-m-d'); ?>">
+                                <?php echo $this->Time->i18nFormat($post->date_created, 'd MMMM Y'); ?>
                             </time>
                         </div>
                     </header>
@@ -74,10 +74,14 @@ echo $this->Html->script([
         </div>
     </div>
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row">
+            <div class="col-md-12">
+                <?php echo $post->body; ?>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-5">
             <div class="col-md-9 col-lg-8">
                 <?php
-                echo $post->body;
                 echo $this->element('article_footer', [
                     'tags' => $post->tags, 'share' => true
                 ]);
