@@ -75,12 +75,12 @@ echo $this->Html->script([
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-12">
                 <?php echo $post->body; ?>
             </div>
         </div>
         <div class="row justify-content-center mt-5">
-            <div class="col-md-9 col-lg-8">
+            <div class="col-md-11 col-lg-10">
                 <?php
                 echo $this->element('article_footer', [
                     'tags' => $post->tags, 'share' => true
