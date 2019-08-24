@@ -1,6 +1,3 @@
-<?php
-use Cake\Core\Configure;
-?>
 <header>
     <nav aria-label="<?php echo __('Main navigation'); ?>" class="navbar navbar-expand-md navbar-dark">
         <h2 class="text-hide m-0"><?php echo __('Main navigation'); ?></h2>
@@ -9,8 +6,8 @@ use Cake\Core\Configure;
             echo $this->Html->link(
                 $this->Html->image('logo.png', [
                     'height' => 23,
-                    'alt' => Configure::read('Settings.Site.title'),
-                    'title' => Configure::read('Settings.Site.title')
+                    'alt' => $configure['Settings']['Site']['title'],
+                    'title' => $configure['Settings']['Site']['title']
                 ]),
                 ['_name' => 'display'],
                 ['escape' => false, 'class' => 'navbar-brand']
@@ -27,7 +24,7 @@ use Cake\Core\Configure;
                 if (!isset($menu)) {
                     $menu = [];
                 }
-                
+
                 echo $this->Dallin->headerLink(__('Home'),
                     ['_name' => 'display'],
                     [
@@ -39,8 +36,8 @@ use Cake\Core\Configure;
                 );
                 echo $this->Dallin->headerLink(__('About Me'),
                     [
-                        'controller' => 'Pages', 
-                        'action' => 'view', 
+                        'controller' => 'Pages',
+                        'action' => 'view',
                         'slug' => 'about'
                     ],
                     [
@@ -56,15 +53,6 @@ use Cake\Core\Configure;
                         'class' => 'nav-item nav-link',
                         'title' => __('Blog'),
                         'slug' => 'posts',
-                        'menu' => $menu
-                    ]
-                );
-                echo $this->Dallin->headerLink(__('Projects'),
-                    ['controller' => 'projects', 'action' => 'index'],
-                    [
-                        'class' => 'nav-item nav-link',
-                        'title' => __('Projects'),
-                        'slug' => 'projects',
                         'menu' => $menu
                     ]
                 );

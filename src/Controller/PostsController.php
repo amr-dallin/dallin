@@ -73,6 +73,7 @@ class PostsController extends AppController
             ->find('published', ['slug' => $slug])
             ->contain('Image')
             ->first();
+
         if (empty($post)) {
             throw new RecordNotFoundException(__('No post'));
         }

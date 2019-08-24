@@ -71,8 +71,8 @@ $this->set('menu', 'posts');
                     </h2>
                     <div class="article-date">
                         <i class="far fa-calendar-alt"></i>
-                        <time datetime="<?php echo $this->Time->format($post->date_created, 'yyyy-MM-dd'); ?>">
-                            <?php echo $this->Time->format($post->date_created, 'dd.MM.yyyy'); ?>
+                        <time datetime="<?php echo $post->date_created->format('Y-m-d'); ?>">
+                            <?php echo $this->Time->i18nFormat($post->date_created, 'd MMMM Y'); ?>
                         </time>
                     </div>
                 </header>
