@@ -8,8 +8,9 @@
 
 /webroot/~
 /webroot/assets
+/webroot/debug_kit
+/webroot/smart_admin
 /file_storage/*
-
 
 # OS generated files #
 ######################
