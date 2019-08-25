@@ -13,7 +13,7 @@ $menu['gallery'] = true;
 echo $this->element('navigation', ['menu' => $menu]);
 $this->end();
 
-echo $this->Html->script(['superbox', 'clipboard.min'], ['mode' => true]);
+echo $this->Html->script(['superbox', 'clipboard.min'], ['block' => true]);
 ?>
 
 <?php $this->start('script-code'); ?>
