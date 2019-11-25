@@ -6,7 +6,7 @@
         echo $this->Html->css(['main', '/vendor/zoom.js/css/zoom']);
         echo $this->fetch('css');
         ?>
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
+        <!--<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">-->
     </head>
     <body>
         <?php echo $this->element('header'); ?>

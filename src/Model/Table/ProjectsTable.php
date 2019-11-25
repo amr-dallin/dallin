@@ -1,12 +1,12 @@
 <?php
 namespace App\Model\Table;
 
+use ArrayObject;
+use Cake\Event\Event;
+use Cake\ORM\Entity;
 use Cake\ORM\Query;
-use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
-use Cake\Event\Event;
-use Cake\Core\Configure;
 
 /**
  * Projects Model
@@ -127,6 +127,13 @@ class ProjectsTable extends Table
             ->notEmpty('published');
 
         return $validator;
+    }
+
+    public function beforeSave(Event $event, Entity $entity, ArrayObject $options)
+    {
+        if (!empty($entity->image->file)) {
+            $entity->image->set('model', 'ProjectImages');
+        }
     }
 
     public function findAllPublished(Query $query, array $options)

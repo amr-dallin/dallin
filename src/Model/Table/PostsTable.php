@@ -1,6 +1,9 @@
 <?php
 namespace App\Model\Table;
 
+use ArrayObject;
+use Cake\Event\Event;
+use Cake\ORM\Entity;
 use Cake\ORM\Query;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
@@ -116,6 +119,13 @@ class PostsTable extends Table
             ->notEmpty('published');
 
         return $validator;
+    }
+
+    public function beforeSave(Event $event, Entity $entity, ArrayObject $options)
+    {
+        if (!empty($entity->image->file)) {
+            $entity->image->set('model', 'PostImages');
+        }
     }
 
     public function findAllPublished(Query $query, array $options)

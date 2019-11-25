@@ -3,11 +3,11 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2019-02-27 22:09+0500\n"
-"PO-Revision-Date: 2019-02-27 22:09+0500\n"
+"Project-Id-Version: DALLIN\n"
+"POT-Creation-Date: 2019-11-24 23:33+0500\n"
+"PO-Revision-Date: 2019-11-24 23:57+0500\n"
 "Last-Translator: Marat Dallin <amr.dallin@gmail.com>\n"
-"Language-Team: EMAIL@ADDRESS\n"
+"Language-Team: Marat Dallin <mail@dallin.uz>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,16 +16,16 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-#: Controller/PagesController.php:38
+#: Controller/PagesController.php:42
 #, fuzzy
 msgid "No page"
-msgstr "Добавить страницу"
+msgstr "Нет страницы"
 
-#: Controller/PagesController.php:52;75
+#: Controller/PagesController.php:56 Controller/PagesController.php:79
 msgid "Not found page"
 msgstr "Страница не найдена"
 
-#: Controller/PostsController.php:44;74
+#: Controller/PostsController.php:44 Controller/PostsController.php:78
 msgid "No post"
 msgstr "Нет статей"
 
@@ -34,223 +34,213 @@ msgstr "Нет статей"
 msgid "No project"
 msgstr "Добавить проект"
 
-#: Controller/Admin/FilesController.php:62;86
+#: Controller/Admin/FilesController.php:61
+#: Controller/Admin/FilesController.php:85
 msgid "The file has been saved."
 msgstr "Медиафайл был сохранен."
 
-#: Controller/Admin/FilesController.php:66;90
+#: Controller/Admin/FilesController.php:65
+#: Controller/Admin/FilesController.php:89
 msgid "The file could not be saved. Please, try again."
 msgstr "Медиафайл не может быть сохранен. Пожалуйста, попробуйте еще раз."
 
-#: Controller/Admin/FilesController.php:107
+#: Controller/Admin/FilesController.php:106
+#, fuzzy
 msgid "The file has been deleted."
-msgstr ""
+msgstr "Файл успешно удалён."
 
-#: Controller/Admin/FilesController.php:109
+#: Controller/Admin/FilesController.php:108
+#, fuzzy
 msgid "The file could not be deleted. Please, try again."
-msgstr ""
+msgstr "Файл не удалён. Пожалуйста, повторите снова."
 
-#: Controller/Admin/PagesController.php:44;68
+#: Controller/Admin/PagesController.php:48
+#: Controller/Admin/PagesController.php:77
+#, fuzzy
 msgid "The page has been saved."
-msgstr ""
+msgstr "Страница сохранена успешно."
 
-#: Controller/Admin/PagesController.php:48;72
+#: Controller/Admin/PagesController.php:52
+#: Controller/Admin/PagesController.php:81
+#, fuzzy
 msgid "The page could not be saved. Please, try again."
-msgstr ""
+msgstr "Страницу не удалось сохранить. Пожалуйста, повторите снова."
 
-#: Controller/Admin/PagesController.php:89
+#: Controller/Admin/PagesController.php:98
+#, fuzzy
 msgid "The page has been deleted."
-msgstr ""
+msgstr "Страница удалена успешно."
 
-#: Controller/Admin/PagesController.php:91
+#: Controller/Admin/PagesController.php:100
+#, fuzzy
 msgid "The page could not be deleted. Please, try again."
-msgstr ""
+msgstr "Страницу не удалось удалить. Пожалуйста, повторите снова."
 
-#: Controller/Admin/PostsController.php:42;68
+#: Controller/Admin/PostsController.php:49
+#: Controller/Admin/PostsController.php:80
+#, fuzzy
 msgid "The post has been saved."
-msgstr ""
+msgstr "Публикация успешно сохранена."
 
-#: Controller/Admin/PostsController.php:46;72
+#: Controller/Admin/PostsController.php:53
+#: Controller/Admin/PostsController.php:84
+#, fuzzy
 msgid "The post could not be saved. Please, try again."
-msgstr ""
+msgstr "Публикацию не удалось сохранить. Пожалуйста, повторите снова."
 
-#: Controller/Admin/PostsController.php:91
+#: Controller/Admin/PostsController.php:103
+#, fuzzy
 msgid "The post has been deleted."
-msgstr ""
+msgstr "Публикация успешно сохранена."
 
-#: Controller/Admin/PostsController.php:93
+#: Controller/Admin/PostsController.php:105
+#, fuzzy
 msgid "The post could not be deleted. Please, try again."
-msgstr ""
+msgstr "Публикацию не удалось удалить. Пожалуйста, повторите снова."
 
-#: Controller/Admin/ProjectsController.php:39;64
+#: Controller/Admin/ProjectsController.php:43
+#: Controller/Admin/ProjectsController.php:73
 msgid "The project has been saved."
 msgstr ""
 
-#: Controller/Admin/ProjectsController.php:43;68
+#: Controller/Admin/ProjectsController.php:47
+#: Controller/Admin/ProjectsController.php:77
 msgid "The project could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/Admin/ProjectsController.php:85
+#: Controller/Admin/ProjectsController.php:94
 msgid "The project has been deleted."
 msgstr ""
 
-#: Controller/Admin/ProjectsController.php:87
+#: Controller/Admin/ProjectsController.php:96
 msgid "The project could not be deleted. Please, try again."
 msgstr ""
 
 #: Controller/Admin/SettingsController.php:27
 #, fuzzy
 msgid "No settings"
-msgstr "Настройки"
+msgstr "Нет настроек."
 
 #: Controller/Admin/SettingsController.php:45
+#, fuzzy
 msgid "The setting has been saved."
-msgstr ""
+msgstr "Настройки успешно сохранены."
 
 #: Controller/Admin/SettingsController.php:49
+#, fuzzy
 msgid "The setting could not be saved. Please, try again."
-msgstr ""
+msgstr "Настройки не сохранены. Пожалуйста, повторите снова."
 
 #: Controller/Admin/SettingsController.php:86
+#, fuzzy
 msgid "The setting has been deleted."
-msgstr ""
+msgstr "Настройки успешно удалены."
 
 #: Controller/Admin/SettingsController.php:88
+#, fuzzy
 msgid "The setting could not be deleted. Please, try again."
-msgstr ""
+msgstr "Настройки не удалены. Пожалуйста, повторите снова."
 
 #: Controller/Admin/UsersController.php:29
 #, fuzzy
 msgid "Username or password is incorrect"
-msgstr "Неверное имя пользователя или пароль."
+msgstr "Имя пользователя или пароль не верен."
 
-#: Template/Admin/Element/navigation.ctp:53
-#: Template/Admin/Element/ribbon.ctp:27;30 Template/Admin/Pages/display.ctp:2
+#: Template/Admin/Element/navigation.ctp:36
+#: Template/Admin/Element/ribbon.ctp:27 Template/Admin/Element/ribbon.ctp:30
+#: Template/Admin/Pages/display.ctp:2
+#, fuzzy
 msgid "Dashboard"
-msgstr ""
+msgstr "Dashboard"
 
-#: Template/Admin/Element/navigation.ctp:68 Template/Admin/Pages/add.ctp:8
+#: Template/Admin/Element/navigation.ctp:51 Template/Admin/Pages/add.ctp:8
 #: Template/Admin/Pages/edit.ctp:6 Template/Admin/Pages/index.ctp:2
 msgid "Pages"
 msgstr "Страницы"
 
-#: Template/Admin/Element/navigation.ctp:78;109;140;187
+#: Template/Admin/Element/navigation.ctp:61
+#: Template/Admin/Element/navigation.ctp:92
+#: Template/Admin/Element/navigation.ctp:123
+#: Template/Admin/Element/navigation.ctp:169
 msgid "Add"
 msgstr "Добавить"
 
-#: Template/Admin/Element/navigation.ctp:85;116;147;195
+#: Template/Admin/Element/navigation.ctp:68
+#: Template/Admin/Element/navigation.ctp:99
+#: Template/Admin/Element/navigation.ctp:130
+#: Template/Admin/Element/navigation.ctp:177
 msgid "List"
 msgstr "Список"
 
-#: Template/Admin/Element/navigation.ctp:99 Template/Admin/Posts/add.ctp:8
+#: Template/Admin/Element/navigation.ctp:82 Template/Admin/Posts/add.ctp:8
 #: Template/Admin/Posts/edit.ctp:6 Template/Admin/Posts/index.ctp:2
 msgid "Posts"
 msgstr "Статьи"
 
-#: Template/Admin/Element/navigation.ctp:130 Template/Admin/Projects/add.ctp:8
-#: Template/Admin/Projects/edit.ctp:6 Template/Admin/Projects/index.ctp:2
-#: Template/Element/footer.ctp:46;50 Template/Element/header.ctp:62;66
+#: Template/Admin/Element/navigation.ctp:113 Template/Admin/Projects/add.ctp:8
+#: Template/Admin/Projects/edit.ctp:7 Template/Admin/Projects/index.ctp:2
 msgid "Projects"
 msgstr "Проекты"
 
-#: Template/Admin/Element/navigation.ctp:162 Template/Admin/Files/add.ctp:9
+#: Template/Admin/Element/navigation.ctp:144 Template/Admin/Files/add.ctp:9
 #: Template/Admin/Files/index.ctp:2
 msgid "Gallery"
 msgstr "Галерея"
 
-#: Template/Admin/Element/navigation.ctp:177
+#: Template/Admin/Element/navigation.ctp:159
 #, fuzzy
 msgid "Settings"
 msgstr "Настройки"
 
-#: Template/Admin/Element/title.ctp:28 Template/Admin/Files/edit.ctp:11
-#: Template/Admin/Files/index.ctp:62 Template/Admin/Pages/edit.ctp:65
-#: Template/Admin/Posts/edit.ctp:71 Template/Admin/Projects/edit.ctp:66
+#: Template/Admin/Element/title.ctp:12 Template/Admin/Files/index.ctp:60
+#: Template/Admin/Pages/edit.ctp:72 Template/Admin/Posts/edit.ctp:78
+#: Template/Admin/Projects/edit.ctp:76
 #, fuzzy
 msgid "Delete"
 msgstr "Удалить"
 
-#: Template/Admin/Element/title.ctp:31 Template/Admin/Files/edit.ctp:13
-#: Template/Admin/Files/index.ctp:65 Template/Admin/Files/view.ctp:11
-#: Template/Admin/Pages/edit.ctp:68 Template/Admin/Posts/edit.ctp:74
-#: Template/Admin/Projects/edit.ctp:69
+#: Template/Admin/Element/title.ctp:15 Template/Admin/Files/index.ctp:63
+#: Template/Admin/Pages/edit.ctp:75 Template/Admin/Posts/edit.ctp:81
+#: Template/Admin/Projects/edit.ctp:79
 msgid "Are you sure you want to delete # {0}?"
 msgstr "Вы уверены, что хотите удалить # {0}?"
 
 #: Template/Admin/Element/Flash/error.ctp:6
 #, fuzzy
 msgid "Error!"
-msgstr "Ошибка"
+msgstr "Ошибка!"
 
 #: Template/Admin/Element/Flash/success.ctp:6
+#, fuzzy
 msgid "Success"
-msgstr ""
+msgstr "Успешно"
 
-#: Template/Admin/Files/add.ctp:3;12;25
+#: Template/Admin/Files/add.ctp:3 Template/Admin/Files/add.ctp:12
+#: Template/Admin/Files/add.ctp:25
+#, fuzzy
 msgid "Add Files"
-msgstr ""
+msgstr "Добавить файл"
 
-#: Template/Admin/Files/add.ctp:32
+#: Template/Admin/Files/add.ctp:31
 msgid "Library"
 msgstr "Библиотека"
 
-#: Template/Admin/Files/add.ctp:47
+#: Template/Admin/Files/add.ctp:43
 #, fuzzy
 msgid "Add File"
-msgstr "Добавить страницу"
+msgstr "Добавить файл"
 
-#: Template/Admin/Files/add.ctp:53
+#: Template/Admin/Files/add.ctp:49
 msgid "Cover"
 msgstr "Обложка"
 
-#: Template/Admin/Files/add.ctp:57 Template/Admin/Files/edit.ctp:30
+#: Template/Admin/Files/add.ctp:53
 msgid "Submit"
 msgstr "Отправить"
 
-#: Template/Admin/Files/edit.ctp:9 Template/Admin/Files/view.ctp:9
-msgid "Actions"
-msgstr "Действия"
-
-#: Template/Admin/Files/edit.ctp:16;17 Template/Admin/Files/view.ctp:12;14
-#, fuzzy
-msgid "List Files"
-msgstr "Список тегов"
-
-#: Template/Admin/Files/edit.ctp:18 Template/Admin/Files/view.ctp:13;15
-msgid "New File"
-msgstr ""
-
-#: Template/Admin/Files/edit.ctp:24 Template/Admin/Files/view.ctp:10
-#, fuzzy
-msgid "Edit File"
-msgstr "Изменить "
-
-#: Template/Admin/Files/index.ctp:39
+#: Template/Admin/Files/index.ctp:37
 msgid "Upload"
 msgstr "Загрузить"
-
-#: Template/Admin/Files/view.ctp:11
-#, fuzzy
-msgid "Delete File"
-msgstr "Удалить проект"
-
-#: Template/Admin/Files/view.ctp:22
-#, fuzzy
-msgid "File"
-msgstr "Медиафайл исключен из альбома."
-
-#: Template/Admin/Files/view.ctp:26
-msgid "Id"
-msgstr ""
-
-#: Template/Admin/Files/view.ctp:30 Template/Admin/Pages/index.ctp:167
-#: Template/Admin/Posts/index.ctp:95 Template/Admin/Projects/index.ctp:94
-msgid "Date Created"
-msgstr "Дата создания"
-
-#: Template/Admin/Files/view.ctp:34
-msgid "Date Modified"
-msgstr "Дата обновления"
 
 #: Template/Admin/Layout/error.ctp:35
 msgid "Error"
@@ -264,48 +254,47 @@ msgstr "Назад"
 msgid "Add Page"
 msgstr "Добавить страницу"
 
-#: Template/Admin/Pages/add.ctp:4 Template/Admin/Posts/add.ctp:2
-msgid "Add Post"
-msgstr "Добавить статью"
-
-#: Template/Admin/Pages/add.ctp:69 Template/Admin/Pages/edit.ctp:89
-#: Template/Admin/Pages/index.ctp:105;165 Template/Admin/Posts/add.ctp:79
-#: Template/Admin/Posts/edit.ctp:95 Template/Admin/Projects/add.ctp:77
-#: Template/Admin/Projects/edit.ctp:90 Template/Admin/Projects/index.ctp:92
-#: Template/Admin/Settings/add.ctp:54
+#: Template/Admin/Pages/add.ctp:77 Template/Admin/Pages/edit.ctp:97
+#: Template/Admin/Pages/index.ctp:105 Template/Admin/Pages/index.ctp:165
+#: Template/Admin/Posts/add.ctp:99 Template/Admin/Posts/edit.ctp:115
+#: Template/Admin/Projects/add.ctp:96 Template/Admin/Projects/edit.ctp:113
+#: Template/Admin/Projects/index.ctp:92 Template/Admin/Settings/add.ctp:54
 msgid "Title"
 msgstr "Заголовок"
 
-#: Template/Admin/Pages/add.ctp:73 Template/Admin/Pages/edit.ctp:93
-#: Template/Admin/Posts/add.ctp:86 Template/Admin/Posts/edit.ctp:102
-#: Template/Admin/Projects/add.ctp:84 Template/Admin/Projects/edit.ctp:97
-msgid "Slug"
-msgstr ""
-
-#: Template/Admin/Pages/add.ctp:78 Template/Admin/Pages/edit.ctp:98
-#: Template/Admin/Posts/add.ctp:94 Template/Admin/Posts/edit.ctp:110
-#: Template/Admin/Projects/add.ctp:93 Template/Admin/Projects/edit.ctp:105
+#: Template/Admin/Pages/add.ctp:82 Template/Admin/Pages/edit.ctp:102
+#: Template/Admin/Posts/add.ctp:95 Template/Admin/Posts/edit.ctp:111
+#: Template/Admin/Projects/add.ctp:92 Template/Admin/Projects/edit.ctp:109
 msgid "Body"
 msgstr "Описание"
 
-#: Template/Admin/Pages/add.ctp:85 Template/Admin/Pages/edit.ctp:105
-#: Template/Admin/Posts/add.ctp:101 Template/Admin/Posts/edit.ctp:117
-#: Template/Admin/Projects/add.ctp:100 Template/Admin/Projects/edit.ctp:112
-msgid "Image"
-msgstr "Изображение"
+#: Template/Admin/Pages/add.ctp:86 Template/Admin/Pages/edit.ctp:106
+#: Template/Admin/Posts/add.ctp:102 Template/Admin/Posts/edit.ctp:118
+#: Template/Admin/Projects/add.ctp:99 Template/Admin/Projects/edit.ctp:116
+#, fuzzy
+msgid "Slug"
+msgstr "url адрес"
 
-#: Template/Admin/Pages/add.ctp:90 Template/Admin/Pages/edit.ctp:110
-#: Template/Admin/Pages/index.ctp:106;166 Template/Admin/Posts/add.ctp:106
-#: Template/Admin/Posts/edit.ctp:122 Template/Admin/Posts/index.ctp:94
-#: Template/Admin/Projects/add.ctp:111 Template/Admin/Projects/edit.ctp:123
+#: Template/Admin/Pages/add.ctp:94 Template/Admin/Pages/edit.ctp:114
+#: Template/Admin/Pages/index.ctp:106 Template/Admin/Pages/index.ctp:166
+#: Template/Admin/Posts/add.ctp:110 Template/Admin/Posts/edit.ctp:126
+#: Template/Admin/Posts/index.ctp:94 Template/Admin/Projects/add.ctp:107
+#: Template/Admin/Projects/edit.ctp:124
 msgid "Meta Keywords"
 msgstr "Мета теги"
 
-#: Template/Admin/Pages/add.ctp:94 Template/Admin/Pages/edit.ctp:114
-#: Template/Admin/Posts/add.ctp:110 Template/Admin/Posts/edit.ctp:126
-#: Template/Admin/Projects/add.ctp:117 Template/Admin/Projects/edit.ctp:129
+#: Template/Admin/Pages/add.ctp:102 Template/Admin/Pages/edit.ctp:122
+#: Template/Admin/Posts/add.ctp:118 Template/Admin/Posts/edit.ctp:134
+#: Template/Admin/Projects/add.ctp:115 Template/Admin/Projects/edit.ctp:132
 msgid "Meta Description"
 msgstr "Мета описание"
+
+#: Template/Admin/Pages/add.ctp:110 Template/Admin/Pages/edit.ctp:130
+#: Template/Admin/Posts/add.ctp:126 Template/Admin/Posts/edit.ctp:142
+#: Template/Admin/Projects/add.ctp:123 Template/Admin/Projects/edit.ctp:140
+#, fuzzy
+msgid "Open Graph Image"
+msgstr "Изображение Open Graph"
 
 #: Template/Admin/Pages/index.ctp:88
 msgid "Systemic"
@@ -319,28 +308,40 @@ msgstr ""
 msgid "Not Systemic"
 msgstr "Не системный"
 
+#: Template/Admin/Pages/index.ctp:167 Template/Admin/Posts/index.ctp:95
+#: Template/Admin/Projects/index.ctp:94
+msgid "Date Created"
+msgstr "Дата создания"
+
 #: Template/Admin/Pages/index.ctp:168 Template/Admin/Posts/index.ctp:96
 #: Template/Admin/Projects/index.ctp:95
 #, fuzzy
 msgid "Published"
-msgstr "Опубликованный"
+msgstr "Опубликованные"
 
-#: Template/Admin/Posts/add.ctp:82 Template/Admin/Posts/edit.ctp:98
-#: Template/Admin/Posts/index.ctp:93 Template/Admin/Projects/add.ctp:80
-#: Template/Admin/Projects/edit.ctp:93
+#: Template/Admin/Posts/add.ctp:2
+msgid "Add Post"
+msgstr "Добавить статью"
+
+#: Template/Admin/Posts/add.ctp:87 Template/Admin/Posts/edit.ctp:103
+#: Template/Admin/Posts/index.ctp:93 Template/Admin/Projects/add.ctp:84
+#: Template/Admin/Projects/edit.ctp:101
+#, fuzzy
 msgid "Heading"
-msgstr ""
+msgstr "Заголовок h1"
 
-#: Template/Admin/Posts/add.ctp:90 Template/Admin/Posts/edit.ctp:106
+#: Template/Admin/Posts/add.ctp:91 Template/Admin/Posts/edit.ctp:107
+#: Template/Admin/Projects/add.ctp:88 Template/Admin/Projects/edit.ctp:105
+#, fuzzy
 msgid "Lead"
-msgstr ""
+msgstr "Краткое описание (главное)"
 
-#: Template/Admin/Posts/add.ctp:115 Template/Admin/Posts/edit.ctp:131
+#: Template/Admin/Posts/add.ctp:133 Template/Admin/Posts/edit.ctp:156
 msgid "Check which project the article belongs to"
 msgstr ""
 
-#: Template/Admin/Posts/add.ctp:120 Template/Admin/Posts/edit.ctp:136
-#: Template/Admin/Projects/add.ctp:124 Template/Admin/Projects/edit.ctp:136
+#: Template/Admin/Posts/add.ctp:138 Template/Admin/Posts/edit.ctp:161
+#: Template/Admin/Projects/add.ctp:140 Template/Admin/Projects/edit.ctp:164
 msgid "Tags"
 msgstr "Теги"
 
@@ -348,18 +349,23 @@ msgstr "Теги"
 msgid "Add Project"
 msgstr "Добавить проект"
 
-#: Template/Admin/Projects/add.ctp:89 Template/Admin/Projects/edit.ctp:101
+#: Template/Admin/Projects/add.ctp:129 Template/Admin/Projects/edit.ctp:153
+msgid "URL"
+msgstr ""
+
+#: Template/Admin/Projects/add.ctp:133 Template/Admin/Projects/edit.ctp:157
+#, fuzzy
+msgid "Weight"
+msgstr "Положение в группе изданий"
+
 #: Template/Admin/Projects/index.ctp:93
 msgid "Description"
 msgstr "Мета описание"
 
-#: Template/Admin/Projects/add.ctp:104 Template/Admin/Projects/edit.ctp:116
-msgid "URL"
-msgstr ""
-
 #: Template/Admin/Settings/add.ctp:2
+#, fuzzy
 msgid "Add Setting"
-msgstr ""
+msgstr "Добавить настройки"
 
 #: Template/Admin/Settings/add.ctp:42
 msgid "Key"
@@ -373,19 +379,19 @@ msgstr "Значение"
 msgid "Settings {0}"
 msgstr "Настройки {0}"
 
-#: Template/Admin/Users/login.ctp:5
+#: Template/Admin/Users/login.ctp:3
 msgid "Login"
 msgstr "Войти"
 
-#: Template/Admin/Users/login.ctp:21
+#: Template/Admin/Users/login.ctp:15
 msgid "Username"
 msgstr "Username"
 
-#: Template/Admin/Users/login.ctp:24
+#: Template/Admin/Users/login.ctp:18
 msgid "Password"
 msgstr "Пароль"
 
-#: Template/Admin/Users/login.ctp:31
+#: Template/Admin/Users/login.ctp:25
 msgid "Log In"
 msgstr "Войти"
 
@@ -393,32 +399,33 @@ msgstr "Войти"
 msgid "Liked? Share with others."
 msgstr "Понравилось? Поделитесь с другими."
 
-#: Template/Element/footer.ctp:18
+#: Template/Element/footer.ctp:15
 msgid "Mail: {0}"
 msgstr "Почта: {0}"
 
-#: Template/Element/footer.ctp:24;32 Template/Element/header.ctp:40;48
+#: Template/Element/footer.ctp:21 Template/Element/footer.ctp:23
+#: Template/Element/header.ctp:38 Template/Element/header.ctp:46
 msgid "About Me"
 msgstr "Обо мне"
 
-#: Template/Element/footer.ctp:57
+#: Template/Element/footer.ctp:34
 msgid "Social"
 msgstr "Соц. сети"
 
-#: Template/Element/header.ctp:5;6
+#: Template/Element/header.ctp:2 Template/Element/header.ctp:3
 msgid "Main navigation"
 msgstr "Базовая навигация"
 
-#: Template/Element/header.ctp:31;35
+#: Template/Element/header.ctp:29 Template/Element/header.ctp:33
 msgid "Home"
 msgstr "Главная"
 
-#: Template/Element/header.ctp:53;57 Template/Posts/index.ctp:15
-#: Template/Posts/view.ctp:16
+#: Template/Element/header.ctp:51 Template/Element/header.ctp:55
+#: Template/Posts/index.ctp:15 Template/Posts/view.ctp:29
 msgid "Blog"
 msgstr "Блог"
 
-#: Template/Error/error400.ctp:5;9
+#: Template/Error/error400.ctp:5 Template/Error/error400.ctp:9
 msgid "Page not found"
 msgstr "Страница не найдена"
 
@@ -438,33 +445,63 @@ msgstr "назад"
 msgid "home page"
 msgstr "главную страницу"
 
-#: Template/Error/error500.ctp:5;9
+#: Template/Error/error500.ctp:5 Template/Error/error500.ctp:9
 msgid "An internal error has occurred"
 msgstr "Произошла внутренняя ошибка"
 
-#: Template/Pages/display.ctp:41
+#: Template/Pages/display.ctp:54
 msgid "Read more"
 msgstr "Подробнее"
 
-#: Template/Posts/index.ctp:78;79 Template/Projects/index.ctp:67;68
+#: Template/Posts/index.ctp:89 Template/Posts/index.ctp:90
+#: Template/Projects/index.ctp:80 Template/Projects/index.ctp:81
 msgid "Page navigation"
 msgstr "Постраничная навигация"
 
-#: Template/Posts/index.ctp:82 Template/Projects/index.ctp:71
+#: Template/Posts/index.ctp:93 Template/Projects/index.ctp:84
 msgid "previous"
 msgstr "Предыдущие"
 
-#: Template/Posts/index.ctp:84 Template/Projects/index.ctp:73
+#: Template/Posts/index.ctp:95 Template/Projects/index.ctp:86
 msgid "next"
 msgstr "Следующие"
 
-#: Template/Posts/index.ctp:90
+#: Template/Posts/index.ctp:101
 msgid "No articles"
 msgstr "Нет статей"
 
-#: Template/Projects/index.ctp:79
+#: Template/Projects/index.ctp:92
 msgid "No projects"
 msgstr "Нет проектов"
+
+#~ msgid "Actions"
+#~ msgstr "Действия"
+
+#, fuzzy
+#~ msgid "List Files"
+#~ msgstr "Список файлов"
+
+#, fuzzy
+#~ msgid "New File"
+#~ msgstr "Новый файл"
+
+#, fuzzy
+#~ msgid "Edit File"
+#~ msgstr "Изменить файл"
+
+#, fuzzy
+#~ msgid "Delete File"
+#~ msgstr "Удалить файл"
+
+#, fuzzy
+#~ msgid "File"
+#~ msgstr "Файл"
+
+#~ msgid "Date Modified"
+#~ msgstr "Дата обновления"
+
+#~ msgid "Image"
+#~ msgstr "Изображение"
 
 #~ msgid "To all articles"
 #~ msgstr "Ко всем статьям"

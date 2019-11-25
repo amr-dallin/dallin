@@ -35,10 +35,6 @@ class ProjectsController extends AppController
         if ($this->request->is('post')) {
             $project = $this->Projects->patchEntity($project, $this->request->getData());
 
-            if (!empty($project->image->file)) {
-                $project->image->set('model', 'ProjectImages');
-            }
-
             if ($this->Projects->save($project)) {
                 $this->Flash->success(__('The project has been saved.'));
 
@@ -64,10 +60,6 @@ class ProjectsController extends AppController
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $project = $this->Projects->patchEntity($project, $this->request->getData());
-
-            if (!empty($project->image->file)) {
-                $project->image->set('model', 'ProjectImages');
-            }
 
             if ($this->Projects->save($project)) {
                 $this->Flash->success(__('The project has been saved.'));

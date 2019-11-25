@@ -39,10 +39,6 @@ class PostsController extends AppController
         if ($this->request->is('post')) {
             $post = $this->Posts->patchEntity($post, $this->request->getData());
 
-            if (!empty($post->image->file)) {
-                $post->image->set('model', 'PostImages');
-            }
-
             if ($this->Posts->save($post)) {
                 $this->Flash->success(__('The post has been saved.'));
 
@@ -69,10 +65,6 @@ class PostsController extends AppController
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $post = $this->Posts->patchEntity($post, $this->request->getData());
-
-            if (!empty($post->image->file)) {
-                $post->image->set('model', 'PostImages');
-            }
 
             if ($this->Posts->save($post)) {
                 $this->Flash->success(__('The post has been saved.'));

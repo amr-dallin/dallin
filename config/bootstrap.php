@@ -1,4 +1,3 @@
-
 <?php
 /**
  * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
@@ -45,11 +44,8 @@ use Cake\Mailer\TransportFactory;
 use Cake\Utility\Inflector;
 use Cake\Utility\Security;
 use Cake\Event\EventManager;
-use Burzum\FileStorage\Storage\StorageUtils;
-use Burzum\FileStorage\Storage\StorageManager;
-use Burzum\FileStorage\Storage\Listener\ImageProcessingListener;
-use Burzum\FileStorage\Storage\Listener\LocalListener;
-use Cake\ORM\TableRegistry;
+
+require __DIR__ . DS . 'file_storage.php';
 
 /**
  * Uncomment block of code below if you want to use `.env` file during development.
@@ -204,52 +200,3 @@ Type::build('timestamp')
 //Inflector::rules('irregular', ['red' => 'redlings']);
 //Inflector::rules('uninflected', ['dontinflectme']);
 //Inflector::rules('transliteration', ['/å/' => 'aa']);
-
-StorageManager::config('Local', [
-	'adapterOptions' => [ROOT . DS . 'file_storage', true],
-	'adapterClass' => '\Gaufrette\Adapter\Local',
-	'class' => '\Gaufrette\Filesystem'
-]);
-
-EventManager::instance()->on(new LocalListener());
-
-EventManager::instance()->on('FileStorage.afterSave', function ($event, $entity) {
-    TableRegistry::get('Burzum/FileStorage.FileStorage')->deleteOldFileOnSave($entity);
-});
-
-// For automated image processing you'll have to attach this listener as well
-EventManager::instance()->on(new ImageProcessingListener());
-
-Configure::write('FileStorage', [
-    'imageSizes' => [
-        'Files' => [
-            'crop160' => [
-                'squareCenterCrop' => [
-                    'size' => 160
-                ]
-            ]
-        ],
-        'PageImages' => [
-            't382x200' => [
-                'thumbnail' => [
-                    'width' => 382, 'height' => 200
-                ]
-            ]
-        ],
-        'PostImages' => [
-            't382x200' => [
-                'thumbnail' => [
-                    'width' => 382, 'height' => 200
-                ]
-            ]
-        ],
-        'ProjectImages' => [
-            't382x200' => [
-                'thumbnail' => [
-                    'width' => 382, 'height' => 200
-                ]
-            ]
-        ]
-    ]
-]);
-StorageUtils::generateHashes();

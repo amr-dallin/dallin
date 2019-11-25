@@ -25,7 +25,8 @@
                     $menu = [];
                 }
 
-                echo $this->Dallin->headerLink(__('Home'),
+                echo $this->Dallin->headerLink(
+                    __('Home'),
                     ['_name' => 'display'],
                     [
                         'class' => 'nav-item nav-link',
