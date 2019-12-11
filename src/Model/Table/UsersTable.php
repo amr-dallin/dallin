@@ -5,6 +5,7 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use Cake\Auth\DefaultPasswordHasher;
 
 /**
  * Users Model
@@ -12,8 +13,8 @@ use Cake\Validation\Validator;
  * @method \App\Model\Entity\User get($primaryKey, $options = [])
  * @method \App\Model\Entity\User newEntity($data = null, array $options = [])
  * @method \App\Model\Entity\User[] newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\User|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\User|bool saveOrFail(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\User|false save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\User saveOrFail(\Cake\Datasource\EntityInterface $entity, $options = [])
  * @method \App\Model\Entity\User patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
  * @method \App\Model\Entity\User[] patchEntities($entities, array $data, array $options = [])
  * @method \App\Model\Entity\User findOrCreate($search, callable $callback = null, $options = [])
@@ -33,6 +34,15 @@ class UsersTable extends Table
         $this->setTable('users');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
+
+        $this->addBehavior('Timestamp', [
+            'events' => [
+                'Model.beforeSave' => [
+                    'date_created' => 'new',
+                    'date_modified' => 'always',
+                ]
+            ]
+        ]);
     }
 
     /**
@@ -45,32 +55,36 @@ class UsersTable extends Table
     {
         $validator
             ->nonNegativeInteger('id')
-            ->allowEmpty('id', 'create');
+            ->allowEmptyString('id', null, 'create');
 
         $validator
             ->scalar('username')
-            ->maxLength('username', 15)
+            ->maxLength('username', 10)
             ->requirePresence('username', 'create')
-            ->notEmpty('username');
+            ->notEmptyString('username')
+            ->add('username', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         $validator
             ->scalar('password')
-            ->maxLength('password', 255)
-            ->requirePresence('password', 'create')
-            ->notEmpty('password');
+            ->minLength('password', 6, __('Password must be at least 6 characters long.'))
+            ->notEmptyString('password', __('Password is required.'));
 
         $validator
-            ->dateTime('date_visited')
-            ->allowEmpty('date_visited');
+            ->scalar('current_password')
+            ->minLength('current_password', 6, __('Password must be at least 6 characters long.'))
+            ->notEmptyString('current_password', __('You must enter the current password.'));
 
         $validator
-            ->dateTime('date_created')
-            ->requirePresence('date_created', 'create')
-            ->notEmpty('date_created');
+            ->scalar('new_password')
+            ->notEmptyString('new_password', __('You must enter a new password.'))
+            ->minLength('new_password', 6, __('Password must be at least 6 characters long.'));
 
         $validator
-            ->dateTime('date_modified')
-            ->allowEmpty('date_modified');
+            ->add('new_password_confirm', 'confirm_password', [
+                'rule'     => 'confirmPassword',
+                'message'  => __('New password and confirmation record do not match!'),
+                'provider' => 'table'
+            ]);
 
         return $validator;
     }
@@ -86,6 +100,56 @@ class UsersTable extends Table
     {
         $rules->add($rules->isUnique(['username']));
 
+        $rules->add(function($user) {
+            if (!isset($user->current_password)) {
+                return true;
+            }
+
+            $userFind = $this->findById($user->id)->first();
+            if (
+                !empty($userFind) &&
+                (new DefaultPasswordHasher)->check(
+                    $user->current_password,
+                    $userFind->password
+                )
+            ) {
+                return true;
+            }
+
+            return false;
+        }, [
+            'errorField' => 'current_password',
+            'message' => __('The current password is incorrectly entered!')
+        ]);
+
+        $rules->add(function($user) {
+            if (
+                !isset($user->current_password) ||
+                ($user->new_password !== $user->current_password)
+            ) {
+                return true;
+            }
+
+            return false;
+        }, [
+            'errorField' => 'new_password',
+            'message' => __('The new password is no different from the current!')
+        ]);
+
         return $rules;
+    }
+
+    public function beforeSave($event, $entity, $options)
+    {
+        if (isset($entity->new_password)) {
+            $entity->password = $entity->new_password;
+        }
+
+        return true;
+    }
+
+    public function confirmPassword($value, array $context)
+    {
+        return ($value === $context['data']['new_password']);
     }
 }

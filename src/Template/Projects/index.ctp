@@ -1,28 +1,5 @@
 <?php
-$title = h($page->title);
-
-$this->start('meta');
-echo $this->element('meta', [
-    'title' => $title,
-    'meta' => [
-        'keywords' => h($page->meta_keywords),
-        'description' => h($page->meta_description)
-    ],
-    'og' => [
-        'title' => $title,
-        'description' => h($page->meta_description),
-        'image' => [
-            'url' => $page->image
-        ],
-        'url' => $this->Url->build(['action' => 'index'], true)
-    ],
-    'twitter' => [
-        'card' => 'summary_large_image'
-    ],
-    'canonical' => $this->Url->build(['action' => 'index'], true)
-]);
-$this->end();
-
+$this->assign('meta', $this->MetaRender->init($page)->render());
 $this->set('menu', 'projects');
 ?>
 
@@ -47,11 +24,11 @@ $this->set('menu', 'projects');
                         <header class="mb-2">
                             <h2 class="mb-1">
                                 <?php
-                                echo $this->Html->link(h($project->heading),
-                                    ['action' => 'view', 'slug' => h($project->slug)],
+                                echo $this->Html->link(h($project->title),
+                                    ['_name' => 'project_view', 'slug' => h($project->slug)],
                                     [
                                         'class' => 'header-link',
-                                        'title' => h($project->heading)
+                                        'title' => h($project->title)
                                     ]
                                 );
                                 ?>
@@ -65,7 +42,7 @@ $this->set('menu', 'projects');
                             </div>
                             <?php endif; ?>
                         </footer>
-                        <p class="mb-3"><?php echo h($project->description); ?></p>
+                        <p class="mb-3"><?php echo h($project->lead); ?></p>
                     </div>
                     <?php if (!empty($project->image)): ?>
                     <div class="w-30 order-1 d-none d-lg-block mt-2 mr-2">
@@ -77,16 +54,7 @@ $this->set('menu', 'projects');
             <?php endforeach; ?>
         </div>
     </div>
-    <nav aria-label="<?php echo __('Page navigation'); ?>" class="mb-5">
-        <h3 class="text-hide m-0"><?php echo __('Page navigation'); ?></h3>
-        <ul class="pagination pagination-sm justify-content-center">
-        <?php
-        echo $this->Paginator->prev(' << ' . __('previous'));
-        echo $this->Paginator->numbers();
-        echo $this->Paginator->next(' >> ' . __('next'));
-        ?>
-        </ul>
-    </nav>
+    <?= $this->element('pagination') ?>
     <?php else: ?>
     <div class="row my-5">
         <div class="col text-center lead"><?php echo __('No projects'); ?></div>

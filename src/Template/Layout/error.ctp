@@ -4,7 +4,7 @@
         <!-- Required meta tags -->
         <?php echo $this->Html->charset(); ?>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
+        <!--<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">-->
         <?php echo $this->Html->css('error'); ?>
 
         <title><?php echo $this->fetch('title'); ?></title>

@@ -35,4 +35,31 @@ class UsersController extends AppController
     {
         $this->redirect($this->Auth->logout());
     }
+
+    public function settings()
+    {
+        $user = $this->Users->get(
+            $this->getRequest()->getSession()->read('Auth.User.id')
+        );
+
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $user = $this->Users->patchEntity($user, $this->request->getData(), [
+                'fields'   => ['current_password', 'new_password', 'new_password_confirm'],
+                'validate' => 'default'
+            ]);
+
+            if ($this->Users->save($user)) {
+                if (isset($user->new_password)) {
+                    $this->Flash->success(__('The user password has been changed. Please, Log In.'), ['class' => 'success']);
+                    return $this->redirect(['_name' => 'logout']);
+                }
+
+                $this->Flash->success(__('The user has been saved.'), ['class' => 'success']);
+                return $this->redirect(['action' => 'settings']);
+            }
+            $this->Flash->error(__('The user could not be saved. Please, try again.'), ['class' => 'error']);
+        }
+
+        $this->set('user', $user);
+    }
 }

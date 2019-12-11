@@ -5,6 +5,7 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use Burzum\FileStorage\Model\Table\FileStorageTable;
 
 /**
  * Files Model
@@ -18,7 +19,7 @@ use Cake\Validation\Validator;
  * @method \App\Model\Entity\File[] patchEntities($entities, array $data, array $options = [])
  * @method \App\Model\Entity\File findOrCreate($search, callable $callback = null, $options = [])
  */
-class FilesTable extends Table
+class FilesTable extends FileStorageTable
 {
     /**
      * Initialize method
@@ -29,41 +30,19 @@ class FilesTable extends Table
     public function initialize(array $config)
     {
         parent::initialize($config);
+    }
 
-        $this->setTable('files');
-        $this->setDisplayField('id');
-        $this->setPrimaryKey('id');
-
-        $this->addBehavior('Timestamp', [
-            'events' => [
-                'Model.beforeSave' => [
-                    'date_created' => 'new',
-                    'date_modified' => 'always'
-                ]
-            ]
-        ]);
-
-        $this->hasOne('File', [
-            'className' => 'Burzum/FileStorage.FileStorage',
-            'foreignKey' => 'foreign_key',
-            'conditions' => ['File.model' => 'Files'],
-            'cascadeCallbacks' => true,
-            'dependent' => true
+    public function findCommon(Query $query, array $options)
+    {
+        return $query->where([
+            'Files.foreign_key IS' => null,
+            'Files.model' => 'file_storage'
         ]);
     }
 
-    /**
-     * Default validation rules.
-     *
-     * @param \Cake\Validation\Validator $validator Validator instance.
-     * @return \Cake\Validation\Validator
-     */
-    public function validationDefault(Validator $validator)
+    public function findByType(Query $query, array $options)
     {
-        $validator
-            ->nonNegativeInteger('id')
-            ->allowEmpty('id', 'create');
-
-        return $validator;
+        return $query
+            ->where(['Files.mime_type LIKE' => $options['type'] . '/%']);
     }
 }

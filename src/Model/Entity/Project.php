@@ -14,8 +14,6 @@ use Cake\ORM\Entity;
  * @property string $meta_description
  * @property \Cake\I18n\FrozenTime $date_created
  * @property \Cake\I18n\FrozenTime $date_modified
- * @property \Cake\I18n\FrozenTime $date_published
- * @property bool $published
  *
  * @property \App\Model\Entity\Post[] $posts
  * @property \Tags\Model\Entity\Tag[] $tags
@@ -35,19 +33,15 @@ class Project extends Entity
      */
     protected $_accessible = [
         'title' => true,
-        'heading' => true,
         'slug' => true,
         'lead' => true,
         'body' => true,
         'url' => true,
-        'image' => true,
         'weight' => true,
-        'meta_keywords' => true,
-        'meta_description' => true,
         'date_created' => true,
         'date_modified' => true,
-        'published' => true,
         'posts' => true,
-        'tags' => true
+        'meta_tags' => true,
+        'published' => true
     ];
 }

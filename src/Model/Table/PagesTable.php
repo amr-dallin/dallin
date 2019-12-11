@@ -1,12 +1,14 @@
 <?php
 namespace App\Model\Table;
 
+use ArrayObject;
+use Cake\Event\Event;
+use Cake\ORM\Entity;
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
-use Cake\ORM\TableRegistry;
-use Cake\Utility\Inflector;
+use Cake\Utility\Text;
 
 /**
  * Pages Model
@@ -45,14 +47,9 @@ class PagesTable extends Table
                 ]
             ]
         ]);
-
-        $this->hasOne('Image', [
-            'className' => 'Burzum/FileStorage.FileStorage',
-            'foreignKey' => 'foreign_key',
-            'conditions' => ['Image.model' => 'PageImages'],
-            'cascadeCallbacks' => true,
-            'dependent' => true
-        ]);
+        $this->addBehavior('Meta.Meta');
+        $this->addBehavior('Muffin/Slug.Slug');
+        $this->addBehavior('Published.Published');
     }
 
     /**
@@ -78,64 +75,6 @@ class PagesTable extends Table
             ->requirePresence('body', 'create')
             ->allowEmpty('body');
 
-        $validator
-            ->scalar('meta_keywords')
-            ->maxLength('meta_keywords', 255)
-            ->allowEmpty('meta_keywords');
-
-        $validator
-            ->scalar('meta_description')
-            ->maxLength('meta_description', 255)
-            ->allowEmpty('meta_description');
-
         return $validator;
-    }
-
-    public function findType(Query $query, array $options)
-    {
-        return $query
-            ->where(['Pages.systemic' => $options['systemic']]);
-    }
-
-    public function findAllPublished(Query $query, array $options)
-    {
-        return $query
-            ->where([
-                'Pages.systemic' => false,
-                'Pages.published' => true
-            ]);
-    }
-
-    public function findPublished(Query $query, array $options)
-    {
-        return $this->find('allPublished')
-            ->where(['Pages.slug' => $options['slug']]);
-    }
-
-    public function tagged($slug)
-    {
-        $tagged = [];
-        $records = ['books', 'posts', 'projects'];
-        foreach($records as $record) {
-            ${$record . 'Table'} = TableRegistry::getTableLocator()->get(Inflector::camelize($record));
-            ${$record} = ${$record . 'Table'}->find('tagged', [
-                'tag' => $slug,
-            ])->toArray();
-
-            $key = 0;
-            foreach(${$record} as ${Inflector::singularize($record)}) {
-                if (${Inflector::singularize($record)}->published) {
-                    $tagged[$record][$key] = [
-                        'id' => ${Inflector::singularize($record)}->id,
-                        'alias' => ${Inflector::singularize($record)}->alias,
-                        'title' => ${Inflector::singularize($record)}->title
-                    ];
-
-                    $key++;
-                }
-            }
-        }
-
-        return $tagged;
     }
 }

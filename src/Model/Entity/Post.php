@@ -16,7 +16,6 @@ use Cake\ORM\Entity;
  * @property string $meta_description
  * @property \Cake\I18n\FrozenTime $date_created
  * @property \Cake\I18n\FrozenTime $date_modified
- * @property bool $published
  * @property \Tags\Model\Entity\Tagged[] $tagged
  * @property \Tags\Model\Entity\Tag[] $tags
  */
@@ -34,16 +33,16 @@ class Post extends Entity
      */
     protected $_accessible = [
         'project_id' => true,
+        'service_id' => true,
         'title' => true,
-        'heading' => true,
         'slug' => true,
         'lead' => true,
         'body' => true,
-        'image' => true,
-        'meta_keywords' => true,
-        'meta_description' => true,
         'date_created' => true,
         'date_modified' => true,
+        'project' => true,
+        'service' => true,
+        'meta_tags' => true,
         'published' => true
     ];
 }

@@ -26,31 +26,10 @@ EventManager::instance()->on(new ImageProcessingListener());
 
 Configure::write('FileStorage', [
     'imageSizes' => [
-        'Files' => [
+        'file_storage' => [
             'crop160' => [
                 'squareCenterCrop' => [
                     'size' => 160
-                ]
-            ]
-        ],
-        'PageImages' => [
-            't382x200' => [
-                'thumbnail' => [
-                    'width' => 382, 'height' => 200
-                ]
-            ]
-        ],
-        'PostImages' => [
-            't382x200' => [
-                'thumbnail' => [
-                    'width' => 382, 'height' => 200
-                ]
-            ]
-        ],
-        'ProjectImages' => [
-            't382x200' => [
-                'thumbnail' => [
-                    'width' => 382, 'height' => 200
                 ]
             ]
         ]

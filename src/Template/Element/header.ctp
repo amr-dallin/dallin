@@ -9,7 +9,7 @@
                     'alt' => $configure['Settings']['Site']['title'],
                     'title' => $configure['Settings']['Site']['title']
                 ]),
-                ['_name' => 'display'],
+                ['_name' => 'home'],
                 ['escape' => false, 'class' => 'navbar-brand']
             );
             ?>
@@ -27,7 +27,7 @@
 
                 echo $this->Dallin->headerLink(
                     __('Home'),
-                    ['_name' => 'display'],
+                    ['_name' => 'home'],
                     [
                         'class' => 'nav-item nav-link',
                         'title' => __('Home'),
@@ -48,8 +48,17 @@
                         'menu' => $menu
                     ]
                 );
+                echo $this->Dallin->headerLink(__('Projects'),
+                    ['_name' => 'projects'],
+                    [
+                        'class' => 'nav-item nav-link',
+                        'title' => __('Projects'),
+                        'slug' => 'projects',
+                        'menu' => $menu
+                    ]
+                );
                 echo $this->Dallin->headerLink(__('Blog'),
-                    ['controller' => 'Posts', 'action' => 'index'],
+                    ['_name' => 'posts'],
                     [
                         'class' => 'nav-item nav-link',
                         'title' => __('Blog'),

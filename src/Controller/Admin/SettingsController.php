@@ -21,10 +21,11 @@ class SettingsController extends AppController
     public function index($key = null)
     {
         $settings = $this->Settings
-            ->find('prefixSettings', ['key' => $key])
+            ->find('prefixSettings', compact('key'))
             ->toArray();
+
         if (empty($settings)) {
-            throw new RecordNotFoundException(__('No settings'));
+            throw new RecordNotFoundException(__('Settings not found'));
         }
 
         $this->set('settings', $settings);
@@ -65,10 +66,8 @@ class SettingsController extends AppController
         $setting->value = $this->request->getData('value');
         $this->Settings->save($setting);
 
-        $this->set([
-            'valid' => null,
-            '_serialize' => 'valid'
-        ]);
+        $this->set('valid', true);
+        $this->set('_serialize', 'valid');
     }
 
     /**

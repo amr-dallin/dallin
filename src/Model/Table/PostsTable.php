@@ -5,8 +5,10 @@ use ArrayObject;
 use Cake\Event\Event;
 use Cake\ORM\Entity;
 use Cake\ORM\Query;
+use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use Cake\Utility\Text;
 /**
  * Posts Model
  *
@@ -40,8 +42,10 @@ class PostsTable extends Table
         $this->setPrimaryKey('id');
 
         $this->belongsTo('Projects', [
-            'foreignKey' => 'project_id',
-            'joinType' => 'INNER'
+            'foreignKey' => 'project_id'
+        ]);
+        $this->belongsTo('Services', [
+            'foreignKey' => 'service_id'
         ]);
 
         $this->addBehavior('Timestamp', [
@@ -52,16 +56,10 @@ class PostsTable extends Table
                 ]
             ]
         ]);
-
-        $this->addBehavior('Tags.Tag', ['taggedCounter' => false]);
-
-        $this->hasOne('Image', [
-            'className' => 'Burzum/FileStorage.FileStorage',
-            'foreignKey' => 'foreign_key',
-            'conditions' => ['Image.model' => 'PostImages'],
-            'cascadeCallbacks' => true,
-            'dependent' => true
-        ]);
+        $this->addBehavior('Tags.Tag', ['taggedCounter' => false, 'strategy' => 'array']);
+        $this->addBehavior('Meta.Meta');
+        $this->addBehavior('Muffin/Slug.Slug');
+        $this->addBehavior('Published.Published');
     }
 
     /**
@@ -83,18 +81,6 @@ class PostsTable extends Table
             ->notEmpty('title');
 
         $validator
-            ->scalar('heading')
-            ->maxLength('heading', 255)
-            ->requirePresence('heading', 'create')
-            ->notEmpty('heading');
-
-        $validator
-            ->scalar('slug')
-            ->maxLength('slug', 255)
-            ->requirePresence('slug', 'create')
-            ->notEmpty('slug');
-
-        $validator
             ->scalar('lead')
             ->requirePresence('lead', 'create')
             ->notEmpty('lead');
@@ -104,52 +90,24 @@ class PostsTable extends Table
             ->requirePresence('body', 'create')
             ->notEmpty('body');
 
-        $validator
-            ->scalar('meta_keywords')
-            ->maxLength('meta_keywords', 255)
-            ->allowEmpty('meta_keywords');
-
-        $validator
-            ->scalar('meta_description')
-            ->maxLength('meta_description', 255)
-            ->allowEmpty('meta_description');
-
-        $validator
-            ->boolean('published')
-            ->notEmpty('published');
-
         return $validator;
     }
 
-    public function beforeSave(Event $event, Entity $entity, ArrayObject $options)
+    public function beforeFind($event, $query, $options, $primary)
     {
-        if (!empty($entity->image->file)) {
-            $entity->image->set('model', 'PostImages');
+        $order = $query->clause('order');
+        if ($order === null || !count($order)) {
+            $query->order([
+                $this->aliasField('id') => 'DESC'
+            ]);
         }
     }
 
-    public function findAllPublished(Query $query, array $options)
+    public function findByService(Query $query, Array $options)
     {
         return $query
-            ->where(['Posts.published' => true])
-            ->order(['Posts.id' => 'DESC'])
-            ->contain('Tags');
-    }
-
-    public function findPublished(Query $query, array $options)
-    {
-        return $query
-            ->where([
-                'Posts.slug' => $options['slug'],
-                'Posts.published' => true
-            ])
-            ->contain('Tags');
-    }
-
-    public function findTaggedAllPublished(Query $query, array $options)
-    {
-        return $this
-            ->find('allPublished')
-            ->find('tagged', ['tag' => $options['slug']]);
+            ->where(
+                ['Posts.service_id' => $options['service_id']]
+            );
     }
 }

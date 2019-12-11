@@ -38,13 +38,22 @@ class AppView extends View
     public function initialize()
     {
         parent::initialize();
+
+        $configure = Configure::read();
+        $this->set('configure', $configure);
+
         $this->loadHelper('Tags.Tag');
         $this->loadHelper('Burzum/FileStorage.Image', [
             'pathPrefix' => DS . 'assets' . DS
         ]);
         $this->loadHelper('Paginator', ['templates' => 'paginator-templates']);
-
-        $configure = Configure::read();
-        $this->set('configure', $configure);
+        $this->loadHelper('Meta.MetaRender', [
+            'fb.app_id' => Configure::read('Settings.App.facebook'),
+            'og.site_name' => Configure::read('Settings.Site.title'),
+            'twitter' => [
+                'site' => '@' . Configure::read('Settings.Contacts.twitter'),
+                'creator' => '@' . Configure::read('Settings.Contacts.twitter')
+            ]
+        ]);
     }
 }

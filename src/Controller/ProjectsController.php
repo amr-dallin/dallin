@@ -15,19 +15,13 @@ use Cake\Datasource\Exception\RecordNotFoundException;
 class ProjectsController extends AppController
 {
     public $paginate = [
-        'limit' => 10
+        'limit' => 1
     ];
-
-    public function initialize()
-    {
-        parent::initialize();
-        $this->loadComponent('Paginator');
-    }
 
     public function beforeFilter(\Cake\Event\Event $event)
     {
         parent::beforeFilter($event);
-        $this->Auth->allow(['index', 'view']);
+        $this->Auth->allow('index', 'view');
     }
     /**
      * Index method
@@ -36,11 +30,10 @@ class ProjectsController extends AppController
      */
     public function index()
     {
-        $query = $this->Projects->find('allPublished');
-        $projects = $this->paginate($query);
+        $pagesTable = TableRegistry::getTableLocator()->get('SystemicPages');
+        $page = $pagesTable->get(3, ['contain' => ['MetaTags']]);
 
-        $pagesTable = TableRegistry::getTableLocator()->get('Pages');
-        $page = $pagesTable->get(4);
+        $projects = $this->paginate($this->Projects->find('published'));
 
         $this->set(compact('page', 'projects'));
     }
@@ -53,9 +46,14 @@ class ProjectsController extends AppController
      */
     public function view($slug)
     {
-        $project = $this->Projects->find('published', ['slug' => $slug])->first();
+        $project = $this->Projects
+            ->find('published')
+            ->find('slugged', compact('slug'))
+            ->contain('MetaTags')
+            ->first();
+
         if (empty($project)) {
-            throw new RecordNotFoundException(__('No project'));
+            throw new RecordNotFoundException(__('Project not found'));
         }
 
         $this->set('project', $project);

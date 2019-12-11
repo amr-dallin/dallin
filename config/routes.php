@@ -47,32 +47,128 @@ use Cake\Routing\Route\DashedRoute;
 Router::defaultRouteClass(DashedRoute::class);
 
 Router::prefix('admin', function (RouteBuilder $routes) {
-    $routes->connect('/dashboard', ['controller' => 'Pages', 'action' => 'display']);
-    $routes->connect('/login', ['controller' => 'Users', 'action' => 'login']);
+    $routes->connect(
+        '/dashboard',
+        ['controller' => 'SystemicPages', 'action' => 'dashboard'],
+        ['_name' => 'dashboard']
+    );
 
     $routes
-        ->connect('/settings/edit',
+        ->connect(
+            '/tag-list',
+            ['controller' => 'Posts', 'action' => 'tagList'],
+            ['_name' => 'tag-list']
+        )
+        ->setExtensions(['json']);
+
+    $routes->connect(
+        '/login',
+        ['controller' => 'Users', 'action' => 'login'],
+        ['_name' => 'login']
+    );
+    $routes->connect(
+        '/logout',
+        ['controller' => 'Users', 'action' => 'logout'],
+        ['_name' => 'logout']
+    );
+
+    $routes
+        ->connect(
+            '/settings/key/:key',
+            ['controller' => 'Settings', 'action' => 'index'],
+            ['_name' => 'settings']
+        )
+        ->setPass(['key']);
+
+    $routes
+        ->connect(
+            '/settings/edit',
             ['controller' => 'Settings', 'action' => 'edit']
-        )->setExtensions(['json']);
+        )
+        ->setExtensions(['json']);
 
     $routes->fallbacks(DashedRoute::class);
 });
 
 Router::scope('/', function (RouteBuilder $routes) {
-    $routes->connect('/:controller/:slug', ['action' => 'view'])
+
+    // Posts
+    $routes
+        ->connect(
+            '/posts',
+            ['controller' => 'Posts', 'action' => 'index'],
+            ['_name' => 'posts']
+        )
+        ->setPass(['slug']);
+    $routes
+        ->connect(
+            '/posts/c/:service_slug',
+            ['controller' => 'Posts', 'action' => 'service'],
+            ['_name' => 'posts_service']
+        )
+        ->setPass(['service_slug']);
+    $routes
+        ->connect(
+            '/posts/:slug',
+            ['controller' => 'Posts', 'action' => 'view'],
+            ['_name' => 'post_view']
+        )
         ->setPass(['slug']);
 
-    $routes->connect('/', ['controller' => 'Pages', 'action' => 'display'], ['_name' => 'display']);
-
-    $routes->connect('/p/:slug', ['controller' => 'Pages', 'action' => 'view'])
+    // Services
+    $routes
+        ->connect(
+            '/s/:slug',
+            ['controller' => 'Services', 'action' => 'view'],
+            ['_name' => 'service_view']
+        )
         ->setPass(['slug']);
 
-    $routes->connect('/about', ['controller' => 'Pages', 'action' => 'about'], ['_name' => 'about']);
+    // Projects
+    $routes
+        ->connect(
+            '/projects',
+            ['controller' => 'Projects', 'action' => 'index'],
+            ['_name' => 'projects']
+        )
+        ->setPass(['slug']);
+    $routes
+        ->connect(
+            '/projects/:slug',
+            ['controller' => 'Projects', 'action' => 'view'],
+            ['_name' => 'project_view']
+        )
+        ->setPass(['slug']);
 
-    $routes->connect('/sitemap', ['controller' => 'Pages', 'action' => 'sitemap'])
+    $routes->connect(
+        '/',
+        ['controller' => 'SystemicPages', 'action' => 'display'],
+        ['_name' => 'home']
+    );
+
+    $routes
+        ->connect(
+            '/p/:slug',
+            ['controller' => 'Pages', 'action' => 'view'],
+            ['_name' => 'page_view']
+        )
+        ->setPass(['slug']);
+
+
+    $routes
+        ->connect(
+            '/sitemap',
+            ['controller' => 'SystemicPages', 'action' => 'sitemap'],
+            ['_name' => 'sitemap']
+        )
         ->setExtensions(['xml']);
 
-    $routes->connect('/robots', ['controller' => 'Pages', 'action' => 'robots'])
+    $routes
+        ->connect(
+            '/robots',
+            ['controller' => 'SystemicPages', 'action' => 'robots'],
+            ['_name' => 'robots']
+        )
         ->setExtensions(['txt']);
 
     $routes->fallbacks(DashedRoute::class);

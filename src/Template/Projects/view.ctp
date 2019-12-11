@@ -1,29 +1,12 @@
 <?php
-$title = h($project->title);
-
+$this->assign('meta', $this->MetaRender->init($project)->render());
 $this->set('menu', 'projects');
 
-$this->start('meta');
-echo $this->element('meta', [
-    'title' => $title,
-    'meta' => [
-        'keywords' => h($project->meta_keywords),
-        'description' => h($project->meta_description)
-    ],
-    'og' => [
-        'title' => h($project->heading),
-        'description' => h($project->meta_description),
-        'image' => [
-            'url' => $project->image
-        ],
-        'url' => $this->Url->build(['slug' => h($project->slug)], true)
-    ],
-    'twitter' => [
-        'card' => 'summary_large_image'
-    ],
-    'canonical' => $this->Url->build(['slug' => h($project->slug)], true)
-]);
-$this->end();
+$breadcrumbs = [
+    ['title' => __('Projects'), 'url' => ['_name' => 'projects']],
+    ['title' => h($project->title)]
+];
+$this->set('breadcrumbs', $breadcrumbs);
 
 echo $this->Html->css([
     '/vendor/highlight/styles/tomorrow-night-blue',
@@ -48,17 +31,15 @@ hljs.initHighlightingOnLoad();
 <?php $this->end(); ?>
 
 <article class="article">
-    <div class="jumbotron jumbotron-fluid bg-light text-center <?php if (!empty($project->cover)) echo 'overlay-element'; ?>">
-    <?php if (!empty($project->cover)): ?>
-        <div class="overlay-element-cover" style="background: url('<?php echo h($project->cover); ?>') no-repeat;"></div>
-    <?php endif; ?>
+    <div class="jumbotron jumbotron-fluid bg-light text-center">
         <div class="container inner-elements">
             <div class="row justify-content-center">
                 <div class="col col-md-11 col-lg-10 p-3">
                     <header>
-                        <h1 class="display-1"><?php echo h($project->heading); ?></h1>
+                        <?= $this->element('breadcrumbs') ?>
+                        <h1 class="display-1"><?php echo h($project->title); ?></h1>
                     </header>
-                    <p class="lead m-0"><?php echo h($project->description); ?></p>
+                    <p class="lead m-0"><?php echo h($project->lead); ?></p>
                 </div>
             </div>
         </div>
@@ -69,7 +50,7 @@ hljs.initHighlightingOnLoad();
                 <?php
                 echo $project->body;
                 echo $this->element('article_footer', [
-                    'tags' => $project->tags, 'share' => true
+                    'share' => true
                 ]);
                 ?>
             </div>

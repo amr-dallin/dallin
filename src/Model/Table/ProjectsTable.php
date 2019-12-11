@@ -7,6 +7,7 @@ use Cake\ORM\Entity;
 use Cake\ORM\Query;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use Cake\Utility\Text;
 
 /**
  * Projects Model
@@ -56,15 +57,9 @@ class ProjectsTable extends Table
             ]
         ]);
 
-        $this->addBehavior('Tags.Tag', ['taggedCounter' => false]);
-
-        $this->hasOne('Image', [
-            'className' => 'Burzum/FileStorage.FileStorage',
-            'foreignKey' => 'foreign_key',
-            'conditions' => ['Image.model' => 'ProjectImages'],
-            'cascadeCallbacks' => true,
-            'dependent' => true
-        ]);
+        $this->addBehavior('Meta.Meta');
+        $this->addBehavior('Muffin/Slug.Slug');
+        $this->addBehavior('Published.Published');
     }
 
     public function buildValidator(Event $event, Validator $validator, $name)
@@ -90,18 +85,6 @@ class ProjectsTable extends Table
             ->notEmpty('title');
 
         $validator
-            ->scalar('heading')
-            ->maxLength('heading', 255)
-            ->requirePresence('heading', 'create')
-            ->notEmpty('heading');
-
-        $validator
-            ->scalar('slug')
-            ->maxLength('slug', 255)
-            ->requirePresence('slug', 'create')
-            ->notEmpty('slug');
-
-            $validator
             ->scalar('lead')
             ->requirePresence('lead', 'create')
             ->notEmpty('lead');
@@ -111,45 +94,16 @@ class ProjectsTable extends Table
             ->requirePresence('body', 'create')
             ->notEmpty('body');
 
-        $validator
-            ->scalar('meta_keywords')
-            ->maxLength('meta_keywords', 255)
-            ->allowEmpty('meta_keywords');
-
-        $validator
-            ->scalar('meta_description')
-            ->maxLength('meta_description', 255)
-            ->allowEmpty('meta_description');
-
-        $validator
-            ->boolean('published')
-            ->requirePresence('published', 'create')
-            ->notEmpty('published');
-
         return $validator;
     }
 
-    public function beforeSave(Event $event, Entity $entity, ArrayObject $options)
+    public function beforeFind($event, $query, $options, $primary)
     {
-        if (!empty($entity->image->file)) {
-            $entity->image->set('model', 'ProjectImages');
-        }
-    }
-
-    public function findAllPublished(Query $query, array $options)
-    {
-        return $query
-            ->where(['Projects.published' => true])
-            ->order(['Projects.weight' => 'DESC', 'Projects.id' => 'DESC'])
-            ->contain('Tags');
-    }
-
-    public function findPublished(Query $query, array $options)
-    {
-        return $query
-            ->where([
-                'Projects.slug' => $options['slug'],
-                'Projects.published' => true
+        $order = $query->clause('order');
+        if ($order === null || !count($order)) {
+            $query->order([
+                $this->aliasField('id') => 'DESC'
             ]);
+        }
     }
 }

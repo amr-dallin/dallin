@@ -6,13 +6,9 @@ use Cake\ORM\Entity;
 /**
  * File Entity
  *
- * @property int $id
- * @property \Cake\I18n\FrozenTime $date_created
- * @property \Cake\I18n\FrozenTime $date_modified
  */
 class File extends Entity
 {
-
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
      *
@@ -23,8 +19,6 @@ class File extends Entity
      * @var array
      */
     protected $_accessible = [
-        'date_created' => true,
-        'date_modified' => true,
-        'file' => true
+        '*' => true
     ];
 }

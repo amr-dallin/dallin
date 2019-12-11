@@ -35,18 +35,18 @@ class Application extends BaseApplication
      */
     public function bootstrap()
     {
+        $this->addPlugin('Muffin/Slug');
+        $this->addPlugin('Published');
         $this->addPlugin('Meta');
-
-        // Call parent to load bootstrap from files.
-        parent::bootstrap();
-
+        $this->addPlugin('ControlPanel');
         $this->addPlugin('Tags');
         $this->addPlugin('Ajax', ['bootstrap' => true]);
 
-        $this->addPlugin('SmartAdmin');
-
         $this->addPlugin('Burzum/FileStorage', ['bootstrap' => true]);
         $this->addPlugin('Burzum/Imagine');
+
+        // Call parent to load bootstrap from files.
+        parent::bootstrap();
 
         if (PHP_SAPI === 'cli') {
             try {

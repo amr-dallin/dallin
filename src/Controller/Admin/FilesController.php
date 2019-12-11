@@ -19,27 +19,26 @@ class FilesController extends AppController
      */
     public function index()
     {
-        $files = $this->paginate($this->Files->find('all', [
-            'contain' => ['File']
-        ]));
-
-        $this->set(compact('files'));
+        $files = $this->Files->find('common');
+        $this->set('files', $files);
     }
 
-    /**
-     * View method
-     *
-     * @param string|null $id File id.
-     * @return \Cake\Http\Response|void
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
-    public function view($id = null)
+    public function images()
     {
-        $file = $this->Files->get($id, [
-            'contain' => ['Files']
-        ]);
+        $files = $this->Files
+            ->find('common')
+            ->find('byType', ['type' => 'image']);
 
-        $this->set('file', $file);
+        $this->set('files', $files);
+    }
+
+    public function documents()
+    {
+        $files = $this->Files
+            ->find('common')
+            ->find('byType', ['type' => 'application']);
+
+        $this->set('files', $files);
     }
 
     /**
@@ -51,35 +50,6 @@ class FilesController extends AppController
     {
         $file = $this->Files->newEntity();
         if ($this->request->is('post')) {
-            $file = $this->Files->patchEntity($file, $this->request->getData());
-
-            if (!empty($file->file->file)) {
-                $file->file->set('model', 'Files');
-            }
-
-            if ($this->Files->save($file)) {
-                $this->Flash->success(__('The file has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The file could not be saved. Please, try again.'));
-        }
-        $this->set(compact('file'));
-    }
-
-    /**
-     * Edit method
-     *
-     * @param string|null $id File id.
-     * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
-     * @throws \Cake\Network\Exception\NotFoundException When record not found.
-     */
-    public function edit($id = null)
-    {
-        $file = $this->Files->get($id, [
-            'contain' => []
-        ]);
-        if ($this->request->is(['patch', 'post', 'put'])) {
             $file = $this->Files->patchEntity($file, $this->request->getData());
             if ($this->Files->save($file)) {
                 $this->Flash->success(__('The file has been saved.'));
@@ -108,6 +78,6 @@ class FilesController extends AppController
             $this->Flash->error(__('The file could not be deleted. Please, try again.'));
         }
 
-        return $this->redirect(['action' => 'index']);
+        return $this->redirect($this->referer());
     }
 }

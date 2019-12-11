@@ -12,10 +12,11 @@ use App\Controller\AppController;
  */
 class PagesController extends AppController
 {
-    public function display()
-    {
-    }
+    public function initialize() {
+        parent::initialize();
 
+        $this->loadComponent('Published.Published');
+    }
     /**
      * Index method
      *
@@ -23,10 +24,11 @@ class PagesController extends AppController
      */
     public function index()
     {
-        $systemic_pages = $this->Pages->find('type', ['systemic' => true]);
-        $pages = $this->Pages->find('type', ['systemic' => false]);
+        $pages = $this->Pages
+            ->find()
+            ->contain('Published');
 
-        $this->set(compact('systemic_pages', 'pages'));
+        $this->set('pages', $pages);
     }
 
     /**
@@ -37,12 +39,13 @@ class PagesController extends AppController
     public function add()
     {
         $page = $this->Pages->newEntity();
-        if ($this->request->is('post')) {
-            $page = $this->Pages->patchEntity($page, $this->request->getData());
 
-            if (!empty($page->image->file)) {
-                $page->image->set('model', 'PageImages');
-            }
+        if ($this->request->is('post')) {
+            $page = $this->Pages->patchEntity(
+                $page,
+                $this->request->getData(),
+                ['associated' => ['MetaTags' , 'Published']]
+            );
 
             if ($this->Pages->save($page)) {
                 $this->Flash->success(__('The page has been saved.'));
@@ -51,7 +54,8 @@ class PagesController extends AppController
             }
             $this->Flash->error(__('The page could not be saved. Please, try again.'));
         }
-        $this->set(compact('page'));
+
+        $this->set('page', $page);
     }
 
     /**
@@ -64,14 +68,15 @@ class PagesController extends AppController
     public function edit($id = null)
     {
         $page = $this->Pages->get($id, [
-            'contain' => ['Image']
+            'contain' => ['MetaTags', 'Published']
         ]);
-        if ($this->request->is(['patch', 'post', 'put'])) {
-            $page = $this->Pages->patchEntity($page, $this->request->getData());
 
-            if (!empty($page->image->file)) {
-                $page->image->set('model', 'PageImages');
-            }
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $page = $this->Pages->patchEntity(
+                $page,
+                $this->request->getData(),
+                ['associated' => ['MetaTags', 'Published']]
+            );
 
             if ($this->Pages->save($page)) {
                 $this->Flash->success(__('The page has been saved.'));
@@ -80,7 +85,20 @@ class PagesController extends AppController
             }
             $this->Flash->error(__('The page could not be saved. Please, try again.'));
         }
-        $this->set(compact('page'));
+
+        $this->set('page', $page);
+    }
+
+    /**
+     * setPublished method
+     *
+     * @param int|null $id Page id.
+     * @return \Cake\Http\Response|null Redirects to index.
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     */
+    public function setPublished($id = null)
+    {
+        $this->Published->setPublished($id);
     }
 
     /**

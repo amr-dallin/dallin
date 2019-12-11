@@ -12,6 +12,11 @@ use App\Controller\AppController;
  */
 class PostsController extends AppController
 {
+    public function initialize() {
+        parent::initialize();
+
+        $this->loadComponent('Published.Published');
+    }
     /**
      * Index method
      *
@@ -19,13 +24,28 @@ class PostsController extends AppController
      */
     public function index()
     {
-        $posts = $this->paginate(
-            $this->Posts->find('all', [
-                'order' => ['Posts.id' => 'DESC']
-            ])
-        );
+        $posts = $this->Posts
+            ->find()
+            ->contain('Published');
 
         $this->set(compact('posts'));
+    }
+
+    public function tagList()
+    {
+        $this->request->allowMethod('ajax');
+
+        $tags = $this->Posts->Tagged->Tags->find('list');
+        $data = [];
+        foreach($tags as $key => $tag) {
+            $data[] = [
+                'id' => $tag,
+                'text' => $tag
+            ];
+        }
+
+        $this->set('data', $data);
+        $this->set('_serialize', 'data');
     }
 
     /**
@@ -37,7 +57,11 @@ class PostsController extends AppController
     {
         $post = $this->Posts->newEntity();
         if ($this->request->is('post')) {
-            $post = $this->Posts->patchEntity($post, $this->request->getData());
+            $post = $this->Posts->patchEntity(
+                $post,
+                $this->request->getData(),
+                ['associated' => ['MetaTags' , 'Published', 'Tags']]
+            );
 
             if ($this->Posts->save($post)) {
                 $this->Flash->success(__('The post has been saved.'));
@@ -48,7 +72,8 @@ class PostsController extends AppController
         }
 
         $projects = $this->Posts->Projects->find('list');
-        $this->set(compact('post', 'projects'));
+        $services = $this->Posts->Services->find('list');
+        $this->set(compact('post', 'projects', 'services'));
     }
 
     /**
@@ -61,10 +86,15 @@ class PostsController extends AppController
     public function edit($id = null)
     {
         $post = $this->Posts->get($id, [
-            'contain' => ['Image', 'Tags']
+            'contain' => ['MetaTags', 'Published', 'Tags']
         ]);
+
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $post = $this->Posts->patchEntity($post, $this->request->getData());
+            $post = $this->Posts->patchEntity(
+                $post,
+                $this->request->getData(),
+                ['associated' => ['MetaTags', 'Published', 'Tags']]
+            );
 
             if ($this->Posts->save($post)) {
                 $this->Flash->success(__('The post has been saved.'));
@@ -75,8 +105,22 @@ class PostsController extends AppController
         }
 
         $projects = $this->Posts->Projects->find('list');
-        $this->set(compact('post', 'projects'));
+        $services = $this->Posts->Services->find('list');
+        $this->set(compact('post', 'projects', 'services'));
     }
+
+    /**
+     * setPublished method
+     *
+     * @param int|null $id Post id.
+     * @return \Cake\Http\Response|null Redirects to index.
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     */
+    public function setPublished($id = null)
+    {
+        $this->Published->setPublished($id);
+    }
+
 
     /**
      * Delete method

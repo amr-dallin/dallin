@@ -19,7 +19,6 @@ use Cake\Event\Event;
 use Cake\Core\Configure;
 use Cake\ORM\TableRegistry;
 
-
 /**
  * Application Controller
  *
@@ -45,14 +44,13 @@ class AppController extends Controller
         parent::initialize();
 
         $this->loadComponent('RequestHandler', [
-            'enableBeforeRedirect' => false,
+            'enableBeforeRedirect' => false
         ]);
         $this->loadComponent('Flash');
         $this->loadComponent('Auth', [
+            'authorize' => 'Controller',
             'loginAction' => [
-                'controller' => 'users',
-                'action' => 'login',
-                'prefix' => 'admin'
+                '_name' => 'login'
             ],
             'loginRedirect' => [
                 'controller' => 'Pages',
@@ -67,26 +65,39 @@ class AppController extends Controller
     public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
-    }
-
-    public function beforeRender(\Cake\Event\Event $event)
-    {
-        if (
-            !empty($this->request->getParam('prefix')) &&
-            $this->request->getParam('prefix') === 'admin'
-        ) {
-            $this->viewBuilder()->setTheme('SmartAdmin');
-        }
-
         $this->__setSettings();
     }
 
-    public function isAuthorized($user)
+    public function beforeRender(Event $event)
     {
-        if (!empty($user)) {
-            return true;
+        parent::beforeRender($event);
+
+        if (
+            !empty($this->request->getParam('prefix')) &&
+            $this->request->getParam('prefix') === 'admin' &&
+            !$this->getRequest()->is('ajax') &&
+            !$this->getRequest()->is('json') &&
+            !$this->getRequest()->is('xml')
+        ) {
+            $this->viewBuilder()->setClassName('ControlPanel.App');
+            $this->viewBuilder()->setTheme('ControlPanel');
         }
-        return false;
+    }
+
+    public function isAuthorized($user = null)
+    {
+        $sessionAuth = $this->getRequest()->getSession()->read('Auth');
+        if ((time() - date('U', strtotime($user['date_visited']))) > 60) {
+            $usersTable = TableRegistry::getTableLocator()->get('Users');
+            $user = $usersTable->get($user['id']);
+
+            $user->date_visited = $usersTable->timestamp();
+            if ($usersTable->save($user)) {
+                $this->getRequest()->getSession()->write('Auth.User.date_visited', $user->date_visited);
+            }
+        }
+
+        return true;
     }
 
     private function __setSettings()

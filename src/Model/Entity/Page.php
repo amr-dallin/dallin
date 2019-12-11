@@ -8,14 +8,10 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string $title
- * @property string $alias
+ * @property string $slug
  * @property string $body
- * @property string $meta_keywords
- * @property string $meta_description
- * @property bool $home
  * @property \Cake\I18n\FrozenTime $date_created
  * @property \Cake\I18n\FrozenTime $date_modified
- * @property bool $published
  */
 class Page extends Entity
 {
@@ -33,12 +29,9 @@ class Page extends Entity
         'title' => true,
         'slug' => true,
         'body' => true,
-        'image' => true,
-        'meta_keywords' => true,
-        'meta_description' => true,
         'date_created' => true,
         'date_modified' => true,
-        'systemic' => true,
+        'meta_tags' => true,
         'published' => true
     ];
 }

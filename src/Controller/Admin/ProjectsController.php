@@ -12,6 +12,12 @@ use App\Controller\AppController;
  */
 class ProjectsController extends AppController
 {
+    public function initialize() {
+        parent::initialize();
+
+        $this->loadComponent('Published.Published');
+    }
+
     /**
      * Index method
      *
@@ -19,7 +25,10 @@ class ProjectsController extends AppController
      */
     public function index()
     {
-        $projects = $this->paginate($this->Projects);
+        $projects = $this->Projects
+            ->find()
+            ->contain('Published')
+            ->toArray();
 
         $this->set(compact('projects'));
     }
@@ -33,7 +42,11 @@ class ProjectsController extends AppController
     {
         $project = $this->Projects->newEntity();
         if ($this->request->is('post')) {
-            $project = $this->Projects->patchEntity($project, $this->request->getData());
+            $project = $this->Projects->patchEntity(
+                $project,
+                $this->request->getData(),
+                ['associated' => ['MetaTags', 'Published']]
+            );
 
             if ($this->Projects->save($project)) {
                 $this->Flash->success(__('The project has been saved.'));
@@ -56,10 +69,15 @@ class ProjectsController extends AppController
     public function edit($id = null)
     {
         $project = $this->Projects->get($id, [
-            'contain' => ['Tags', 'Image']
+            'contain' => ['MetaTags', 'Published']
         ]);
+
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $project = $this->Projects->patchEntity($project, $this->request->getData());
+            $project = $this->Projects->patchEntity(
+                $project,
+                $this->request->getData(),
+                ['associated' => ['MetaTags', 'Published']]
+            );
 
             if ($this->Projects->save($project)) {
                 $this->Flash->success(__('The project has been saved.'));
@@ -69,6 +87,18 @@ class ProjectsController extends AppController
             $this->Flash->error(__('The project could not be saved. Please, try again.'));
         }
         $this->set(compact('project'));
+    }
+
+    /**
+     * setPublished method
+     *
+     * @param int|null $id Project id.
+     * @return \Cake\Http\Response|null Redirects to index.
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     */
+    public function setPublished($id = null)
+    {
+        $this->Published->setPublished($id);
     }
 
     /**

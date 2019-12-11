@@ -18,65 +18,21 @@ class PagesController extends AppController
     public function beforeFilter(\Cake\Event\Event $event)
     {
         parent::beforeFilter($event);
-        $this->Auth->allow(['display', 'view', 'about', 'sitemap', 'robots']);
-    }
-
-    public function display()
-    {
-        $projectsTables = TableRegistry::getTableLocator()->get('Projects');
-        $project = $projectsTables->find('allPublished')->first();
-
-        // Page ID 1 - Home page
-        $page = $this->Pages->get(1);
-        $this->set(compact('page', 'project'));
+        $this->Auth->allow(['view', 'sitemap', 'robots']);
     }
 
     public function view($slug)
     {
         $page = $this->Pages
-            ->find('published', ['slug' => $slug])
-            ->contain('Image')
+            ->find('published')
+            ->find('slugged', compact('slug'))
+            ->contain('MetaTags')
             ->first();
 
         if (empty($page)) {
-            throw new RecordNotFoundException(__('No page'));
+            throw new RecordNotFoundException(__('Page not found'));
         }
 
         $this->set('page', $page);
-    }
-
-    public function about()
-    {
-        return $this->redirect(['action' => 'view', 'slug' => 'about'], 302);
-    }
-
-    public function sitemap()
-    {
-        if (!$this->request->is('xml')) {
-            throw new NotFoundException(__('Not found page'));
-        }
-
-        $pages = $this->Pages->find('allPublished')->toArray();
-
-        $postsTable = TableRegistry::getTableLocator()->get('Posts');
-        $posts = $postsTable->find('allPublished');
-
-        $projectsTable = TableRegistry::getTableLocator()->get('Projects');
-        $projects = $projectsTable->find('allPublished');
-
-        $this->set(compact('pages', 'posts', 'projects'));
-    }
-
-    public function robots()
-    {
-        $this->request->addDetector('extTxt',
-            function ($request) {
-                return $request->getParam('_ext') === 'txt';
-            }
-        );
-
-        if (!$this->request->is('extTxt')) {
-            throw new NotFoundException(__('Not found page'));
-        }
     }
 }

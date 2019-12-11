@@ -1,8 +1,8 @@
 <?php
 namespace App\Model\Entity;
 
-use Cake\Auth\DefaultPasswordHasher;
 use Cake\ORM\Entity;
+use Cake\Auth\DefaultPasswordHasher;
 
 /**
  * User Entity
@@ -10,13 +10,12 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property string $username
  * @property string $password
- * @property \Cake\I18n\FrozenTime $date_visited
  * @property \Cake\I18n\FrozenTime $date_created
- * @property \Cake\I18n\FrozenTime $date_modified
+ * @property \Cake\I18n\FrozenTime|null $date_modified
+ * @property \Cake\I18n\FrozenTime|null $date_visited
  */
 class User extends Entity
 {
-
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
      *
@@ -29,9 +28,12 @@ class User extends Entity
     protected $_accessible = [
         'username' => true,
         'password' => true,
-        'date_visited' => true,
+        'current_password' => true,
+        'new_password' => true,
+        'new_password_confirm' => true,
         'date_created' => true,
-        'date_modified' => true
+        'date_modified' => true,
+        'date_visited' => true
     ];
 
     /**

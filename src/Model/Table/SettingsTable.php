@@ -85,10 +85,19 @@ class SettingsTable extends Table
         return $validator;
     }
 
+    public function beforeFind($event, $query, $options, $primary)
+    {
+        $order = $query->clause('order');
+        if ($order === null || !count($order)) {
+            $query->order([
+                $this->aliasField('id') => 'DESC'
+            ]);
+        }
+    }
+
     public function findPrefixSettings(Query $query, array $options)
     {
         return $query
-            ->where(['Settings.field_key LIKE' => $options['key'] . '.%'])
-            ->order(['Settings.weight' => 'DESC']);
+            ->where(['Settings.field_key LIKE' => $options['key'] . '.%']);
     }
 }
