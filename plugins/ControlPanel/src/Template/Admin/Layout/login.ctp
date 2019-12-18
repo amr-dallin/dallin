@@ -13,9 +13,15 @@
         <?= $this->Html->css('vendors.bundle') ?>
         <?= $this->Html->css('app.bundle') ?>
         <!-- Place favicon.ico in the root directory -->
-        <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
-        <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+        <?= $this->Html->meta('icon') ?>
+        <link rel="icon" href="/img/favicon-16x16.png" type="image/png" sizes="16x16">
+        <link rel="shortcut icon" href="/img/favicon-16x16.png" type="image/png" sizes="16x16">
+        <link rel="icon" href="/img/favicon-32x32.png" type="image/png" sizes="32x32">
+        <link rel="shortcut icon" href="/img/favicon-32x32.png" type="image/png" sizes="32x32">
+        <link rel="apple-touch-icon" href="/img/touch-icon-iphone.png" type="image/png">
+        <link rel="apple-touch-icon" href="/img/touch-icon-ipad.png" type="image/png" sizes="76x76">
+        <link rel="apple-touch-icon" href="/img/touch-icon-iphone-retina.png" type="image/png" sizes="120x120">
+        <link rel="apple-touch-icon" href="/img/touch-icon-ipad-retina.png" type="image/png" sizes="152x152">
         <!-- Optional: page related CSS-->
         <?= $this->Html->css('page-login') ?>
     </head>

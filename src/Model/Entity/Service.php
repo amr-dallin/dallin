@@ -9,6 +9,7 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property string $title
  * @property string $slug
+ * @property string $slogan
  * @property string $body
  * @property \Cake\I18n\FrozenTime $date_created
  * @property \Cake\I18n\FrozenTime|null $date_modified
@@ -29,6 +30,7 @@ class Service extends Entity
     protected $_accessible = [
         'title' => true,
         'slug' => true,
+        'slogan' => true,
         'body' => true,
         'date_created' => true,
         'date_modified' => true,

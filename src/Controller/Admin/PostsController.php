@@ -35,17 +35,10 @@ class PostsController extends AppController
     {
         $this->request->allowMethod('ajax');
 
-        $tags = $this->Posts->Tagged->Tags->find('list');
-        $data = [];
-        foreach($tags as $key => $tag) {
-            $data[] = [
-                'id' => $tag,
-                'text' => $tag
-            ];
-        }
+        $tags = $this->Posts->tagList($this->request->getQuery('q'));
 
-        $this->set('data', $data);
-        $this->set('_serialize', 'data');
+        $this->set('tags', $tags);
+        $this->set('_serialize', 'tags');
     }
 
     /**

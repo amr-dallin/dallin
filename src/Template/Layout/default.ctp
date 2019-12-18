@@ -1,3 +1,6 @@
+<?php
+use Cake\Core\Configure;
+?>
 <?php echo $this->Html->docType(); ?>
 <html lang="ru_RU" prefix="http://ogp.me/ns#">
     <head>
@@ -5,6 +8,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <?= $this->fetch('meta') ?>
+        <?= Configure::read('Settings.Metrics.yandex') ?>
+        <?= Configure::read('Settings.Metrics.google') ?>
         <link rel="icon" href="/img/favicon-16x16.png" type="image/png" sizes="16x16">
         <link rel="shortcut icon" href="/img/favicon-16x16.png" type="image/png" sizes="16x16">
         <link rel="icon" href="/img/favicon-32x32.png" type="image/png" sizes="32x32">
@@ -15,7 +20,7 @@
         <link rel="apple-touch-icon" href="/img/touch-icon-ipad-retina.png" type="image/png" sizes="152x152">
         <?= $this->Html->meta('icon') ?>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
-        <?= $this->Html->css(['main', '/vendor/zoom.js/css/zoom']) ?>
+        <?= $this->Html->css('main.min') ?>
         <?= $this->fetch('css') ?>
     </head>
     <body>
@@ -32,12 +37,12 @@
 
         echo $this->Html->script([
             '/vendor/jquery-slim.min',
-            'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js',
+            '/vendor/moment-with-locales',
             '/vendor/popper.min',
             '/vendor/bootstrap-4.1.2/dist/js/bootstrap.min',
-            '/vendor/zoom.js/js/zoom',
-            'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js',
-            'https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels'
+            '/vendor/medium-zoom.min',
+            '/vendor/Chart.bundle.min',
+            '/vendor/chartjs-plugin-datalabels.min'
         ]);
 
         echo $this->fetch('script');
@@ -53,6 +58,11 @@
                 Chart.defaults.global.title.fontSize = 18;
                 Chart.defaults.global.title.fontStyle = 'normal';
                 Chart.defaults.global.title.padding = 20;
+
+                mediumZoom('[data-action="zoom"]', {
+                    background: "#001e37",
+                    margin: 5
+                });
             });
         </script>
 

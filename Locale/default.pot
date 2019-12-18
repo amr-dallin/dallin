@@ -1,0 +1,1089 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2019-12-18 15:52+0500\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: config/paginator-templates.php:9
+#: config/paginator-templates.php:11
+msgid "Previous"
+msgstr ""
+
+#: config/paginator-templates.php:16
+#: config/paginator-templates.php:18
+msgid "Next"
+msgstr ""
+
+#: config/paginator-templates.php:22
+msgid "First Page"
+msgstr ""
+
+#: config/paginator-templates.php:23
+msgid "Last Page"
+msgstr ""
+
+#: config/paginator-templates.php:26
+msgid "Current"
+msgstr ""
+
+#: config/paginator-templates.php:28
+msgid "Page"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/breadcrumbs.ctp:3
+#: plugins/ControlPanel/src/Template/Admin/Element/breadcrumbs.ctp:5
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:25
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:29
+#: plugins/ControlPanel/src/Template/Admin/SystemicPages/dashboard.ctp:2
+msgid "Dashboard"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/footer.ctp:3
+#: src/Template/Element/footer.ctp:8
+msgid "Marat Dallin"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/meta_tags.ctp:5
+msgid "Meta Tags && Open Graph"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:29
+msgid "dashboard"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:34
+msgid "Content"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:41
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:45
+#: plugins/ControlPanel/src/Template/Admin/Posts/add.ctp:6
+#: plugins/ControlPanel/src/Template/Admin/Posts/edit.ctp:6
+#: plugins/ControlPanel/src/Template/Admin/Posts/index.ctp:2
+#: plugins/ControlPanel/src/Template/Admin/Posts/index.ctp:6
+#: plugins/ControlPanel/src/Template/Cell/Admin/BanksNavigation/display.ctp:33
+msgid "Posts"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:45
+msgid "posts"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:55
+msgid "New Post"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:59
+msgid "Create new post"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:59
+msgid "post add new"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:69
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:73
+msgid "List Posts"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:73
+msgid "posts list"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:85
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:89
+#: plugins/ControlPanel/src/Template/Admin/Projects/add.ctp:6
+#: plugins/ControlPanel/src/Template/Admin/Projects/edit.ctp:6
+#: plugins/ControlPanel/src/Template/Admin/Projects/index.ctp:2
+#: plugins/ControlPanel/src/Template/Admin/Projects/index.ctp:6
+#: src/Template/Projects/view.ctp:6
+msgid "Projects"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:89
+msgid "projects"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:99
+msgid "New Project"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:103
+msgid "Create new project"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:103
+msgid "project add new"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:113
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:117
+msgid "List Projects"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:117
+msgid "projects list"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:129
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:133
+#: plugins/ControlPanel/src/Template/Admin/Services/add.ctp:6
+#: plugins/ControlPanel/src/Template/Admin/Services/edit.ctp:6
+#: plugins/ControlPanel/src/Template/Admin/Services/index.ctp:2
+#: plugins/ControlPanel/src/Template/Admin/Services/index.ctp:6
+msgid "Services"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:133
+msgid "services"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:143
+msgid "New Service"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:147
+msgid "Create new service"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:147
+msgid "service add new"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:157
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:161
+msgid "List Services"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:161
+msgid "services list"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:173
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:177
+#: plugins/ControlPanel/src/Template/Admin/Pages/edit.ctp:6
+#: plugins/ControlPanel/src/Template/Admin/Pages/index.ctp:6
+msgid "Pages"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:177
+msgid "pages"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:187
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:191
+#: plugins/ControlPanel/src/Template/Admin/Pages/add.ctp:6
+#: plugins/ControlPanel/src/Template/Admin/Pages/index.ctp:2
+msgid "Dynamic Pages"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:191
+msgid "dynamic pages"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:201
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:245
+msgid "New Page"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:205
+#: plugins/ControlPanel/src/Template/Admin/Pages/add.ctp:2
+msgid "Create New Dynamic Page"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:205
+msgid "dynamic page add new"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:215
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:259
+msgid "List Pages"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:219
+msgid "List Dynamic Pages"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:231
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:235
+#: plugins/ControlPanel/src/Template/Admin/SystemicPages/add.ctp:6
+#: plugins/ControlPanel/src/Template/Admin/SystemicPages/edit.ctp:6
+#: plugins/ControlPanel/src/Template/Admin/SystemicPages/index.ctp:6
+msgid "Systemic Pages"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:235
+msgid "systemic system pages"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:249
+#: plugins/ControlPanel/src/Template/Admin/SystemicPages/add.ctp:2
+msgid "Create New Systemic Page"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:249
+msgid "systemic system page add new"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:263
+msgid "List Systemic Pages"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:263
+msgid "systemic system pages list"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:272
+#: plugins/ControlPanel/src/Template/Admin/Files/add.ctp:6
+msgid "File Storage"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:279
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:283
+#: plugins/ControlPanel/src/Template/Admin/Files/add.ctp:2
+#: plugins/ControlPanel/src/Template/Admin/Files/add.ctp:7
+msgid "Add File(s)"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:283
+msgid "file add"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:293
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:297
+#: plugins/ControlPanel/src/Template/Admin/Files/documents.ctp:6
+#: plugins/ControlPanel/src/Template/Admin/Files/images.ctp:6
+#: plugins/ControlPanel/src/Template/Admin/Files/index.ctp:2
+#: plugins/ControlPanel/src/Template/Admin/Files/index.ctp:6
+msgid "Files"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:297
+msgid "files list"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:307
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:311
+msgid "By Type Files"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:311
+msgid "type files"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:320
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:324
+#: plugins/ControlPanel/src/Template/Admin/Files/documents.ctp:2
+#: plugins/ControlPanel/src/Template/Admin/Files/documents.ctp:7
+msgid "Documents"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:324
+msgid "documents"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:333
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:337
+#: plugins/ControlPanel/src/Template/Admin/Files/images.ctp:2
+#: plugins/ControlPanel/src/Template/Admin/Files/images.ctp:7
+msgid "Images"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:337
+msgid "images"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:344
+#: plugins/ControlPanel/src/Template/Admin/Layout/default.ctp:107
+#: plugins/ControlPanel/src/Template/Admin/Users/settings.ctp:2
+#: plugins/ControlPanel/src/Template/Admin/Users/settings.ctp:6
+msgid "Settings"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:352
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:356
+msgid "New Setting"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:356
+msgid "setting add new"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:366
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:370
+msgid "All Settings"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:370
+msgid "settings list"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:380
+msgid "{0} Settings"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/navigation.ctp:380
+msgid "{0} settings list"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/Flash/error.ctp:10
+msgid "Error!"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Element/Flash/success.ctp:11
+msgid "Well Done!"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Files/add.ctp:30
+msgid "Drop files here or click to upload"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Files/documents.ctp:54
+#: plugins/ControlPanel/src/Template/Admin/Files/index.ctp:53
+msgid "Name"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Files/documents.ctp:55
+#: plugins/ControlPanel/src/Template/Admin/Files/index.ctp:54
+msgid "Size"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Files/documents.ctp:56
+#: plugins/ControlPanel/src/Template/Admin/Files/images.ctp:134
+#: plugins/ControlPanel/src/Template/Admin/Files/index.ctp:55
+msgid "Mime Type"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Files/documents.ctp:79
+#: plugins/ControlPanel/src/Template/Admin/Files/index.ctp:78
+msgid "Are you sure you want to delete the file?"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Files/documents.ctp:80
+#: plugins/ControlPanel/src/Template/Admin/Files/images.ctp:165
+#: plugins/ControlPanel/src/Template/Admin/Files/index.ctp:79
+#: plugins/ControlPanel/src/Template/Admin/Pages/edit.ctp:95
+#: plugins/ControlPanel/src/Template/Admin/Posts/edit.ctp:123
+#: plugins/ControlPanel/src/Template/Admin/Projects/edit.ctp:106
+#: plugins/ControlPanel/src/Template/Admin/Services/edit.ctp:103
+msgid "Deletion eliminates the possibility of data recovery."
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Files/images.ctp:120
+msgid "Detail Image"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Files/images.ctp:132
+msgid "Filename"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Files/images.ctp:136
+msgid "Date Created"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Files/images.ctp:138
+msgid "Filsize"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Files/images.ctp:146
+msgid "Copy URL"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Files/images.ctp:159
+#: plugins/ControlPanel/src/Template/Admin/Pages/edit.ctp:90
+#: plugins/ControlPanel/src/Template/Admin/Posts/edit.ctp:118
+#: plugins/ControlPanel/src/Template/Admin/Projects/edit.ctp:101
+#: plugins/ControlPanel/src/Template/Admin/Services/edit.ctp:98
+msgid "Delete"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Files/images.ctp:164
+msgid "Are you sure you want to delete the image?"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Layout/default.ctp:37
+#: plugins/ControlPanel/src/Template/Admin/Layout/default.ctp:53
+#: plugins/ControlPanel/src/Template/Admin/Layout/default.ctp:54
+msgid "Control Panel"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Layout/default.ctp:111
+msgid "Fullscreen"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Layout/default.ctp:115
+msgid "Print"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Layout/default.ctp:120
+msgid "Logout"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Layout/default.ctp:153
+#: src/Template/Element/header.ctp:32
+#: src/Template/Element/header.ctp:36
+msgid "Home"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Layout/default.ctp:192
+msgid "Are you sure?"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Layout/default.ctp:202
+msgid "Critical action"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Pages/add.ctp:7
+#: plugins/ControlPanel/src/Template/Admin/Posts/add.ctp:7
+#: plugins/ControlPanel/src/Template/Admin/Projects/add.ctp:7
+#: plugins/ControlPanel/src/Template/Admin/Services/add.ctp:7
+#: plugins/ControlPanel/src/Template/Admin/Settings/add.ctp:6
+#: plugins/ControlPanel/src/Template/Admin/SystemicPages/add.ctp:7
+msgid "Create New"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Pages/add.ctp:64
+#: plugins/ControlPanel/src/Template/Admin/Pages/edit.ctp:64
+#: plugins/ControlPanel/src/Template/Admin/Pages/index.ctp:49
+#: plugins/ControlPanel/src/Template/Admin/Posts/add.ctp:87
+#: plugins/ControlPanel/src/Template/Admin/Posts/edit.ctp:87
+#: plugins/ControlPanel/src/Template/Admin/Posts/index.ctp:48
+#: plugins/ControlPanel/src/Template/Admin/Projects/add.ctp:70
+#: plugins/ControlPanel/src/Template/Admin/Projects/edit.ctp:70
+#: plugins/ControlPanel/src/Template/Admin/Projects/index.ctp:48
+#: plugins/ControlPanel/src/Template/Admin/Services/add.ctp:70
+#: plugins/ControlPanel/src/Template/Admin/Services/add.ctp:119
+#: plugins/ControlPanel/src/Template/Admin/Services/edit.ctp:67
+#: plugins/ControlPanel/src/Template/Admin/Services/edit.ctp:127
+#: plugins/ControlPanel/src/Template/Admin/Services/index.ctp:48
+#: plugins/ControlPanel/src/Template/Admin/Settings/add.ctp:38
+#: plugins/ControlPanel/src/Template/Admin/Settings/index.ctp:53
+#: plugins/ControlPanel/src/Template/Admin/SystemicPages/add.ctp:52
+#: plugins/ControlPanel/src/Template/Admin/SystemicPages/edit.ctp:52
+#: plugins/ControlPanel/src/Template/Admin/SystemicPages/index.ctp:49
+msgid "Title"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Pages/add.ctp:68
+#: plugins/ControlPanel/src/Template/Admin/Pages/edit.ctp:68
+#: plugins/ControlPanel/src/Template/Admin/Posts/add.ctp:91
+#: plugins/ControlPanel/src/Template/Admin/Posts/edit.ctp:91
+#: plugins/ControlPanel/src/Template/Admin/Projects/add.ctp:74
+#: plugins/ControlPanel/src/Template/Admin/Projects/edit.ctp:74
+#: plugins/ControlPanel/src/Template/Admin/Services/add.ctp:74
+#: plugins/ControlPanel/src/Template/Admin/Services/edit.ctp:71
+msgid "Slug"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Pages/add.ctp:82
+#: plugins/ControlPanel/src/Template/Admin/Pages/edit.ctp:82
+#: plugins/ControlPanel/src/Template/Admin/Posts/add.ctp:110
+#: plugins/ControlPanel/src/Template/Admin/Posts/edit.ctp:110
+#: plugins/ControlPanel/src/Template/Admin/Projects/add.ctp:93
+#: plugins/ControlPanel/src/Template/Admin/Projects/edit.ctp:93
+#: plugins/ControlPanel/src/Template/Admin/Services/add.ctp:93
+#: plugins/ControlPanel/src/Template/Admin/Services/edit.ctp:90
+#: plugins/ControlPanel/src/Template/Admin/SystemicPages/add.ctp:66
+#: plugins/ControlPanel/src/Template/Admin/SystemicPages/edit.ctp:66
+msgid "Publish mode"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Pages/add.ctp:88
+#: plugins/ControlPanel/src/Template/Admin/Pages/edit.ctp:99
+#: plugins/ControlPanel/src/Template/Admin/Posts/add.ctp:116
+#: plugins/ControlPanel/src/Template/Admin/Posts/edit.ctp:126
+#: plugins/ControlPanel/src/Template/Admin/Projects/add.ctp:99
+#: plugins/ControlPanel/src/Template/Admin/Projects/edit.ctp:109
+#: plugins/ControlPanel/src/Template/Admin/Services/add.ctp:99
+#: plugins/ControlPanel/src/Template/Admin/Services/edit.ctp:106
+#: plugins/ControlPanel/src/Template/Admin/SystemicPages/add.ctp:71
+#: plugins/ControlPanel/src/Template/Admin/SystemicPages/edit.ctp:71
+msgid "Save"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Pages/edit.ctp:94
+msgid "Are you sure you want to delete the page?"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Pages/index.ctp:50
+#: plugins/ControlPanel/src/Template/Admin/Posts/index.ctp:50
+#: plugins/ControlPanel/src/Template/Admin/Projects/index.ctp:50
+#: plugins/ControlPanel/src/Template/Admin/Services/index.ctp:50
+msgid "Mode"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Posts/add.ctp:2
+msgid "Create New Post"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Posts/add.ctp:54
+#: plugins/ControlPanel/src/Template/Admin/Posts/edit.ctp:54
+msgid "Add tags"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Posts/add.ctp:95
+#: plugins/ControlPanel/src/Template/Admin/Posts/edit.ctp:95
+#: plugins/ControlPanel/src/Template/Admin/Projects/add.ctp:78
+#: plugins/ControlPanel/src/Template/Admin/Projects/edit.ctp:78
+msgid "Lead"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Posts/add.ctp:124
+#: plugins/ControlPanel/src/Template/Admin/Posts/edit.ctp:135
+msgid "Tags"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Posts/add.ctp:135
+#: plugins/ControlPanel/src/Template/Admin/Posts/edit.ctp:146
+msgid "Service"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Posts/add.ctp:142
+#: plugins/ControlPanel/src/Template/Admin/Posts/edit.ctp:153
+msgid "Select Service"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Posts/add.ctp:151
+#: plugins/ControlPanel/src/Template/Admin/Posts/edit.ctp:162
+msgid "Project"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Posts/add.ctp:158
+#: plugins/ControlPanel/src/Template/Admin/Posts/edit.ctp:169
+msgid "Select Project"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Posts/edit.ctp:122
+#: plugins/ControlPanel/src/Template/Admin/Services/edit.ctp:102
+msgid "Are you sure you want to delete the post?"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Posts/index.ctp:49
+#: plugins/ControlPanel/src/Template/Admin/Projects/index.ctp:49
+#: plugins/ControlPanel/src/Template/Admin/Services/index.ctp:49
+#: plugins/ControlPanel/src/Template/Admin/SystemicPages/index.ctp:50
+msgid "Date Modified"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Projects/add.ctp:2
+msgid "Create New Project"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Projects/add.ctp:107
+#: plugins/ControlPanel/src/Template/Admin/Projects/edit.ctp:118
+msgid "Other"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Projects/add.ctp:113
+#: plugins/ControlPanel/src/Template/Admin/Projects/edit.ctp:124
+msgid "URL"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Projects/add.ctp:117
+#: plugins/ControlPanel/src/Template/Admin/Projects/edit.ctp:128
+msgid "Weight"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Projects/edit.ctp:105
+msgid "Are you sure you want to delete the project?"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Services/add.ctp:2
+msgid "Create New Service"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Services/add.ctp:78
+#: plugins/ControlPanel/src/Template/Admin/Services/edit.ctp:75
+msgid "Slogan"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Services/add.ctp:113
+#: plugins/ControlPanel/src/Template/Admin/Services/edit.ctp:121
+msgid "Posts System Page"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Settings/add.ctp:2
+msgid "Create New Setting"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Settings/add.ctp:27
+msgid "Key"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Settings/add.ctp:32
+msgid "Text"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Settings/add.ctp:33
+msgid "Checkbox"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Settings/add.ctp:34
+msgid "Textarea"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Settings/add.ctp:41
+#: plugins/ControlPanel/src/Template/Admin/Settings/index.ctp:54
+msgid "Value"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Settings/index.ctp:2
+msgid "{0} — Settings"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/SystemicPages/index.ctp:2
+msgid "Systemic pages"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/SystemicPages/index.ctp:48
+msgid "ID"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Users/login.ctp:3
+msgid "Login"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Users/login.ctp:17
+msgid "Username"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Users/login.ctp:20
+msgid "Password"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Users/login.ctp:22
+msgid "Log In"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Users/settings.ctp:26
+msgid "Current Password"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Users/settings.ctp:30
+msgid "New Password"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Admin/Users/settings.ctp:34
+msgid "Confirm New Password"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Cell/Admin/BanksNavigation/display.ctp:20
+msgid "Edit"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Cell/Admin/BanksNavigation/display.ctp:24
+msgid "Edit Bank"
+msgstr ""
+
+#: plugins/ControlPanel/src/Template/Cell/Admin/BanksNavigation/display.ctp:37
+msgid "Bank Posts"
+msgstr ""
+
+#: plugins/ControlPanel/src/View/Helper/FilesHelper.php:23
+msgid "Tb"
+msgstr ""
+
+#: plugins/ControlPanel/src/View/Helper/FilesHelper.php:24
+msgid "Gb"
+msgstr ""
+
+#: plugins/ControlPanel/src/View/Helper/FilesHelper.php:25
+msgid "Mb"
+msgstr ""
+
+#: plugins/ControlPanel/src/View/Helper/FilesHelper.php:26
+msgid "Kb"
+msgstr ""
+
+#: plugins/ControlPanel/src/View/Helper/FilesHelper.php:27
+msgid "b"
+msgstr ""
+
+#: plugins/Published/src/Controller/Component/PublishedComponent.php:47
+#: src/Controller/PagesController.php:33
+#: src/Controller/SystemicPagesController.php:32
+#: src/Controller/SystemicPagesController.php:59
+#: src/Template/Error/error400.ctp:5
+#: src/Template/Error/error400.ctp:9
+msgid "Page not found"
+msgstr ""
+
+#: plugins/Published/src/Controller/Component/PublishedComponent.php:51
+msgid "Publish mode replaced successfully!"
+msgstr ""
+
+#: plugins/Published/src/Controller/Component/PublishedComponent.php:53
+msgid "Failed to change publish mode. Please try again."
+msgstr ""
+
+#: plugins/Published/src/View/Helper/PublishedHelper.php:25
+msgid "Published"
+msgstr ""
+
+#: plugins/Published/src/View/Helper/PublishedHelper.php:42
+msgid "unpublish"
+msgstr ""
+
+#: plugins/Published/src/View/Helper/PublishedHelper.php:43
+msgid "Are you sure you want to publish?"
+msgstr ""
+
+#: plugins/Published/src/View/Helper/PublishedHelper.php:47
+msgid "publish"
+msgstr ""
+
+#: plugins/Published/src/View/Helper/PublishedHelper.php:48
+msgid "Are you sure you want to be removed from publication?"
+msgstr ""
+
+#: src/Controller/PostsController.php:68
+#: src/Controller/ServicesController.php:40
+msgid "Service not found"
+msgstr ""
+
+#: src/Controller/PostsController.php:94
+msgid "Tag not found"
+msgstr ""
+
+#: src/Controller/PostsController.php:124
+msgid "Post not found"
+msgstr ""
+
+#: src/Controller/ProjectsController.php:56
+msgid "Project not found"
+msgstr ""
+
+#: src/Controller/Admin/FilesController.php:55
+msgid "The file has been saved."
+msgstr ""
+
+#: src/Controller/Admin/FilesController.php:59
+msgid "The file could not be saved. Please, try again."
+msgstr ""
+
+#: src/Controller/Admin/FilesController.php:76
+msgid "The file has been deleted."
+msgstr ""
+
+#: src/Controller/Admin/FilesController.php:78
+msgid "The file could not be deleted. Please, try again."
+msgstr ""
+
+#: src/Controller/Admin/PagesController.php:51
+#: src/Controller/Admin/PagesController.php:82
+msgid "The page has been saved."
+msgstr ""
+
+#: src/Controller/Admin/PagesController.php:55
+#: src/Controller/Admin/PagesController.php:86
+msgid "The page could not be saved. Please, try again."
+msgstr ""
+
+#: src/Controller/Admin/PagesController.php:116
+msgid "The page has been deleted."
+msgstr ""
+
+#: src/Controller/Admin/PagesController.php:118
+msgid "The page could not be deleted. Please, try again."
+msgstr ""
+
+#: src/Controller/Admin/PostsController.php:60
+#: src/Controller/Admin/PostsController.php:93
+msgid "The post has been saved."
+msgstr ""
+
+#: src/Controller/Admin/PostsController.php:64
+#: src/Controller/Admin/PostsController.php:97
+msgid "The post could not be saved. Please, try again."
+msgstr ""
+
+#: src/Controller/Admin/PostsController.php:130
+msgid "The post has been deleted."
+msgstr ""
+
+#: src/Controller/Admin/PostsController.php:132
+msgid "The post could not be deleted. Please, try again."
+msgstr ""
+
+#: src/Controller/Admin/ProjectsController.php:52
+#: src/Controller/Admin/ProjectsController.php:83
+msgid "The project has been saved."
+msgstr ""
+
+#: src/Controller/Admin/ProjectsController.php:56
+#: src/Controller/Admin/ProjectsController.php:87
+msgid "The project could not be saved. Please, try again."
+msgstr ""
+
+#: src/Controller/Admin/ProjectsController.php:116
+msgid "The project has been deleted."
+msgstr ""
+
+#: src/Controller/Admin/ProjectsController.php:118
+msgid "The project could not be deleted. Please, try again."
+msgstr ""
+
+#: src/Controller/Admin/ServicesController.php:50
+#: src/Controller/Admin/ServicesController.php:78
+msgid "The service has been saved."
+msgstr ""
+
+#: src/Controller/Admin/ServicesController.php:54
+#: src/Controller/Admin/ServicesController.php:82
+msgid "The service could not be saved. Please, try again."
+msgstr ""
+
+#: src/Controller/Admin/ServicesController.php:111
+msgid "The service has been deleted."
+msgstr ""
+
+#: src/Controller/Admin/ServicesController.php:113
+msgid "The service could not be deleted. Please, try again."
+msgstr ""
+
+#: src/Controller/Admin/SettingsController.php:28
+msgid "Settings not found"
+msgstr ""
+
+#: src/Controller/Admin/SettingsController.php:46
+msgid "The setting has been saved."
+msgstr ""
+
+#: src/Controller/Admin/SettingsController.php:50
+msgid "The setting could not be saved. Please, try again."
+msgstr ""
+
+#: src/Controller/Admin/SettingsController.php:85
+msgid "The setting has been deleted."
+msgstr ""
+
+#: src/Controller/Admin/SettingsController.php:87
+msgid "The setting could not be deleted. Please, try again."
+msgstr ""
+
+#: src/Controller/Admin/SystemicPagesController.php:52
+#: src/Controller/Admin/SystemicPagesController.php:76
+msgid "The systemic page has been saved."
+msgstr ""
+
+#: src/Controller/Admin/SystemicPagesController.php:56
+#: src/Controller/Admin/SystemicPagesController.php:80
+msgid "The systemic page could not be saved. Please, try again."
+msgstr ""
+
+#: src/Controller/Admin/UsersController.php:29
+msgid "Username or password is incorrect"
+msgstr ""
+
+#: src/Controller/Admin/UsersController.php:53
+msgid "The user password has been changed. Please, Log In."
+msgstr ""
+
+#: src/Controller/Admin/UsersController.php:57
+msgid "The user has been saved."
+msgstr ""
+
+#: src/Controller/Admin/UsersController.php:60
+msgid "The user could not be saved. Please, try again."
+msgstr ""
+
+#: src/Model/Table/UsersTable.php:69
+#: src/Model/Table/UsersTable.php:74
+#: src/Model/Table/UsersTable.php:80
+msgid "Password must be at least 6 characters long."
+msgstr ""
+
+#: src/Model/Table/UsersTable.php:70
+msgid "Password is required."
+msgstr ""
+
+#: src/Model/Table/UsersTable.php:75
+msgid "You must enter the current password."
+msgstr ""
+
+#: src/Model/Table/UsersTable.php:79
+msgid "You must enter a new password."
+msgstr ""
+
+#: src/Model/Table/UsersTable.php:85
+msgid "New password and confirmation record do not match!"
+msgstr ""
+
+#: src/Model/Table/UsersTable.php:122
+msgid "The current password is incorrectly entered!"
+msgstr ""
+
+#: src/Model/Table/UsersTable.php:136
+msgid "The new password is no different from the current!"
+msgstr ""
+
+#: src/Template/Element/article_footer.ctp:24
+msgid "Liked? Share with others."
+msgstr ""
+
+#: src/Template/Element/footer.ctp:10
+msgid "{0}, {1} and other {2}."
+msgstr ""
+
+#: src/Template/Element/footer.ctp:18
+msgid "telegram"
+msgstr ""
+
+#: src/Template/Element/footer.ctp:23
+msgid "contacts"
+msgstr ""
+
+#: src/Template/Element/header.ctp:5
+#: src/Template/Element/header.ctp:6
+msgid "Main navigation"
+msgstr ""
+
+#: src/Template/Element/header.ctp:41
+#: src/Template/Element/header.ctp:49
+msgid "About Me"
+msgstr ""
+
+#: src/Template/Element/header.ctp:54
+#: src/Template/Element/header.ctp:58
+#: src/Template/Posts/view.ctp:5
+msgid "Publications"
+msgstr ""
+
+#: src/Template/Element/header.ctp:63
+#: src/Template/Element/header.ctp:67
+msgid "Contacts"
+msgstr ""
+
+#: src/Template/Element/pagination.ctp:1
+#: src/Template/Element/pagination.ctp:2
+msgid "Page navigation"
+msgstr ""
+
+#: src/Template/Element/pagination.ctp:5
+msgid "previous"
+msgstr ""
+
+#: src/Template/Element/pagination.ctp:7
+msgid "next"
+msgstr ""
+
+#: src/Template/Element/post_categories_menu.ctp:7
+#: src/Template/Element/post_categories_menu.ctp:12
+msgid "All"
+msgstr ""
+
+#: src/Template/Element/post_categories_menu.ctp:16
+msgid "All publications"
+msgstr ""
+
+#: src/Template/Error/error400.ctp:11
+msgid "The link you clicked may be damaged or the page deleted."
+msgstr ""
+
+#: src/Template/Error/error400.ctp:12
+msgid "Go {0} or visit {1}."
+msgstr ""
+
+#: src/Template/Error/error400.ctp:12
+msgid "back"
+msgstr ""
+
+#: src/Template/Error/error400.ctp:12
+msgid "home page"
+msgstr ""
+
+#: src/Template/Error/error500.ctp:5
+#: src/Template/Error/error500.ctp:9
+msgid "An internal error has occurred"
+msgstr ""
+
+#: src/Template/Posts/index.ctp:57
+#: src/Template/Posts/service.ctp:75
+#: src/Template/Posts/tag.ctp:51
+msgid "No articles"
+msgstr ""
+
+#: src/Template/Posts/service.ctp:16
+#: src/Template/Posts/view.ctp:78
+msgid "More details"
+msgstr ""
+
+#: src/Template/Projects/index.ctp:60
+msgid "No projects"
+msgstr ""
+
+#: src/Template/Services/view.ctp:28
+msgid "Related Publications"
+msgstr ""
+
+#: src/Template/SystemicPages/display.ctp:31
+msgid "Read more"
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Shell/ImageVersionShell.php:294
+msgid "{0} processed"
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Shell/StorageShell.php:39
+msgid "The adapter config name to use."
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Shell/StorageShell.php:44
+msgid "The files identifier (`model` field in `file_storage` table)."
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Shell/StorageShell.php:49
+msgid "The model / table to use."
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Shell/StorageShell.php:53
+msgid "Image Processing Task."
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Shell/StorageShell.php:57
+msgid "Stores a file in the DB."
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Shell/Task/ImageTask.php:173
+#: vendor/burzum/file-storage/src/Shell/Task/ImageTask.php:185
+msgid "The model to use."
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Shell/Task/ImageTask.php:179
+msgid "The limit of records to process in a batch."
+msgstr ""
+
+#: vendor/cakephp/cakephp/src/View/Helper/PaginatorHelper.php:1270
+msgid "View"
+msgstr ""
+
+#: vendor/dereuromark/cakephp-tags/src/Model/Table/TagsTable.php:79
+msgid "Already exists"
+msgstr ""
+
+#: vendor/wyrihaximus/twig-view/src/Shell/CompileShell.php:151
+msgid "Searches and precompiles all twig templates it finds."
+msgstr ""
+
+#: vendor/wyrihaximus/twig-view/src/Shell/CompileShell.php:159
+msgid "Searches and precompiles all twig templates for a specific plugin."
+msgstr ""
+
+#: vendor/wyrihaximus/twig-view/src/Shell/CompileShell.php:167
+msgid "Precompile a specific file."
+msgstr ""
+
+#: vendor/wyrihaximus/twig-view/src/Shell/CompileShell.php:171
+msgid "TwigView templates precompiler"
+msgstr ""
+

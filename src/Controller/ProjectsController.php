@@ -21,7 +21,7 @@ class ProjectsController extends AppController
     public function beforeFilter(\Cake\Event\Event $event)
     {
         parent::beforeFilter($event);
-        $this->Auth->allow('index', 'view');
+        $this->Auth->allow(['index', 'view']);
     }
     /**
      * Index method

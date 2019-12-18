@@ -1,0 +1,46 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2019-12-18 15:52+0500\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: vendor/burzum/cakephp-imagine-plugin/src/Lib/ImageProcessor.php:281
+msgid "You have to pass size in the options!"
+msgstr ""
+
+#: vendor/burzum/cakephp-imagine-plugin/src/Lib/ImageProcessor.php:326
+#: vendor/burzum/cakephp-imagine-plugin/src/Lib/ImageProcessor.php:351
+msgid "You must pass a size value!"
+msgstr ""
+
+#: vendor/burzum/cakephp-imagine-plugin/src/Lib/ImageProcessor.php:381
+msgid "You have to pass a height, width or size!"
+msgstr ""
+
+#: vendor/burzum/cakephp-imagine-plugin/src/Lib/ImageProcessor.php:385
+msgid "You can only scale by width or height!"
+msgstr ""
+
+#: vendor/burzum/cakephp-imagine-plugin/src/Lib/ImageProcessor.php:448
+msgid "You must pass a factor value!"
+msgstr ""
+
+#: vendor/burzum/cakephp-imagine-plugin/src/Lib/ImageProcessor.php:480
+msgid "Invalid direction, use vertically or horizontally"
+msgstr ""
+
+#: vendor/burzum/cakephp-imagine-plugin/src/Lib/ImageProcessor.php:519
+#: vendor/burzum/cakephp-imagine-plugin/src/Lib/ImageProcessor.php:598
+msgid "You have to pass height and width in the options!"
+msgstr ""
+

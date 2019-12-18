@@ -22,6 +22,7 @@ echo $this->Html->script(
     [
         'formplugins/summernote/summernote',
         'formplugins/select2/select2.bundle',
+        'formplugins/select2/i18n/ru',
         '/vendor/bundle.umd.min'
     ],
     ['block' => true]
@@ -48,9 +49,12 @@ $(document).ready(function() {
     );
 
     $('.select2').select2();
-    $("#tag-list").select2({
+    $('#tag-list').select2({
         tags: true,
+        placeholder: '<?= __('Add tags') ?>',
+        language: 'ru',
         tokenSeparators: [','],
+        minimumInputLength: 3,
         ajax: {
             url: '<?= $this->Url->build(['_name' => 'tag-list', '_ext' => 'json']) ?>',
             dataType: 'json',

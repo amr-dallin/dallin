@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2019-11-24 23:33+0500\n"
+"POT-Creation-Date: 2019-12-18 15:43+0500\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -14,439 +14,261 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: Controller/PagesController.php:42
-msgid "No page"
+#: Controller/PagesController.php:33
+#: Controller/SystemicPagesController.php:32
+#: Controller/SystemicPagesController.php:59
+#: Template/Error/error400.ctp:5
+#: Template/Error/error400.ctp:9
+msgid "Page not found"
 msgstr ""
 
-#: Controller/PagesController.php:56
-#: Controller/PagesController.php:79
-msgid "Not found page"
+#: Controller/PostsController.php:68
+#: Controller/ServicesController.php:40
+msgid "Service not found"
 msgstr ""
 
-#: Controller/PostsController.php:44
-#: Controller/PostsController.php:78
-msgid "No post"
+#: Controller/PostsController.php:94
+msgid "Tag not found"
 msgstr ""
 
-#: Controller/ProjectsController.php:58
-msgid "No project"
+#: Controller/PostsController.php:124
+msgid "Post not found"
 msgstr ""
 
-#: Controller/Admin/FilesController.php:61
-#: Controller/Admin/FilesController.php:85
+#: Controller/ProjectsController.php:56
+msgid "Project not found"
+msgstr ""
+
+#: Controller/Admin/FilesController.php:55
 msgid "The file has been saved."
 msgstr ""
 
-#: Controller/Admin/FilesController.php:65
-#: Controller/Admin/FilesController.php:89
+#: Controller/Admin/FilesController.php:59
 msgid "The file could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/Admin/FilesController.php:106
+#: Controller/Admin/FilesController.php:76
 msgid "The file has been deleted."
 msgstr ""
 
-#: Controller/Admin/FilesController.php:108
+#: Controller/Admin/FilesController.php:78
 msgid "The file could not be deleted. Please, try again."
 msgstr ""
 
-#: Controller/Admin/PagesController.php:48
-#: Controller/Admin/PagesController.php:77
+#: Controller/Admin/PagesController.php:51
+#: Controller/Admin/PagesController.php:82
 msgid "The page has been saved."
 msgstr ""
 
-#: Controller/Admin/PagesController.php:52
-#: Controller/Admin/PagesController.php:81
+#: Controller/Admin/PagesController.php:55
+#: Controller/Admin/PagesController.php:86
 msgid "The page could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/Admin/PagesController.php:98
+#: Controller/Admin/PagesController.php:116
 msgid "The page has been deleted."
 msgstr ""
 
-#: Controller/Admin/PagesController.php:100
+#: Controller/Admin/PagesController.php:118
 msgid "The page could not be deleted. Please, try again."
 msgstr ""
 
-#: Controller/Admin/PostsController.php:49
-#: Controller/Admin/PostsController.php:80
+#: Controller/Admin/PostsController.php:60
+#: Controller/Admin/PostsController.php:93
 msgid "The post has been saved."
 msgstr ""
 
-#: Controller/Admin/PostsController.php:53
-#: Controller/Admin/PostsController.php:84
+#: Controller/Admin/PostsController.php:64
+#: Controller/Admin/PostsController.php:97
 msgid "The post could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/Admin/PostsController.php:103
+#: Controller/Admin/PostsController.php:130
 msgid "The post has been deleted."
 msgstr ""
 
-#: Controller/Admin/PostsController.php:105
+#: Controller/Admin/PostsController.php:132
 msgid "The post could not be deleted. Please, try again."
 msgstr ""
 
-#: Controller/Admin/ProjectsController.php:43
-#: Controller/Admin/ProjectsController.php:73
+#: Controller/Admin/ProjectsController.php:52
+#: Controller/Admin/ProjectsController.php:83
 msgid "The project has been saved."
 msgstr ""
 
-#: Controller/Admin/ProjectsController.php:47
-#: Controller/Admin/ProjectsController.php:77
+#: Controller/Admin/ProjectsController.php:56
+#: Controller/Admin/ProjectsController.php:87
 msgid "The project could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/Admin/ProjectsController.php:94
+#: Controller/Admin/ProjectsController.php:116
 msgid "The project has been deleted."
 msgstr ""
 
-#: Controller/Admin/ProjectsController.php:96
+#: Controller/Admin/ProjectsController.php:118
 msgid "The project could not be deleted. Please, try again."
 msgstr ""
 
-#: Controller/Admin/SettingsController.php:27
-msgid "No settings"
+#: Controller/Admin/ServicesController.php:50
+#: Controller/Admin/ServicesController.php:78
+msgid "The service has been saved."
 msgstr ""
 
-#: Controller/Admin/SettingsController.php:45
+#: Controller/Admin/ServicesController.php:54
+#: Controller/Admin/ServicesController.php:82
+msgid "The service could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/Admin/ServicesController.php:111
+msgid "The service has been deleted."
+msgstr ""
+
+#: Controller/Admin/ServicesController.php:113
+msgid "The service could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/Admin/SettingsController.php:28
+msgid "Settings not found"
+msgstr ""
+
+#: Controller/Admin/SettingsController.php:46
 msgid "The setting has been saved."
 msgstr ""
 
-#: Controller/Admin/SettingsController.php:49
+#: Controller/Admin/SettingsController.php:50
 msgid "The setting could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/Admin/SettingsController.php:86
+#: Controller/Admin/SettingsController.php:85
 msgid "The setting has been deleted."
 msgstr ""
 
-#: Controller/Admin/SettingsController.php:88
+#: Controller/Admin/SettingsController.php:87
 msgid "The setting could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/Admin/SystemicPagesController.php:52
+#: Controller/Admin/SystemicPagesController.php:76
+msgid "The systemic page has been saved."
+msgstr ""
+
+#: Controller/Admin/SystemicPagesController.php:56
+#: Controller/Admin/SystemicPagesController.php:80
+msgid "The systemic page could not be saved. Please, try again."
 msgstr ""
 
 #: Controller/Admin/UsersController.php:29
 msgid "Username or password is incorrect"
 msgstr ""
 
-#: Template/Admin/Element/navigation.ctp:36
-#: Template/Admin/Element/ribbon.ctp:27
-#: Template/Admin/Element/ribbon.ctp:30
-#: Template/Admin/Pages/display.ctp:2
-msgid "Dashboard"
+#: Controller/Admin/UsersController.php:53
+msgid "The user password has been changed. Please, Log In."
 msgstr ""
 
-#: Template/Admin/Element/navigation.ctp:51
-#: Template/Admin/Pages/add.ctp:8
-#: Template/Admin/Pages/edit.ctp:6
-#: Template/Admin/Pages/index.ctp:2
-msgid "Pages"
+#: Controller/Admin/UsersController.php:57
+msgid "The user has been saved."
 msgstr ""
 
-#: Template/Admin/Element/navigation.ctp:61
-#: Template/Admin/Element/navigation.ctp:92
-#: Template/Admin/Element/navigation.ctp:123
-#: Template/Admin/Element/navigation.ctp:169
-msgid "Add"
+#: Controller/Admin/UsersController.php:60
+msgid "The user could not be saved. Please, try again."
 msgstr ""
 
-#: Template/Admin/Element/navigation.ctp:68
-#: Template/Admin/Element/navigation.ctp:99
-#: Template/Admin/Element/navigation.ctp:130
-#: Template/Admin/Element/navigation.ctp:177
-msgid "List"
+#: Model/Table/UsersTable.php:69
+#: Model/Table/UsersTable.php:74
+#: Model/Table/UsersTable.php:80
+msgid "Password must be at least 6 characters long."
 msgstr ""
 
-#: Template/Admin/Element/navigation.ctp:82
-#: Template/Admin/Posts/add.ctp:8
-#: Template/Admin/Posts/edit.ctp:6
-#: Template/Admin/Posts/index.ctp:2
-msgid "Posts"
+#: Model/Table/UsersTable.php:70
+msgid "Password is required."
 msgstr ""
 
-#: Template/Admin/Element/navigation.ctp:113
-#: Template/Admin/Projects/add.ctp:8
-#: Template/Admin/Projects/edit.ctp:7
-#: Template/Admin/Projects/index.ctp:2
-msgid "Projects"
+#: Model/Table/UsersTable.php:75
+msgid "You must enter the current password."
 msgstr ""
 
-#: Template/Admin/Element/navigation.ctp:144
-#: Template/Admin/Files/add.ctp:9
-#: Template/Admin/Files/index.ctp:2
-msgid "Gallery"
+#: Model/Table/UsersTable.php:79
+msgid "You must enter a new password."
 msgstr ""
 
-#: Template/Admin/Element/navigation.ctp:159
-msgid "Settings"
+#: Model/Table/UsersTable.php:85
+msgid "New password and confirmation record do not match!"
 msgstr ""
 
-#: Template/Admin/Element/title.ctp:12
-#: Template/Admin/Files/index.ctp:60
-#: Template/Admin/Pages/edit.ctp:72
-#: Template/Admin/Posts/edit.ctp:78
-#: Template/Admin/Projects/edit.ctp:76
-msgid "Delete"
+#: Model/Table/UsersTable.php:122
+msgid "The current password is incorrectly entered!"
 msgstr ""
 
-#: Template/Admin/Element/title.ctp:15
-#: Template/Admin/Files/index.ctp:63
-#: Template/Admin/Pages/edit.ctp:75
-#: Template/Admin/Posts/edit.ctp:81
-#: Template/Admin/Projects/edit.ctp:79
-msgid "Are you sure you want to delete # {0}?"
+#: Model/Table/UsersTable.php:136
+msgid "The new password is no different from the current!"
 msgstr ""
 
-#: Template/Admin/Element/Flash/error.ctp:6
-msgid "Error!"
-msgstr ""
-
-#: Template/Admin/Element/Flash/success.ctp:6
-msgid "Success"
-msgstr ""
-
-#: Template/Admin/Files/add.ctp:3
-#: Template/Admin/Files/add.ctp:12
-#: Template/Admin/Files/add.ctp:25
-msgid "Add Files"
-msgstr ""
-
-#: Template/Admin/Files/add.ctp:31
-msgid "Library"
-msgstr ""
-
-#: Template/Admin/Files/add.ctp:43
-msgid "Add File"
-msgstr ""
-
-#: Template/Admin/Files/add.ctp:49
-msgid "Cover"
-msgstr ""
-
-#: Template/Admin/Files/add.ctp:53
-msgid "Submit"
-msgstr ""
-
-#: Template/Admin/Files/index.ctp:37
-msgid "Upload"
-msgstr ""
-
-#: Template/Admin/Layout/error.ctp:35
-msgid "Error"
-msgstr ""
-
-#: Template/Admin/Layout/error.ctp:43
-msgid "Back"
-msgstr ""
-
-#: Template/Admin/Pages/add.ctp:2
-msgid "Add Page"
-msgstr ""
-
-#: Template/Admin/Pages/add.ctp:77
-#: Template/Admin/Pages/edit.ctp:97
-#: Template/Admin/Pages/index.ctp:105
-#: Template/Admin/Pages/index.ctp:165
-#: Template/Admin/Posts/add.ctp:99
-#: Template/Admin/Posts/edit.ctp:115
-#: Template/Admin/Projects/add.ctp:96
-#: Template/Admin/Projects/edit.ctp:113
-#: Template/Admin/Projects/index.ctp:92
-#: Template/Admin/Settings/add.ctp:54
-msgid "Title"
-msgstr ""
-
-#: Template/Admin/Pages/add.ctp:82
-#: Template/Admin/Pages/edit.ctp:102
-#: Template/Admin/Posts/add.ctp:95
-#: Template/Admin/Posts/edit.ctp:111
-#: Template/Admin/Projects/add.ctp:92
-#: Template/Admin/Projects/edit.ctp:109
-msgid "Body"
-msgstr ""
-
-#: Template/Admin/Pages/add.ctp:86
-#: Template/Admin/Pages/edit.ctp:106
-#: Template/Admin/Posts/add.ctp:102
-#: Template/Admin/Posts/edit.ctp:118
-#: Template/Admin/Projects/add.ctp:99
-#: Template/Admin/Projects/edit.ctp:116
-msgid "Slug"
-msgstr ""
-
-#: Template/Admin/Pages/add.ctp:94
-#: Template/Admin/Pages/edit.ctp:114
-#: Template/Admin/Pages/index.ctp:106
-#: Template/Admin/Pages/index.ctp:166
-#: Template/Admin/Posts/add.ctp:110
-#: Template/Admin/Posts/edit.ctp:126
-#: Template/Admin/Posts/index.ctp:94
-#: Template/Admin/Projects/add.ctp:107
-#: Template/Admin/Projects/edit.ctp:124
-msgid "Meta Keywords"
-msgstr ""
-
-#: Template/Admin/Pages/add.ctp:102
-#: Template/Admin/Pages/edit.ctp:122
-#: Template/Admin/Posts/add.ctp:118
-#: Template/Admin/Posts/edit.ctp:134
-#: Template/Admin/Projects/add.ctp:115
-#: Template/Admin/Projects/edit.ctp:132
-msgid "Meta Description"
-msgstr ""
-
-#: Template/Admin/Pages/add.ctp:110
-#: Template/Admin/Pages/edit.ctp:130
-#: Template/Admin/Posts/add.ctp:126
-#: Template/Admin/Posts/edit.ctp:142
-#: Template/Admin/Projects/add.ctp:123
-#: Template/Admin/Projects/edit.ctp:140
-msgid "Open Graph Image"
-msgstr ""
-
-#: Template/Admin/Pages/index.ctp:88
-msgid "Systemic"
-msgstr ""
-
-#: Template/Admin/Pages/index.ctp:104
-msgid "ID"
-msgstr ""
-
-#: Template/Admin/Pages/index.ctp:149
-msgid "Not Systemic"
-msgstr ""
-
-#: Template/Admin/Pages/index.ctp:167
-#: Template/Admin/Posts/index.ctp:95
-#: Template/Admin/Projects/index.ctp:94
-msgid "Date Created"
-msgstr ""
-
-#: Template/Admin/Pages/index.ctp:168
-#: Template/Admin/Posts/index.ctp:96
-#: Template/Admin/Projects/index.ctp:95
-msgid "Published"
-msgstr ""
-
-#: Template/Admin/Posts/add.ctp:2
-msgid "Add Post"
-msgstr ""
-
-#: Template/Admin/Posts/add.ctp:87
-#: Template/Admin/Posts/edit.ctp:103
-#: Template/Admin/Posts/index.ctp:93
-#: Template/Admin/Projects/add.ctp:84
-#: Template/Admin/Projects/edit.ctp:101
-msgid "Heading"
-msgstr ""
-
-#: Template/Admin/Posts/add.ctp:91
-#: Template/Admin/Posts/edit.ctp:107
-#: Template/Admin/Projects/add.ctp:88
-#: Template/Admin/Projects/edit.ctp:105
-msgid "Lead"
-msgstr ""
-
-#: Template/Admin/Posts/add.ctp:133
-#: Template/Admin/Posts/edit.ctp:156
-msgid "Check which project the article belongs to"
-msgstr ""
-
-#: Template/Admin/Posts/add.ctp:138
-#: Template/Admin/Posts/edit.ctp:161
-#: Template/Admin/Projects/add.ctp:140
-#: Template/Admin/Projects/edit.ctp:164
-msgid "Tags"
-msgstr ""
-
-#: Template/Admin/Projects/add.ctp:2
-msgid "Add Project"
-msgstr ""
-
-#: Template/Admin/Projects/add.ctp:129
-#: Template/Admin/Projects/edit.ctp:153
-msgid "URL"
-msgstr ""
-
-#: Template/Admin/Projects/add.ctp:133
-#: Template/Admin/Projects/edit.ctp:157
-msgid "Weight"
-msgstr ""
-
-#: Template/Admin/Projects/index.ctp:93
-msgid "Description"
-msgstr ""
-
-#: Template/Admin/Settings/add.ctp:2
-msgid "Add Setting"
-msgstr ""
-
-#: Template/Admin/Settings/add.ctp:42
-msgid "Key"
-msgstr ""
-
-#: Template/Admin/Settings/add.ctp:57
-msgid "Value"
-msgstr ""
-
-#: Template/Admin/Settings/index.ctp:2
-msgid "Settings {0}"
-msgstr ""
-
-#: Template/Admin/Users/login.ctp:3
-msgid "Login"
-msgstr ""
-
-#: Template/Admin/Users/login.ctp:15
-msgid "Username"
-msgstr ""
-
-#: Template/Admin/Users/login.ctp:18
-msgid "Password"
-msgstr ""
-
-#: Template/Admin/Users/login.ctp:25
-msgid "Log In"
-msgstr ""
-
-#: Template/Element/article_footer.ctp:22
+#: Template/Element/article_footer.ctp:24
 msgid "Liked? Share with others."
 msgstr ""
 
-#: Template/Element/footer.ctp:15
-msgid "Mail: {0}"
+#: Template/Element/footer.ctp:8
+msgid "Marat Dallin"
 msgstr ""
 
-#: Template/Element/footer.ctp:21
+#: Template/Element/footer.ctp:10
+msgid "{0}, {1} and other {2}."
+msgstr ""
+
+#: Template/Element/footer.ctp:18
+msgid "telegram"
+msgstr ""
+
 #: Template/Element/footer.ctp:23
-#: Template/Element/header.ctp:38
-#: Template/Element/header.ctp:46
-msgid "About Me"
+msgid "contacts"
 msgstr ""
 
-#: Template/Element/footer.ctp:34
-msgid "Social"
-msgstr ""
-
-#: Template/Element/header.ctp:2
-#: Template/Element/header.ctp:3
+#: Template/Element/header.ctp:5
+#: Template/Element/header.ctp:6
 msgid "Main navigation"
 msgstr ""
 
-#: Template/Element/header.ctp:29
-#: Template/Element/header.ctp:33
+#: Template/Element/header.ctp:32
+#: Template/Element/header.ctp:36
 msgid "Home"
 msgstr ""
 
-#: Template/Element/header.ctp:51
-#: Template/Element/header.ctp:55
-#: Template/Posts/index.ctp:15
-#: Template/Posts/view.ctp:29
-msgid "Blog"
+#: Template/Element/header.ctp:41
+#: Template/Element/header.ctp:49
+msgid "About Me"
 msgstr ""
 
-#: Template/Error/error400.ctp:5
-#: Template/Error/error400.ctp:9
-msgid "Page not found"
+#: Template/Element/header.ctp:54
+#: Template/Element/header.ctp:58
+#: Template/Posts/view.ctp:5
+msgid "Publications"
+msgstr ""
+
+#: Template/Element/header.ctp:63
+#: Template/Element/header.ctp:67
+msgid "Contacts"
+msgstr ""
+
+#: Template/Element/pagination.ctp:1
+#: Template/Element/pagination.ctp:2
+msgid "Page navigation"
+msgstr ""
+
+#: Template/Element/pagination.ctp:5
+msgid "previous"
+msgstr ""
+
+#: Template/Element/pagination.ctp:7
+msgid "next"
+msgstr ""
+
+#: Template/Element/post_categories_menu.ctp:7
+#: Template/Element/post_categories_menu.ctp:12
+msgid "All"
+msgstr ""
+
+#: Template/Element/post_categories_menu.ctp:16
+msgid "All publications"
 msgstr ""
 
 #: Template/Error/error400.ctp:11
@@ -470,32 +292,30 @@ msgstr ""
 msgid "An internal error has occurred"
 msgstr ""
 
-#: Template/Pages/display.ctp:54
-msgid "Read more"
-msgstr ""
-
-#: Template/Posts/index.ctp:89
-#: Template/Posts/index.ctp:90
-#: Template/Projects/index.ctp:80
-#: Template/Projects/index.ctp:81
-msgid "Page navigation"
-msgstr ""
-
-#: Template/Posts/index.ctp:93
-#: Template/Projects/index.ctp:84
-msgid "previous"
-msgstr ""
-
-#: Template/Posts/index.ctp:95
-#: Template/Projects/index.ctp:86
-msgid "next"
-msgstr ""
-
-#: Template/Posts/index.ctp:101
+#: Template/Posts/index.ctp:57
+#: Template/Posts/service.ctp:75
+#: Template/Posts/tag.ctp:51
 msgid "No articles"
 msgstr ""
 
-#: Template/Projects/index.ctp:92
+#: Template/Posts/service.ctp:16
+#: Template/Posts/view.ctp:78
+msgid "More details"
+msgstr ""
+
+#: Template/Projects/index.ctp:60
 msgid "No projects"
+msgstr ""
+
+#: Template/Projects/view.ctp:6
+msgid "Projects"
+msgstr ""
+
+#: Template/Services/view.ctp:28
+msgid "Related Publications"
+msgstr ""
+
+#: Template/SystemicPages/display.ctp:31
+msgid "Read more"
 msgstr ""
 

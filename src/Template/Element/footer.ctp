@@ -1,45 +1,30 @@
-<footer class="footer bg-dark mt-auto">
+<?php
+use Cake\Core\Configure;
+?>
+<footer class="mt-5 mb-4 small">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-4 text-center text-md-left">
+            <div class="col-12 text-center">
+                © 2008 - <?= date('Y') ?>. <?= __('Marat Dallin') ?><br/>
                 <?php
-                echo $this->Html->image('logo.png', [
-                    'width' => 20,
-                    'alt' => $configure['Settings']['Site']['title'],
-                    'title' => $configure['Settings']['Site']['title']
-                ]);
+                echo __(
+                    '{0}, {1} and other {2}.',
+                    $this->Html->link(
+                        Configure::read('Settings.Contacts.mail'),
+                        'mailto:' . Configure::read('Settings.Contacts.email'),
+                        ['target' => '_blank']
+                    ),
+                    $this->Html->link(
+                        __('telegram'),
+                        'https://t.me/' . Configure::read('Settings.Contacts.telegram'),
+                        ['target' => '_blank']
+                    ),
+                    $this->Html->link(
+                        __('contacts'),
+                        ['_name' => 'page_view', 'slug' => 'contacts']
+                    )
+                );
                 ?>
-                <br/><br/>
-                <p class="text-white-50">
-                    © 2008 - <?php echo date('Y'); ?>. <?php echo $configure['Settings']['Site']['title']; ?><br/>
-                    <?php echo __('Mail: {0}', $configure['Settings']['Contacts']['mail']); ?>
-                </p>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="h6">
-                    <?php
-                    echo $this->Html->link(__('About Me'),
-                        ['controller' => 'Pages', 'action' => 'view', 'slug' => 'about'],
-                        ['class' => 'text-muted', 'title' => __('About Me')]
-                    );
-                    ?>
-                </div>
-                <ul class="list-unstyled text-small">
-                    <li>
-                        <a href="https://medium.com/@amr.dallin/%D0%BA%D0%B0%D0%BA-%D1%8F-%D0%BF%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%B8%D0%BB-%D0%B2-%D1%82%D1%83%D1%81%D1%83%D1%80-757c582c2584" target="_blank" class="text-white-50">Как я поступил в университет</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-6 col-md">
-                <div class="h6 text-muted"><?php echo __('Social'); ?></div>
-                <ul class="list-unstyled text-small">
-                    <li><a class="text-white-50" href="https://medium.com/@<?php echo $configure['Settings']['Contacts']['medium']; ?>" target="_blank">Medium</a></li>
-                    <li><a class="text-white-50" href="https://www.linkedin.com/in/<?php echo $configure['Settings']['Contacts']['linkedin']; ?>/" target="_blank">LinkedIn</a></li>
-                    <li><a class="text-white-50" href="https://github.com/<?php echo $configure['Settings']['Contacts']['github']; ?>" target="_blank">Github</a></li>
-                    <li><a class="text-white-50" href="https://www.facebook.com/<?php echo $configure['Settings']['Contacts']['facebook']; ?>" target="_blank">Facebook</a></li>
-                    <li><a class="text-white-50" href="https://vk.com/<?php echo $configure['Settings']['Contacts']['vk']; ?>" target="_blank">ВКонтакте</a></li>
-                    <li><a class="text-white-50" href="https://twitter.com/<?php echo $configure['Settings']['Contacts']['twitter']; ?>" target="_blank">Twitter</a></li>
-                </ul>
             </div>
         </div>
     </div>

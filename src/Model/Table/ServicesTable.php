@@ -89,6 +89,12 @@ class ServicesTable extends Table
             ->add('slug', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         $validator
+            ->scalar('slogan')
+            ->maxLength('slogan', 255)
+            ->requirePresence('slogan', 'create')
+            ->notEmptyString('slogan');
+
+        $validator
             ->scalar('body')
             ->requirePresence('body', 'create')
             ->notEmptyString('body');

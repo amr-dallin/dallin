@@ -26,7 +26,7 @@
                     ['class' => 'nav-link-text']
                 ),
                 ['_name' => 'dashboard'],
-                ['escape' => false, 'title' => __('Dashboard'), 'data-filter-tags' => '']
+                ['escape' => false, 'title' => __('Dashboard'), 'data-filter-tags' => __('dashboard')]
             );
             ?>
         </li>
@@ -42,7 +42,7 @@
                     ['class' => 'nav-link-text']
                 ),
                 '#',
-                ['escape' => false, 'title' => __('Posts'), 'data-filter-tags' => '']
+                ['escape' => false, 'title' => __('Posts'), 'data-filter-tags' => __('posts')]
             );
             ?>
             <ul>
@@ -56,7 +56,7 @@
                             ['class' => 'nav-link-text']
                         ),
                         ['controller' => 'Posts', 'action' => 'add'],
-                        ['escape' => false, 'title' => __('Create new post'), 'data-filter-tags' => '']
+                        ['escape' => false, 'title' => __('Create new post'), 'data-filter-tags' => __('post add new')]
                     );
                     ?>
                 </li>
@@ -70,7 +70,7 @@
                             ['class' => 'nav-link-text']
                         ),
                         ['controller' => 'Posts', 'action' => 'index'],
-                        ['escape' => false, 'title' => __('List Posts'), 'data-filter-tags' => '']
+                        ['escape' => false, 'title' => __('List Posts'), 'data-filter-tags' => __('posts list')]
                     );
                     ?>
                 </li>
@@ -86,7 +86,7 @@
                     ['class' => 'nav-link-text']
                 ),
                 '#',
-                ['escape' => false, 'title' => __('Projects'), 'data-filter-tags' => '']
+                ['escape' => false, 'title' => __('Projects'), 'data-filter-tags' => __('projects')]
             );
             ?>
             <ul>
@@ -100,7 +100,7 @@
                             ['class' => 'nav-link-text']
                         ),
                         ['controller' => 'Projects', 'action' => 'add'],
-                        ['escape' => false, 'title' => __('Create new project'), 'data-filter-tags' => '']
+                        ['escape' => false, 'title' => __('Create new project'), 'data-filter-tags' => __('project add new')]
                     );
                     ?>
                 </li>
@@ -114,7 +114,7 @@
                             ['class' => 'nav-link-text']
                         ),
                         ['controller' => 'Projects', 'action' => 'index'],
-                        ['escape' => false, 'title' => __('List Projects'), 'data-filter-tags' => '']
+                        ['escape' => false, 'title' => __('List Projects'), 'data-filter-tags' => __('projects list')]
                     );
                     ?>
                 </li>
@@ -130,7 +130,7 @@
                     ['class' => 'nav-link-text']
                 ),
                 '#',
-                ['escape' => false, 'title' => __('Services'), 'data-filter-tags' => '']
+                ['escape' => false, 'title' => __('Services'), 'data-filter-tags' => __('services')]
             );
             ?>
             <ul>
@@ -144,7 +144,7 @@
                             ['class' => 'nav-link-text']
                         ),
                         ['controller' => 'Services', 'action' => 'add'],
-                        ['escape' => false, 'title' => __('Create new service'), 'data-filter-tags' => '']
+                        ['escape' => false, 'title' => __('Create new service'), 'data-filter-tags' => __('service add new')]
                     );
                     ?>
                 </li>
@@ -158,7 +158,7 @@
                             ['class' => 'nav-link-text']
                         ),
                         ['controller' => 'Services', 'action' => 'index'],
-                        ['escape' => false, 'title' => __('List Services'), 'data-filter-tags' => '']
+                        ['escape' => false, 'title' => __('List Services'), 'data-filter-tags' => __('services list')]
                     );
                     ?>
                 </li>
@@ -174,7 +174,7 @@
                     ['class' => 'nav-link-text']
                 ),
                 '#',
-                ['escape' => false, 'title' => __('Pages'), 'data-filter-tags' => '']
+                ['escape' => false, 'title' => __('Pages'), 'data-filter-tags' => __('pages')]
             );
             ?>
             <ul>
@@ -188,7 +188,7 @@
                             ['class' => 'nav-link-text']
                         ),
                         '#',
-                        ['escape' => false, 'title' => __('Dynamic Pages'), 'data-filter-tags' => '']
+                        ['escape' => false, 'title' => __('Dynamic Pages'), 'data-filter-tags' => __('dynamic pages')]
                     );
                     ?>
                     <ul>
@@ -202,7 +202,7 @@
                                     ['class' => 'nav-link-text']
                                 ),
                                 ['controller' => 'Pages', 'action' => 'add'],
-                                ['escape' => false, 'title' => __('Create New Dynamic Page'), 'data-filter-tags' => '']
+                                ['escape' => false, 'title' => __('Create New Dynamic Page'), 'data-filter-tags' => __('dynamic page add new')]
                             );
                             ?>
                         </li>
@@ -216,7 +216,7 @@
                                     ['class' => 'nav-link-text']
                                 ),
                                 ['controller' => 'Pages', 'action' => 'index'],
-                                ['escape' => false, 'title' => __('List Dynamic Pages'), 'data-filter-tags' => '']
+                                ['escape' => false, 'title' => __('List Dynamic Pages'), 'data-filter-tags' => 'dynamic pages list']
                             );
                             ?>
                         </li>
@@ -232,7 +232,7 @@
                             ['class' => 'nav-link-text']
                         ),
                         '#',
-                        ['escape' => false, 'title' => __('Systemic Pages'), 'data-filter-tags' => '']
+                        ['escape' => false, 'title' => __('Systemic Pages'), 'data-filter-tags' => __('systemic system pages')]
                     );
                     ?>
                     <ul>
@@ -246,7 +246,7 @@
                                     ['class' => 'nav-link-text']
                                 ),
                                 ['controller' => 'SystemicPages', 'action' => 'add'],
-                                ['escape' => false, 'title' => __('Create New Systemic Page'), 'data-filter-tags' => '']
+                                ['escape' => false, 'title' => __('Create New Systemic Page'), 'data-filter-tags' => __('systemic system page add new')]
                             );
                             ?>
                         </li>
@@ -260,7 +260,7 @@
                                     ['class' => 'nav-link-text']
                                 ),
                                 ['controller' => 'SystemicPages', 'action' => 'index'],
-                                ['escape' => false, 'title' => __('List Systemic Pages'), 'data-filter-tags' => '']
+                                ['escape' => false, 'title' => __('List Systemic Pages'), 'data-filter-tags' => __('systemic system pages list')]
                             );
                             ?>
                         </li>
@@ -280,7 +280,7 @@
                     ['class' => 'nav-link-text']
                 ),
                 ['controller' => 'Files', 'action' => 'add'],
-                ['escape' => false, 'title' => __('Add File(s)'), 'data-filter-tags' => '']
+                ['escape' => false, 'title' => __('Add File(s)'), 'data-filter-tags' => __('file add')]
             );
             ?>
         </li>
@@ -294,7 +294,7 @@
                     ['class' => 'nav-link-text']
                 ),
                 ['controller' => 'Files', 'action' => 'index'],
-                ['escape' => false, 'title' => __('Files'), 'data-filter-tags' => '']
+                ['escape' => false, 'title' => __('Files'), 'data-filter-tags' => __('files list')]
             );
             ?>
         </li>
@@ -308,7 +308,7 @@
                     ['class' => 'nav-link-text']
                 ),
                 '#',
-                ['escape' => false, 'title' => __('By Type Files'), 'data-filter-tags' => '']
+                ['escape' => false, 'title' => __('By Type Files'), 'data-filter-tags' => __('type files')]
             );
             ?>
             <ul>
@@ -321,7 +321,7 @@
                             ['class' => 'nav-link-text']
                         ),
                         ['controller' => 'Files', 'action' => 'documents'],
-                        ['escape' => false, 'title' => __('Documents'), 'data-filter-tags' => '']
+                        ['escape' => false, 'title' => __('Documents'), 'data-filter-tags' => __('documents')]
                     );
                     ?>
                 </li>
@@ -334,7 +334,7 @@
                             ['class' => 'nav-link-text']
                         ),
                         ['controller' => 'Files', 'action' => 'images'],
-                        ['escape' => false, 'title' => __('Images'), 'data-filter-tags' => '']
+                        ['escape' => false, 'title' => __('Images'), 'data-filter-tags' => __('images')]
                     );
                     ?>
                 </li>
@@ -353,7 +353,7 @@
                     ['class' => 'nav-link-text']
                 ),
                 ['controller' => 'Settings', 'action' => 'add'],
-                ['escape' => false, 'title' => __('New Setting'), 'data-filter-tags' => 'new setting add']
+                ['escape' => false, 'title' => __('New Setting'), 'data-filter-tags' => __('setting add new')]
             );
             ?>
         </li>
@@ -367,7 +367,7 @@
                     ['class' => 'nav-link-text']
                 ),
                 '#',
-                ['escape' => false, 'title' => __('All Settings'), 'data-filter-tags' => '']
+                ['escape' => false, 'title' => __('All Settings'), 'data-filter-tags' => __('settings list')]
             );
             ?>
             <ul>
@@ -376,7 +376,8 @@
                     <?php
                     echo $this->Html->link(
                         $key,
-                        ['_name' => 'settings', 'key' => $key]
+                        ['_name' => 'settings', 'key' => $key],
+                        ['title' => __('{0} Settings', $key), 'data-filter-tags' => __('{0} settings list', mb_strtolower($key))]
                     );
                     ?>
                 </li>

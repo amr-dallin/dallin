@@ -71,6 +71,11 @@ $(document).ready(function() {
                             'placeholder' => __('Slug')
                         ]);
 
+                        echo $this->Form->control('slogan', [
+                            'placeholder' => __('Slogan'),
+                            'rows' => 2
+                        ]);
+
                         echo $this->Form->control('body', [
                             'class' => 'form-control summernote'
                         ]);

@@ -21,7 +21,7 @@ class PostsController extends AppController
     public function beforeFilter(\Cake\Event\Event $event)
     {
         parent::beforeFilter($event);
-        $this->Auth->allow('index', 'view');
+        $this->Auth->allow(['index', 'service', 'tag', 'view']);
     }
 
     /**
@@ -39,8 +39,10 @@ class PostsController extends AppController
                 ->find('published')
                 ->contain('Tags')
         );
+
         $services = $this->Posts->Services
             ->find('published')
+            ->contain('ServicePostsPage')
             ->toArray();
 
         $this->set(compact('page', 'posts', 'services'));
@@ -59,6 +61,7 @@ class PostsController extends AppController
             ->find('slugged', ['slug' => $service_slug])
             ->find('published')
             ->contain('MetaTags')
+            ->contain('ServicePostsPage.MetaTags')
             ->first();
 
         if (empty($service)) {
@@ -69,12 +72,35 @@ class PostsController extends AppController
             $this->Posts
                 ->find('byService', ['service_id' => $service->id])
                 ->find('published')
+                ->contain('Tags')
         );
+
         $services = $this->Posts->Services
             ->find('published')
+            ->contain('ServicePostsPage')
             ->toArray();
 
         $this->set(compact('posts', 'service', 'services'));
+    }
+
+    public function tag($tag_slug = null)
+    {
+        $tag = $this->Posts->Tagged->Tags
+            ->find()
+            ->where(['Tags.slug' => $tag_slug])
+            ->first();
+
+        if (empty($tag)) {
+            throw new RecordNotFoundException(__('Tag not found'));
+        }
+
+        $posts = $this->paginate(
+            $this->Posts
+                ->find('tagged', ['tag' => $tag_slug])
+                ->find('published')
+        );
+
+        $this->set(compact('posts', 'tag'));
     }
 
     /**
@@ -89,7 +115,7 @@ class PostsController extends AppController
             ->find('slugged', compact('slug'))
             ->find('published')
             ->contain('MetaTags')
-            ->contain('Services')
+            ->contain('Services.ServicePostsPage')
             ->contain('Projects')
             ->contain('Tags')
             ->first();

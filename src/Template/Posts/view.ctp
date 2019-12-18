@@ -2,10 +2,10 @@
 $this->assign('meta', $this->MetaRender->init($post)->render());
 $this->set('menu', 'posts');
 
-$breadcrumbs[] = ['title' => __('Blog'), 'url' => ['_name' => 'posts']];
+$breadcrumbs[] = ['title' => __('Publications'), 'url' => ['_name' => 'posts']];
 if (!empty($post->service)) {
     $breadcrumbs[] = [
-        'title' => h($post->service->title),
+        'title' => h($post->service->service_posts_page->title),
         'url' => [
             '_name' => 'posts_service',
             'service_slug' => h($post->service->slug)
@@ -31,19 +31,21 @@ echo $this->Html->script(
 
 <?php $this->start('script-code'); ?>
 <script>
-$(".share-list").jsSocials({
-    showLabel: false,
-    shareIn: "popup",
-    showCount: false,
-    shares: ["email", "linkedin", "facebook", "vkontakte", "twitter", "telegram", "whatsapp"]
+$(document).ready(function () {
+    $(".share-list").jsSocials({
+        showLabel: false,
+        shareIn: "popup",
+        showCount: false,
+        shares: ["email", "linkedin", "facebook", "twitter", "telegram", "whatsapp"]
+    });
+    hljs.initHighlightingOnLoad();
 });
-hljs.initHighlightingOnLoad();
 </script>
 <?php $this->end(); ?>
 
 <article class="article">
-    <div class="jumbotron jumbotron-fluid bg-light mb-5">
-        <div class="container py-3">
+    <div class="jumbotron jumbotron-fluid bg-light border-bottom">
+        <div class="container">
             <div class="row justify-content-center">
                 <div class="col col-md-11 col-lg-10">
                     <header>
@@ -56,32 +58,39 @@ hljs.initHighlightingOnLoad();
                             </time>
                         </div>
                     </header>
-                    <p class="lead m-0"><?= h($post->lead) ?></p>
+                    <p class="lead m-0"><?= $post->lead ?></p>
                 </div>
             </div>
         </div>
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-12">
+            <div class="col">
                 <?= $post->body ?>
-                <?php
-                if (!empty($post->service)) {
-                    echo $this->Html->link(
-                        h($post->service->title),
-                        ['_name' => 'service_view', 'slug' => h($post->service->slug)]
-                    );
-                }
-                ?>
-            </div>
-        </div>
-        <div class="row justify-content-center mt-5">
-            <div class="col-md-11 col-lg-10">
-                <?php
-                echo $this->element('article_footer', [
-                    'tags' => $post->tags, 'share' => true
-                ]);
-                ?>
+                <div class="row justify-content-center">
+                    <div class="col col-md-9 col-lg-8">
+                        <?php if (!empty($post->service)): ?>
+                        <div class="card bg-light border text-center mt-3 mb-4">
+                            <div class="card-body p-4">
+                                <?php
+                                echo $this->Html->tag('p', h($post->service->slogan), ['class' => 'card-text mb-3']);
+                                echo $this->Html->link(
+                                    __('More details'),
+                                    ['_name' => 'service_view', 'slug' => h($post->service->slug)],
+                                    ['class' => 'btn btn-primary']
+                                );
+                                ?>
+                            </div>
+                        </div>
+                        <?php endif; ?>
+
+                        <?php
+                        echo $this->element('article_footer', [
+                            'share' => true
+                        ]);
+                        ?>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

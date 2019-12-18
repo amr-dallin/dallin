@@ -29,7 +29,6 @@ use Cake\ORM\TableRegistry;
  */
 class AppController extends Controller
 {
-
     /**
      * Initialization hook method.
      *
@@ -65,12 +64,12 @@ class AppController extends Controller
     public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
-        $this->__setSettings();
     }
 
     public function beforeRender(Event $event)
     {
         parent::beforeRender($event);
+        $this->__setSettings();
 
         if (
             !empty($this->request->getParam('prefix')) &&
@@ -102,9 +101,9 @@ class AppController extends Controller
 
     private function __setSettings()
     {
+        $settings = [];
         $settingsTable = TableRegistry::getTableLocator()->get('Settings');
-        $settings = $settingsTable->find()->toArray();
-        foreach($settings as $setting) {
+        foreach($settingsTable->find() as $setting) {
             Configure::write('Settings.' . $setting->field_key, $setting->value);
         }
     }

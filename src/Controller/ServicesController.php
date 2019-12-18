@@ -13,6 +13,11 @@ use Cake\Datasource\Exception\RecordNotFoundException;
  */
 class ServicesController extends AppController
 {
+    public function beforeFilter(\Cake\Event\Event $event)
+    {
+        parent::beforeFilter($event);
+        $this->Auth->allow('view');
+    }
     /**
      * View method
      *
@@ -35,6 +40,11 @@ class ServicesController extends AppController
             throw new RecordNotFoundException(__('Service not found'));
         }
 
-        $this->set('service', $service);
+        $posts = $this->Services->Posts
+            ->find('byService', ['service_id' => $service->id])
+            ->find('published')
+            ->limit(10);
+
+        $this->set(compact('posts', 'service'));
     }
 }

@@ -9,6 +9,7 @@ use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 use Cake\Utility\Text;
+use Cake\Database\Expression\QueryExpression;
 /**
  * Posts Model
  *
@@ -102,6 +103,26 @@ class PostsTable extends Table
             ]);
         }
     }
+
+    public function tagList($search)
+    {
+        $query = $this->Tagged->Tags->find();
+        $tags = $query
+            ->where(function (QueryExpression $exp, Query $q) use ($search) {
+                return $exp->like('Tags.label', '%' . $search . '%');
+            });
+
+        $data = [];
+        foreach($tags as $key => $tag) {
+            $data[] = [
+                'id' => $tag->label,
+                'text' => $tag->label
+            ];
+        }
+
+        return $data;
+    }
+
 
     public function findByService(Query $query, Array $options)
     {

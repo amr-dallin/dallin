@@ -1,0 +1,142 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2019-12-18 15:52+0500\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: vendor/burzum/file-storage/src/Shell/ImageVersionShell.php:48
+msgid "Shell command for generating and removing image versions."
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Shell/ImageVersionShell.php:52
+#: vendor/burzum/file-storage/src/Shell/ImageVersionShell.php:75
+#: vendor/burzum/file-storage/src/Shell/ImageVersionShell.php:105
+#: vendor/burzum/file-storage/src/Shell/ImageVersionShell.php:126
+msgid "The storage table for image processing you want to use."
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Shell/ImageVersionShell.php:56
+#: vendor/burzum/file-storage/src/Shell/ImageVersionShell.php:79
+#: vendor/burzum/file-storage/src/Shell/ImageVersionShell.php:109
+#: vendor/burzum/file-storage/src/Shell/ImageVersionShell.php:130
+msgid "Limits the amount of records to be processed in one batch"
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Shell/ImageVersionShell.php:60
+msgid "<model> <version> Generate a new image version"
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Shell/ImageVersionShell.php:64
+#: vendor/burzum/file-storage/src/Shell/ImageVersionShell.php:119
+msgid "Value of the model property of the images to generate"
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Shell/ImageVersionShell.php:68
+msgid "Image version to generate"
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Shell/ImageVersionShell.php:83
+#: vendor/burzum/file-storage/src/Shell/ImageVersionShell.php:134
+msgid "Use this switch if you do not want to overwrite existing versions."
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Shell/ImageVersionShell.php:90
+msgid "<model> <version> Remove an new image version"
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Shell/ImageVersionShell.php:94
+msgid "Value of the model property of the images to remove"
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Shell/ImageVersionShell.php:98
+msgid "Image version to remove"
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Shell/ImageVersionShell.php:115
+msgid "<model> Generates all image versions."
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Shell/ImageVersionShell.php:164
+msgid "--limit must be an integer!"
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Shell/ImageVersionShell.php:182
+#: vendor/burzum/file-storage/src/Shell/ImageVersionShell.php:208
+#: vendor/burzum/file-storage/src/Shell/ImageVersionShell.php:230
+msgid "Invalid table or version."
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Shell/ImageVersionShell.php:258
+msgid "No Images for model {0} found"
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Shell/ImageVersionShell.php:262
+msgid "{0} image file(s) will be processed\n"
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Shell/ImageVersionShell.php:273
+msgid "Cant load adapter config {0} for record {1}"
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Shell/Task/ImageTask.php:70
+msgid "{0} record(s) will be processed.\n"
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Shell/Task/ImageTask.php:85
+msgid "{0} of {1} records processed."
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Shell/Task/ImageTask.php:145
+msgid "No records for identifier \"{0}\" found."
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Storage/Listener/LegacyImageProcessingListener.php:343
+msgid "No adapter config key passed!"
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Storage/Listener/LegacyImageProcessingListener.php:353
+msgid "No callback image url callback implemented for adapter %s"
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Validation/UploadValidator.php:108
+msgid "The uploaded file exceeds limit of %s."
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Validation/UploadValidator.php:112
+msgid "The uploaded file is to big, please choose a smaller file or try to compress it."
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Validation/UploadValidator.php:116
+msgid "The uploaded file was only partially uploaded."
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Validation/UploadValidator.php:121
+msgid "No file was uploaded."
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Validation/UploadValidator.php:128
+msgid "The remote server has no temporary folder for file uploads. Please contact the site admin."
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Validation/UploadValidator.php:132
+msgid "Failed to write file to disk. Please contact the site admin."
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Validation/UploadValidator.php:136
+msgid "File upload stopped by extension. Please contact the site admin."
+msgstr ""
+
+#: vendor/burzum/file-storage/src/Validation/UploadValidator.php:140
+msgid "Unknown File Error. Please contact the site admin."
+msgstr ""
+

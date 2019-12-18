@@ -39,9 +39,6 @@ class AppView extends View
     {
         parent::initialize();
 
-        $configure = Configure::read();
-        $this->set('configure', $configure);
-
         $this->loadHelper('Tags.Tag');
         $this->loadHelper('Burzum/FileStorage.Image', [
             'pathPrefix' => DS . 'assets' . DS

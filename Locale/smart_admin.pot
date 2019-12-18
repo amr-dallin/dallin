@@ -1,0 +1,36 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2019-12-18 15:52+0500\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: plugins/ControlPanel/config/app_form.php:20
+msgid "Choose file"
+msgstr ""
+
+#: plugins/Meta/src/View/Helper/MetaFormHelper.php:74
+msgid "Title Tag"
+msgstr ""
+
+#: plugins/Meta/src/View/Helper/MetaFormHelper.php:107
+msgid "Meta Description"
+msgstr ""
+
+#: plugins/Meta/src/View/Helper/MetaFormHelper.php:139
+msgid "Open Graph Title"
+msgstr ""
+
+#: plugins/Meta/src/View/Helper/MetaFormHelper.php:172
+msgid "Open Graph Description"
+msgstr ""
+

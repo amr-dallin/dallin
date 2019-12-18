@@ -109,6 +109,13 @@ Router::scope('/', function (RouteBuilder $routes) {
         ->setPass(['service_slug']);
     $routes
         ->connect(
+            '/posts/tag/:tag_slug',
+            ['controller' => 'Posts', 'action' => 'tag'],
+            ['_name' => 'posts_tag']
+        )
+        ->setPass(['tag_slug']);
+    $routes
+        ->connect(
             '/posts/:slug',
             ['controller' => 'Posts', 'action' => 'view'],
             ['_name' => 'post_view']
@@ -140,12 +147,6 @@ Router::scope('/', function (RouteBuilder $routes) {
         )
         ->setPass(['slug']);
 
-    $routes->connect(
-        '/',
-        ['controller' => 'SystemicPages', 'action' => 'display'],
-        ['_name' => 'home']
-    );
-
     $routes
         ->connect(
             '/p/:slug',
@@ -154,6 +155,11 @@ Router::scope('/', function (RouteBuilder $routes) {
         )
         ->setPass(['slug']);
 
+    $routes->connect(
+        '/',
+        ['controller' => 'SystemicPages', 'action' => 'display'],
+        ['_name' => 'home']
+    );
 
     $routes
         ->connect(

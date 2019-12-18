@@ -1,3 +1,6 @@
+<?php
+use Cake\Core\Configure;
+?>
 <header>
     <nav aria-label="<?php echo __('Main navigation'); ?>" class="navbar navbar-expand-md navbar-dark">
         <h2 class="text-hide m-0"><?php echo __('Main navigation'); ?></h2>
@@ -6,8 +9,8 @@
             echo $this->Html->link(
                 $this->Html->image('logo.png', [
                     'height' => 23,
-                    'alt' => $configure['Settings']['Site']['title'],
-                    'title' => $configure['Settings']['Site']['title']
+                    'alt' => Configure::read('Settings.Site.title'),
+                    'title' => Configure::read('Settings.Site.title')
                 ]),
                 ['_name' => 'home'],
                 ['escape' => false, 'class' => 'navbar-brand']
@@ -48,24 +51,24 @@
                         'menu' => $menu
                     ]
                 );
-                echo $this->Dallin->headerLink(__('Projects'),
-                    ['_name' => 'projects'],
-                    [
-                        'class' => 'nav-item nav-link',
-                        'title' => __('Projects'),
-                        'slug' => 'projects',
-                        'menu' => $menu
-                    ]
-                );
-                echo $this->Dallin->headerLink(__('Blog'),
+                echo $this->Dallin->headerLink(__('Publications'),
                     ['_name' => 'posts'],
                     [
                         'class' => 'nav-item nav-link',
-                        'title' => __('Blog'),
+                        'title' => __('Publications'),
                         'slug' => 'posts',
                         'menu' => $menu
                     ]
                 );
+                echo $this->Dallin->headerLink(__('Contacts'),
+                ['_name' => 'page_view', 'slug' => 'contacts'],
+                [
+                    'class' => 'nav-item nav-link',
+                    'title' => __('Contacts'),
+                    'slug' => 'contacts',
+                    'menu' => $menu
+                ]
+            );
                 ?>
             </div>
         </div>

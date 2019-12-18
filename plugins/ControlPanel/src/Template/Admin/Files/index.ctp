@@ -60,11 +60,11 @@ $(document).ready(function() {
                             <?php foreach ($files as $file): ?>
                             <tr>
                                 <td class="text-center">
-                                    <button type="button" class="btn btn-link fal fa-copy copy" data-clipboard-text="<?= ASSETS . h($file->path) ?>"></button>
+                                    <button type="button" class="btn btn-link fal fa-copy copy" data-clipboard-text="<?= $this->Image->imageUrl($file) ?>"></button>
                                 </td>
                                 <td>
                                     <strong><?= h($file->filename) ?></strong>
-                                    <code class="d-block"><?= ASSETS . h($file->path) ?></code>
+                                    <code class="d-block"><?= $this->Image->imageUrl($file) ?></code>
                                 </td>
                                 <td><?= $this->Files->fileSizeConvert(h($file->filesize)) ?></td>
                                 <td><?= h($file->mime_type) ?></td>

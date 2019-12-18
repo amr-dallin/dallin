@@ -16,9 +16,14 @@
 
         <!-- Place favicon.ico in the root directory -->
         <?= $this->Html->meta('icon') ?>
-        <link rel="apple-touch-icon" sizes="180x180" href="/smart_admin/img/favicon/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/smart_admin/img/favicon/favicon-32x32.png">
-        <link rel="mask-icon" href="/smart_admin/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="icon" href="/img/favicon-16x16.png" type="image/png" sizes="16x16">
+        <link rel="shortcut icon" href="/img/favicon-16x16.png" type="image/png" sizes="16x16">
+        <link rel="icon" href="/img/favicon-32x32.png" type="image/png" sizes="32x32">
+        <link rel="shortcut icon" href="/img/favicon-32x32.png" type="image/png" sizes="32x32">
+        <link rel="apple-touch-icon" href="/img/touch-icon-iphone.png" type="image/png">
+        <link rel="apple-touch-icon" href="/img/touch-icon-ipad.png" type="image/png" sizes="76x76">
+        <link rel="apple-touch-icon" href="/img/touch-icon-iphone-retina.png" type="image/png" sizes="120x120">
+        <link rel="apple-touch-icon" href="/img/touch-icon-ipad-retina.png" type="image/png" sizes="152x152">
         <!--<link rel="stylesheet" media="screen, print" href="css/your_styles.css">-->
     </head>
     <body class="mod-bg-1 ">

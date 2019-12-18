@@ -1,15 +1,37 @@
 <?php
-$this->assign('meta', $this->MetaRender->init($service)->render());
+$this->assign('meta', $this->MetaRender->init($service->service_posts_page)->render());
 $this->set('menu', 'posts');
 ?>
 
-<div class="jumbotron jumbotron-fluid bg-light border-bottom py-0">
+<div class="jumbotron jumbotron-fluid bg-light">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-9 col-lg-8">
-                <h1 class="h6"><?= h($service->title) ?></h1>
-                <div><?= $service->body ?></div>
-                <?= $this->element('post_categories_menu', ['services' => $services]); ?>
+            <div class="col col-md-11 col-lg-10 text-md-center">
+                <h1><?= h($service->service_posts_page->title) ?></h1>
+                <p class="lead mb-3 text-md-center"><?= strip_tags($service->service_posts_page->body) ?></p>
+                <p class="text-md-center small">
+                    <mark><?= h($service->slogan) ?></mark>
+                    <?php
+                    echo $this->Html->link(
+                        __('More details'),
+                        ['_name' => 'service_view', 'slug' => h($service->slug)],
+                        ['class' => 'ml-1']
+                    );
+                    ?>
+                </p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col col-md-10 col-lg-8">
+                <?php
+                echo $this->element(
+                    'post_categories_menu',
+                    [
+                        'services' => $services,
+                        'slug' => h($service->slug)
+                    ]
+                );
+                ?>
             </div>
         </div>
     </diV>
@@ -40,7 +62,7 @@ $this->set('menu', 'posts');
                 <p class="mb-3"><?php echo $post->lead; ?></p>
                 <?php
                 echo $this->element('article_footer', [
-                    'tags' => $post->tags, 'share' => false
+                    'share' => false
                 ]);
                 ?>
             </article>
